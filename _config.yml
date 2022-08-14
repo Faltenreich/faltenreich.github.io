@@ -5,7 +5,8 @@ baseurl: ""
 url: ""
 github_username:  Faltenreich
 twitter_username: faltendev
-
-theme: minima
+color-scheme: auto
+remote_theme: BDHU/minimalist
 plugins:
   - jekyll-feed
+  - jekyll-remote-theme
