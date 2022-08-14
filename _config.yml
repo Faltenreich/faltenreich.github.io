@@ -3,8 +3,8 @@ email: philipp.fahlteich@gmail.com
 description: Source code and other novels by Philipp Fahlteich
 baseurl: ""
 url: ""
-twitter_username: faltendev
 github_username:  Faltenreich
+twitter_username: faltendev
 
 theme: minima
 plugins:
