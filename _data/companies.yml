@@ -1,0 +1,9 @@
+- id: xroot
+  name: x-root Software GmbH
+  url: https://www.x-root.de
+  image: "/assets/xroot.png"
+
+- id: cubeware
+  name: Cubeware GmbH
+  url: https://www.cubeware.com
+  image: "/assets/cubeware.png"
