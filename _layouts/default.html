@@ -7,7 +7,14 @@
 
     {%- include header.html -%}
 
+    {{%if page.header %}}
+    <div>
+      <img src="{{ page.header }}">
+    </div>
+    {{% endif %}}
+
     <main class="page-content" aria-label="Content">
+
       <div class="wrapper">
         {{ content }}
       </div>
