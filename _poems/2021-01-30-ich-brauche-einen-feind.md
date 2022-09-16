@@ -1,6 +1,6 @@
 ---
 layout: poem
-header: /assets/mask.jpg
+header: /assets/images/mask.jpg
 title: Ich brauche einen Feind
 date: 2021-01-30
 ---
