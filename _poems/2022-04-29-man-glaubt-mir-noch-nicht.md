@@ -1,6 +1,6 @@
 ---
 layout: poem
-header: /assets/king.jpg
+header: /assets/images/king.jpg
 title: Man glaubt mir noch nicht
 date: 2022-04-29
 ---
