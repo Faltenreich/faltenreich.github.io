@@ -8,6 +8,9 @@ twitter_username: faltendev
 
 theme: minima
 
+minima:
+  skin: dark
+
 plugins:
   - jekyll-feed
 
