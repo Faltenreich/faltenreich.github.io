@@ -1,15 +1,21 @@
 title: Writing Bits
-email: philipp.fahlteich@gmail.com
-description: Source code and other novels by Philipp Fahlteich
+author:
+  name: Philipp Fahlteich
+  email: "philipp.fahlteich@gmail.com"
+description: Source code and other novels
 baseurl: ""
 url: ""
-github_username:  Faltenreich
-twitter_username: faltendev
+github_username: 
+twitter_username: 
 
 theme: minima
 
 minima:
-  skin: dark
+  social_links:
+    twitter: faltendev
+    github: Faltenreich
+    stackoverflow: "3269827"
+    linkedin: philipp-fahlteich
 
 plugins:
   - jekyll-feed
