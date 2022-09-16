@@ -7,11 +7,11 @@
 
     {%- include header.html -%}
 
-    {{%if page.header %}}
+    {%- if page.header -%}
     <div>
-      <img src="{{ page.header }}">
+      <img src="{{ page.header }}" style="width:100%;max-height:500px;object-fit:cover;">
     </div>
-    {{% endif %}}
+    {%- endif -%}
 
     <main class="page-content" aria-label="Content">
 
