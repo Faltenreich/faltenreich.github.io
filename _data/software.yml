@@ -1,0 +1,22 @@
+- id: diaguard
+  name: Diaguard
+  platform: Android
+  url: https://github.com/Faltenreich/Diaguard
+  image: "/assets/images/diaguard.png"
+  color: "#478063"
+  summary: >-
+    This Android app supports people with Diabetes mellitus by 
+    replacing their handwritten diary and offering additional features 
+    like a food database or multiple exports. Diaguard is available via 
+    Google Play and F-Droid.
+
+- id: kmm-flavors
+  name: Flavors for Kotlin Multiplatform Mobile
+  platform: Kotlin Multiplatform Mobile Gradle Plugin
+  color: white
+  summary: >-
+    This Gradle Plugin will generate flavors for Kotlin Multiplatform Mobile 
+    which is currently not officially supported by Jetbrains. Both productFlavors 
+    on Android and targets on iOS will be supported. This plugin is currently 
+    being developed and will be open-sourced once it evolves from a proof-of-concept 
+    to the alpha stage.
