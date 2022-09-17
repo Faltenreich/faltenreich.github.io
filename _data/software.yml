@@ -13,10 +13,86 @@
 - id: kmm-flavors
   name: Flavors for Kotlin Multiplatform Mobile
   platform: Kotlin Multiplatform Mobile Gradle Plugin
-  color: white
+  color: "#944f9c"
   summary: >-
     This Gradle Plugin will generate flavors for Kotlin Multiplatform Mobile 
     which is currently not officially supported by Jetbrains. Both productFlavors 
     on Android and targets on iOS will be supported. This plugin is currently 
     being developed and will be open-sourced once it evolves from a proof-of-concept 
     to the alpha stage.
+
+- id: food-manager
+  name: Food Manager
+  platform: Python
+  image: "/assets/images/food-manager.webp"
+  color: "#a1713a"
+  summary: >-
+    This Python application runs on a Raspberry Pi and manages a household’s food. 
+    Branded products are going to be identified through their barcode by a connected 
+    camera and intrepreted via third party-REST API. Non-branded consumables are going 
+    to be identified with the help of deep learning through an image processor. 
+    This application is currently being developed and primarily targeted for personal 
+    usage.
+
+- id: rhyme
+  name: Rhyme
+  platform: Flutter
+  color: "#3a90a1"
+  url: https://github.com/Faltenreich/Rhyme
+  summary: >-
+    This multiplatform app finds and displays rhymes for a given input in six different 
+    languages by merging the results of multiple open APIs. Rhyme served as an 
+    introduction to Flutter development and may not be released publicly.
+
+- id: release-report
+  name: Release Report
+  platform: Android with Parse Server
+  color: "#4f529c"
+  image: "/assets/images/release-report.png"
+  url: https://github.com/Faltenreich/Release-Report
+  summary: >-
+    This Android app shows release dates for upcoming media. It merges movies, music 
+    and video games from different data sources into one cohesive user experience. 
+    Release Report is currently in a closed alpha and yet to be released.
+
+- id: skeletonlayout
+  name: SkeletonLayout
+  platform: Android Library
+  color: gray
+  image: "/assets/images/skeletonlayout.gif"
+  url: https://github.com/Faltenreich/SkeletonLayout
+  summary: >-
+    This library implements the Skeleton View pattern and provides an easy way for 
+    other developers to enable it in their apps. SkeletonLayout is being hosted on 
+    MavenCentral.
+
+- id: alchemy
+  name: Alchemy
+  platform: Android Game
+  color: "#3c708f"
+  url: https://github.com/Faltenreich/Alchemy
+  summary: >-
+    This Android game is heavily inspired by Alchemie or Little Alchemy 2. 
+    Alchemy served as an introduction to native game development on Android 
+    and is not planned to be released publicly.
+
+- id: watchfacer
+  name: Watchfacer
+  platform: Android Wear
+  color: "#8f3c67"
+  image: "/assets/images/watchfacer.jpg"
+  url: https://play.google.com/store/apps/details?id=com.faltenreich.watchcraft
+  summary: >-
+    This watchface for Android Wear 2 can be fully customized: analog or digital, 
+    seconds hand, date display or battery meter. Every element can be turned on and off 
+    as well as adjusted in color.
+
+- id: textinputview
+  name: TextInputView
+  platform: Android Library
+  color: gray
+  url: https://github.com/Faltenreich/TextInputView
+  summary: >-
+    This library offers a different way to display a hint without preserving extra 
+    space by placing it into the embedded EditText. TextInputView is being hosted on 
+    MavenCentral.

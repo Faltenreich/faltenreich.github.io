@@ -12,6 +12,20 @@
   border-top: 0px;
 }
 
+a {
+  color: $text-color;
+  text-decoration: none;
+
+  &:visited {
+    color: $text-color;
+    text-decoration: underline;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 // Custom
 
 .poems{
@@ -41,10 +55,16 @@
 }
 
 .software-list {
-  color: black;
+  margin-top: 32px;
+  color: white;
 }
 
 .software {
   padding: 32px;
+  margin-bottom: 32px;
+}
+
+.software-image {
+  margin-top: 32px;
   margin-bottom: 32px;
 }
