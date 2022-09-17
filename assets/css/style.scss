@@ -5,12 +5,33 @@
   "minima/skins/{{ site.minima.skin | default: 'classic' }}",
   "minima/initialize";
 
-// Custom Style
-
-
-
-// Overriding Minima
+// Overrides
+// Minima
 
 .site-header {
   border-top: 0px;
+}
+
+// Custom
+
+.poems{
+  display: grid;
+  grid-template-columns: #{'repeat(auto-fit, minmax(min(300px, 100%), 1fr))'};
+  grid-gap: 30px;
+}
+
+.poem {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.poem-title {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  color: white;
+  padding: 8px;
 }
