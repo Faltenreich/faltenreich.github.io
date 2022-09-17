@@ -12,6 +12,13 @@ plugins:
   - jekyll-remote-theme
   - jekyll-feed
 
+
+header_pages:
+  - blog.md
+  - profession.md
+  - software.md
+  - poems.md
+
 remote_theme: jekyll/minima
 
 minima:
