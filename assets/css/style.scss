@@ -26,9 +26,16 @@ a {
   }
 }
 
+.social-media-list {
+  display: table-row;
+}
+
+// Custom
+
 .home {
   display: grid;
-  grid-template-columns: #{'repeat(auto-fit, minmax(min(300px, 100%), 1fr))'};
+  grid-template-columns: 1fr 275px;
+    grid-template-rows: auto auto auto 1fr;
   grid-gap: 30px;
 }
 
@@ -36,12 +43,6 @@ a {
   padding: 32px;
   background-color: #4444;
 }
-
-.social-media-list {
-  display: table-row;
-}
-
-// Custom
 
 .poems{
   display: grid;

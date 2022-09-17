@@ -5,28 +5,63 @@ layout: default
 <div class="home">
 
   <div class="home-item">
-    <h1>{{ page.title }}</h2>
     {{ content }}
   </div>
 
   <div class="home-item">
-    <h1>Contact</h2>
     <div><a href="https://www.google.com/maps?q={{ site.author.location }}">{{ site.author.location }}</a></div>
     <div><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></div>
     <div style="margin-top: 16px;">{% include social.html %}</div>
   </div>
 
   <div class="home-item">
-    <h1>Blog</h2>
+    <h1>Experience</h2>
       
   </div>
 
   <div class="home-item">
     <h1>Skills</h2>
+    <p>
+    <div>I have been developing mobile apps for over 10 years 
+      and working as software engineer for over 5 years.
+    </div>
+    </p>
     {% for skill in site.data.skills %}
+    <p>
       <div>{{ skill.title }}</div>
       <div><progress value="{{ skill.experience }}" max="100"></progress></div>
+    </p>
     {% endfor %}
+  </div>
+
+  <div class="home-item">
+    <h1>Publications</h2>
+    {% for publication in site.data.publications %}
+    <p>
+    {% if publication.link %}
+    <div><a href="{{ publication.link }}">{{ publication.title }}</a></div>
+    {% else %}
+    <div>{{ publication.title }}</div>
+    {% endif %}
+    <div>- {{ publication.location }}, {{ publication.year }}</div>
+    </p>
+    {% endfor %}
+  </div>
+
+  <div class="home-item">
+    <h1>Education</h2>
+    {% for education in site.data.education %}
+    <p>
+    <div><b>{{ education.title }}</b></div>
+    <div>{{ education.location }}</div>
+    <div>{{ education.year }}</div>
+    </p>
+    {% endfor %}
+  </div>
+
+  <div class="home-item">
+    <h1>CV</h2>
+      
   </div>
 
 </div>
