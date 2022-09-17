@@ -4,4 +4,13 @@
 @import
   "minima/skins/{{ site.minima.skin | default: 'classic' }}",
   "minima/initialize";
-  
+
+// Custom Style
+
+
+
+// Overriding Minima
+
+.site-header {
+  border-top: 0px;
+}

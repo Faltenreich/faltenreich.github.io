@@ -15,6 +15,7 @@ plugins:
 remote_theme: jekyll/minima
 
 minima:
+  skin: dark
   social_links:
     twitter: faltendev
     github: Faltenreich
