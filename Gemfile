@@ -8,8 +8,9 @@ source "https://rubygems.org"
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
 gem "jekyll", "~> 4.2.2"
-# This is the default theme for new Jekyll sites. You may change this to anything you like.
-gem "minima", :github => 'jekyll/minima', :ref => 'fdc3aba'
+# Minima 3 is not yet whitelisted on GitHub Pages, so we fallback to remote theme
+gem "minima", "~> 2.5"
+gem "jekyll-remote-theme"
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
 # gem "github-pages", group: :jekyll_plugins

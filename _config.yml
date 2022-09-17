@@ -6,9 +6,13 @@ description: Source code and other novels
 baseurl: ""
 url: ""
 github_username: 
-twitter_username: 
+twitter_username:
 
-theme: minima
+plugins:
+  - jekyll-remote-theme
+  - jekyll-feed
+
+remote_theme: jekyll/minima
 
 minima:
   social_links:
@@ -16,9 +20,6 @@ minima:
     github: Faltenreich
     stackoverflow: "3269827"
     linkedin: philipp-fahlteich
-
-plugins:
-  - jekyll-feed
 
 kramdown:
   hard_wrap: true
