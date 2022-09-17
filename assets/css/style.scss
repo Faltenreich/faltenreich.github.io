@@ -35,13 +35,32 @@ a {
 .home {
   display: grid;
   grid-template-columns: 1fr 275px;
-    grid-template-rows: auto auto auto 1fr;
+  grid-template-rows: auto auto auto 1fr;
   grid-gap: 30px;
 }
 
 .home-item {
   padding: 32px;
   background-color: #4444;
+}
+
+.cv {
+  display: grid;
+  grid-template-columns: 275px 1fr;
+}
+
+.cv-content {
+  padding-left: 32px;
+  text-align: justify;
+}
+
+.cv-menu {
+  padding: 32px;
+  background-color: #4444;
+}
+
+.cv-title {
+  font-size: 1.5em;
 }
 
 .poems{

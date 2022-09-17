@@ -1,0 +1,28 @@
+- title: Software Engineer
+  company: x-root Software GmbH
+  time: 2016 - Present
+  summary: >-
+    I am part of a multiplatform development team and as such developing and maintaining 
+    legacy apps, proof of concepts and new projects including their software architecture 
+    and toolchain. My main focus is native development for Android and iOS with Kotlin/Java 
+    and Swift, but I have also been involved in projects with Flutter or in writing Gradle 
+    plugins in Groovy. Currently I am evaluating development for Kotlin Multiplatform Mobile.
+  technologies: Kotlin, Java, Swift, Groovy, Gradle, Android, iOS, Flutter, Kotlin Multiplatform Mobile
+
+- title: Working Student
+  company: x-root Software GmbH
+  time: 2015 - 2016
+  summary: >-
+    I helped maintaining legacy apps and developing new ones on both native iOS- and Android 
+    environments. For my master thesis I created an Android app that is running continuously 
+    in order to provide the acoustic background in a variety of retail stores until today.
+  technologies: Java, Swift, Objective-C, iOS, Android
+
+- title: Working Student
+  company: Cubeware GmbH
+  time: 2012 - 2015
+  summary: >-
+    I supported the ongoing development of a B2B client-server platform by fixing bugs and 
+    assisting in developing new features. For my bachelor thesis I created a proof of concept 
+    for making the existing iOS client offline-capable via a new webservice.
+  technologies: C+, C++, Swift, Objective-C, Java, iOS, Android, ASP.NET
