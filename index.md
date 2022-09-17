@@ -1,5 +1,6 @@
 ---
 layout: home
+title: About me
 header: "/assets/images/header.jpg"
 ---
 
@@ -9,4 +10,4 @@ I’m a software developer from Germany who got his Master of Science at the Ros
 
 In my spare time, I discover new programming languages and frameworks for myself by developing and publishing smaller and larger projects on these platforms.
 
-Feel free to browse through my projects and to contact me if you’d like to. You are welcome!
+Feel free to browse through my projects and to contact me. You are welcome!

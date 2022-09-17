@@ -3,10 +3,30 @@ layout: default
 ---
 
 <div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
 
-  {{ content }}
+  <div class="home-item">
+    <h1>{{ page.title }}</h2>
+    {{ content }}
+  </div>
+
+  <div class="home-item">
+    <h1>Contact</h2>
+    <div><a href="https://www.google.com/maps?q={{ site.author.location }}">{{ site.author.location }}</a></div>
+    <div><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></div>
+    <div style="margin-top: 16px;">{% include social.html %}</div>
+  </div>
+
+  <div class="home-item">
+    <h1>Blog</h2>
+      
+  </div>
+
+  <div class="home-item">
+    <h1>Skills</h2>
+    {% for skill in site.data.skills %}
+      <div>{{ skill.title }}</div>
+      <div><progress value="{{ skill.experience }}" max="100"></progress></div>
+    {% endfor %}
+  </div>
 
 </div>

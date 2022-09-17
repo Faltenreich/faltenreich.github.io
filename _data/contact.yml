@@ -1,0 +1,19 @@
+- platform: Mail
+  title: philipp.fahlteich@gmail.com
+  link: mailto:philipp.fahlteich@gmail.com
+
+- platform: GitHub
+  title: github.com/Faltenreich
+  link: https://github.com/Faltenreich
+
+- platform: Twitter
+  title: twitter.com/faltendev
+  link: https://twitter.com/faltendev
+
+- platform: LinkedIn
+  title: linkedin.com/in/philipp-fahlteich
+  link: https://www.linkedin.com/in/philipp-fahlteich
+
+- platform: XING
+  title: xing.com/profile/Philipp_Fahlteich
+  link: https://www.xing.com/profile/Philipp_Fahlteich
