@@ -21,6 +21,7 @@ header_pages:
   - profession.md
   - software.md
   - poems.md
+  - imprint.md
 
 remote_theme: jekyll/minima
 

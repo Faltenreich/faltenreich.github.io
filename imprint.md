@@ -31,4 +31,4 @@ Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unt
 
 #### [Datenschutzerklärung](/privacy-policy)
 
-*Quelle: [eRecht24](http://www.e-recht24.de)*
+*Quelle: [eRecht24](http://www.e-recht24.de){:target="_blank"}*
