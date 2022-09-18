@@ -14,7 +14,7 @@ I live and write by Clean Code ♥
 
   {%- for software in site.data.software -%}
 
-  <div class="software" style="background-color:{{ software.color }};">
+  <div class="software">
 
     <div>{{- software.platform -}}</div>
 
