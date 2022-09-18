@@ -15,10 +15,10 @@ plugins:
 
 header_pages:
   - blog.md
-  - cv.md
-  - profession.md
+  - poetry.md
   - software.md
-  - poems.md
+  - profession.md
+  - cv.md
   - imprint.md
 
 remote_theme: jekyll/minima
@@ -36,5 +36,5 @@ kramdown:
   hard_wrap: true
 
 collections:
-  poems:
+  poetry:
     output: true

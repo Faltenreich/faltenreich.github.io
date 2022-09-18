@@ -20,7 +20,7 @@ layout: default
   <div class="home-item">
     <h1>Activity</h2>
     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-    {%- assign items = site.posts | concat: site.poems | sort: "date"  -%}
+    {%- assign items = site.posts | concat: site.poetry | sort: "date"  -%}
     {% for item in items reversed %}
     <div style="color: gray;">{{ item.date | date: date_format}}</div>
     <p><a href="{{ item.url }}">{{ item.title | escape }}</a></p>
