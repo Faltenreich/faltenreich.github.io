@@ -44,14 +44,13 @@ a {
   background-color: #4444;
 }
 
+// Mobile First
 .cv {
-  display: grid;
-  grid-template-columns: 275px 1fr;
+  display: block;
 }
 
-.cv-content {
-  padding-left: 32px;
-  text-align: justify;
+.cv-title {
+  font-size: 1.5em;
 }
 
 .cv-menu {
@@ -59,8 +58,26 @@ a {
   background-color: #4444;
 }
 
-.cv-title {
-  font-size: 1.5em;
+.cv-content {
+  text-align: justify;
+  padding: 16px;
+  padding-bottom: 16px;
+  padding-right: 32px;
+  padding-left: 32px;
+}
+
+// Desktop
+@media only screen and (min-width:  600px) {
+  .cv {
+    display: grid;
+    grid-template-columns: 275px 1fr;
+  }
+  .cv-content {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 16px;
+    padding-left: 32px;
+  }
 }
 
 .poems{
