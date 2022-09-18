@@ -34,9 +34,8 @@ a {
 
 .home {
   display: grid;
-  grid-template-columns: 1fr 275px;
-  grid-template-rows: auto auto auto 1fr;
-  grid-gap: 30px;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
 }
 
 .home-item {
@@ -44,7 +43,12 @@ a {
   background-color: #4444;
 }
 
-// Mobile First
+@media only screen and (min-width: 600px) {
+  .home {
+    grid-template-columns: 1fr 275px;
+  }
+}
+
 .cv {
   display: block;
 }
@@ -63,8 +67,7 @@ a {
   padding: 32px;
 }
 
-// Desktop
-@media only screen and (min-width:  600px) {
+@media only screen and (min-width: 600px) {
   .cv {
     display: grid;
     grid-template-columns: 275px 1fr;
