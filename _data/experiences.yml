@@ -6,7 +6,7 @@
     legacy apps, proof of concepts and new projects including their software architecture 
     and toolchain. My main focus is native development for Android and iOS with Kotlin/Java 
     and Swift, but I have also been involved in projects with Flutter or in writing Gradle 
-    plugins in Groovy. Currently I am evaluating development for Kotlin Multiplatform Mobile.
+    plugins in Groovy.
   technologies: Kotlin, Java, Swift, Groovy, Gradle, Android, iOS, Flutter, Kotlin Multiplatform Mobile
 
 - title: Working Student
