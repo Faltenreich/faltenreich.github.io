@@ -4,14 +4,14 @@ layout: default
 
 <div class="home">
 
-  <div class="home-item" style="padding: 0%;">
-    <img src="/assets/images/profile.jpg" style="width: 100%;">
-    <div style="padding: 32px;">
-      {{ content }}
-    </div>
+  <div class="home-item">
+    {{ content }}
   </div>
 
   <div class="home-item">
+    <div style="text-align: center;"><p>
+      <img src="/assets/images/cv.jpg" style="max-width: 150px; border-radius: 250px; overflow: hidden;">
+    </p></div>
     <div><a href="https://www.google.com/maps?q={{ site.author.location }}">{{ site.author.location }}</a></div>
     <div><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></div>
     <div style="margin-top: 16px;">{% include social.html %}</div>
