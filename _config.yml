@@ -7,8 +7,6 @@ author:
 description: Source code and other novels
 baseurl: ""
 url: ""
-github_username: 
-twitter_username:
 
 plugins:
   - jekyll-remote-theme
@@ -32,6 +30,7 @@ minima:
     github: Faltenreich
     stackoverflow: "3269827"
     linkedin: philipp-fahlteich
+    xing: Philipp_Fahlteich
 
 kramdown:
   hard_wrap: true

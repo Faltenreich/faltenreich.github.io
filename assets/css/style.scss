@@ -38,19 +38,20 @@ a {
   grid-gap: 16px;
 }
 
-.home-item {
-  padding: 32px;
-  background-color: #4444;
-}
-
 @media only screen and (min-width: 600px) {
   .home {
     grid-template-columns: 1fr 275px;
   }
 }
 
+.home-item {
+  padding: 32px;
+  background-color: #4444;
+}
+
 .cv {
-  display: block;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .cv-title {
@@ -69,14 +70,7 @@ a {
 
 @media only screen and (min-width: 600px) {
   .cv {
-    display: grid;
     grid-template-columns: 275px 1fr;
-  }
-  .cv-content {
-    padding-top: 16px;
-    padding-bottom: 16px;
-    padding-right: 16px;
-    padding-left: 32px;
   }
 }
 
