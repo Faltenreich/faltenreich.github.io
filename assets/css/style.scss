@@ -80,7 +80,7 @@ a {
 .poems{
   display: grid;
   grid-template-columns: #{'repeat(auto-fit, minmax(min(300px, 100%), 1fr))'};
-  grid-gap: 30px;
+  grid-gap: 16px;
 }
 
 .poem {
