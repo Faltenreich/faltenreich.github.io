@@ -5,16 +5,19 @@
 
 - title: Infineon Technologies AG
   summary: Developing a proof of concept on iOS for opening locks via NFC
+  url: https://www.infineon.com/cms/en/product/power/contactless-power-sensing-ics/nfc-tag-side-controllers/nac1080
   company: xroot
   year: 2021
 
 - title: PSLocks
   summary: Continuing development of an externally developed legacy app for smart locks using Bluetooth LE
+  url: https://pslocks.com/en/bluetooth-locker-locks-smart-bluetooth-lock-for-cabinet-ps-locks
   company: xroot
   year: 2021
 
 - title: Penzkofer
   summary: Developing an in-house showcase app on iPad OS for real estate fairs
+  url: https://www.x-root.de/referenz-app/showroom-app-penzkofer-bau-gmbh
   company: xroot
   year: 2021
 
@@ -25,36 +28,43 @@
 
 - title: Kind Metallteile 
   summary: Developing an in-house showcase app on iPad OS for trade fairs
+  url: https://www.x-root.de/referenz-app/showcase-app-rolf-kind-gmbh
   company: xroot
   year: 2021
   
 - title: OilQuick
   summary: Developing the iOS-part of a public showcase app for large-scale machinery systems
+  url: https://www.x-root.de/referenz-app/service-app-oilquick-deutschland-gmbh
   company: xroot
   year: 2020
   
 - title: Rieper Futtermittel 
   summary: Developing of the Android-part of a public shop app for large-scale farmers
+  url: https://play.google.com/store/apps/details?id=com.rieper.shop
   company: xroot
   year: 2020
   
 - title: OELCHECK
   summary: Developing a multiplatform app for managing submissions
+  url: https://de.oelcheck.com/app
   company: xroot
   year: 2019
   
 - title: NoID
   summary: Supervising a team of four students of the Technische Hochschule Rosenheim to develop a dialing app for iOS and Android as proof of concept using Swift and Java
+  url: https://play.google.com/store/apps/details?id=de.xroot.noid
   company: xroot
   year: 2019
   
 - title: Verkehrssicherung Hahn
   summary: Developing the Android-part of a public app for displaying building sites
+  url: https://play.google.com/store/apps/details?id=de.vshahn.bis
   company: xroot
   year: 2018
   
 - title: Thermomess Außendienst
   summary: Developing an in-house Android app for managing data from heat cost allocators and other meters
+  url: https://www.x-root.de/referenz-app/ablese-app-thermomess-warmedienst-ag
   company: xroot
   year: 2018
   
@@ -70,11 +80,13 @@
   
 - title: StarSnoopy
   summary: Supporting development of the Android-part of a public app for managing wishlists
+  url: https://www.x-root.de/referenz-app/starsnoopy-wunschlisten-x-root-software-gmbh
   company: xroot
   year: 2017
   
 - title: Dunkin Donuts
   summary: Continuing development of the Android-part of a legacy app
+  url: https://www.x-root.de/referenz-app/food-app-dunkin-donuts
   company: xroot
   year: 2017
   
@@ -83,8 +95,9 @@
   company: xroot
   year: 2017
   
-- title: RMS (Master thesis)
+- title: amp retail music solution (Master thesis)
   summary: Redeveloping an in-house Android app for managing playlists for sound systems in shopping stores
+  url: https://www.ampsoundbranding.com
   company: xroot
   year: 2016
   
@@ -95,6 +108,7 @@
   
 - title: Thermomess Vertrieb
   summary: Developing an in-house Android app for managing customer data
+  url: https://www.thermomess.de
   company: xroot
   year: 2015
   
@@ -105,25 +119,28 @@
   
 - title: Adler Mannheim Fan App
   summary: Developing the Android-part of a public app for fans of the ice hockey team of the Deutsche Eishockey Liga
+  url: https://www.x-root.de/referenz-app/fan-app-adler-mannheim-sap
   company: xroot
   year: 2015
 
 - title: Burger King
-  summary: Continuing development of the iOS-part of a legacy app using Objective-C
+  summary: Continuing development of the iOS-part of the formerly native legacy app using Objective-C
   company: xroot
   year: 2015
 
-- title: Offline Reporting (Bachelor thesis)
+- title: Offline reporting service (Bachelor thesis)
   summary: Enabling offline support for mobile clients within an existing client-server-architecture using C# and ASP.NET
   company: cubeware
   year: 2014
 
 - title: C8 Cockpit
   summary: Supporting development of a business intelligence solution using C+ and C++
+  url: https://www.cubeware.com
   company: cubeware
   year: 2012
 
 - title: Internship
   summary: Supporting marketing campaigns in the field of sports and communication
+  url: https://www.toctoc.info
   company: toc
   year: 2011
