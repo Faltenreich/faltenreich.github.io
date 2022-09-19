@@ -14,11 +14,13 @@ layout: page
 {% if professions_of_year.size > 0 %}
 {% for profession in professions_of_year %}
 <tr>
+
 <td>
 {% if profession.title == professions_of_year[0].title %}
 {{year}}
 {% endif %}
-</td> 
+</td>
+
 <td>
   <a href="{{ profession.url }}">
   {% if profession.title %}
@@ -30,6 +32,23 @@ layout: page
   <br/>
   {{ profession.summary }}
 </td>
+
+{% if profession.platforms %}
+<td>
+{% assign platform_ids = profession.platforms | split: ", " %}
+{% for platform_id in platform_ids %}
+{% assign platform = site.data.platforms | where: "id", platform_id | first %}
+<img src="{{ platform.image }}" style="max-width: 24px; min-width: 24px;">
+{% endfor %}
+</td>
+{% endif %}
+
+{% if profession.technologies %}
+<td>
+{{ profession.technologies }}
+</td>
+{% endif %}
+
 </tr>
 {% endfor %}
 {% endif %}

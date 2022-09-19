@@ -1,0 +1,15 @@
+- id: android
+  name: Android
+  image: "/assets/images/android.png"
+
+- id: ios
+  name: iOS
+  image: "/assets/images/ios.png"
+
+- id: windows
+  name: Windows
+  image: "/assets/images/windows.png"
+
+- id: web
+  name: Web
+  image: "/assets/images/web.png"

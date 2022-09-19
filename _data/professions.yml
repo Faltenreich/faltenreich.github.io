@@ -1,146 +1,194 @@
 - title: MediaMarktSaturn
-  summary: Maintaining native legacy apps for iOS and Android
+  summary: Maintaining native legacy apps
   url: https://www.mediamarktsaturn.com
+  platforms: android, ios
+  technologies: GraphQL, Fastlane
   company: xroot
   year: 2022
 
 - title: 
-  summary: Developing a proof of concept on Android for a braking system manufacturer
+  summary: Developing a proof of concept for a braking system manufacturer
+  platforms: android
   company: xroot
   year: 2022
 
 - title: Infineon Technologies AG
-  summary: Developing a proof of concept on iOS for opening locks via NFC
+  summary: Developing a proof of concept for controlling smart locks
   url: https://www.infineon.com/cms/en/product/power/contactless-power-sensing-ics/nfc-tag-side-controllers/nac1080
+  platforms: ios
+  technologies: NFC
   company: xroot
   year: 2021
 
 - title: PSLocks
-  summary: Continuing development of an externally developed legacy app for smart locks using Bluetooth LE
+  summary: Continuing development of an externally developed legacy app for smart locks
   url: https://pslocks.com/en/bluetooth-locker-locks-smart-bluetooth-lock-for-cabinet-ps-locks
+  platforms: android, ios
+  technologies: Bluetooth LE
   company: xroot
   year: 2021
 
 - title: Penzkofer
-  summary: Developing an in-house showcase app on iPad OS for real estate fairs
+  summary: Developing an in-house showcase app on for real estate fairs
   url: https://www.x-root.de/referenz-app/showroom-app-penzkofer-bau-gmbh
+  platforms: ios
+  technologies: iPad OS, SwiftUI
   company: xroot
   year: 2021
 
 - title: 
-  summary: Supervising a team of four students of the Technische Hochschule Rosenheim to develop a platform for users and developers as proof of concept using Flutter and Parse Server
+  summary: Supervising a team of four students of the Technische Hochschule Rosenheim to develop a platform for users and developers as proof of concept
+  platforms: android, ios
+  technologies: Flutter, Parse Server
   company: xroot
   year: 2021
 
 - title: Kind Metallteile 
-  summary: Developing an in-house showcase app on iPad OS for trade fairs
+  summary: Developing an in-house showcase app for trade fairs
   url: https://www.x-root.de/referenz-app/showcase-app-rolf-kind-gmbh
+  platforms: ios
+  technologies: iPad OS, SwiftUI
   company: xroot
   year: 2021
   
 - title: OilQuick
-  summary: Developing the iOS-part of a public showcase app for large-scale machinery systems
+  summary: Developing a public showcase app for large-scale machinery systems
   url: https://www.x-root.de/referenz-app/service-app-oilquick-deutschland-gmbh
+  platforms: ios
   company: xroot
   year: 2020
   
 - title: Rieper Futtermittel 
-  summary: Developing of the Android-part of a public shop app for large-scale farmers
+  summary: Developing a public shop app for large-scale farmers
   url: https://play.google.com/store/apps/details?id=com.rieper.shop
+  platforms: android
   company: xroot
   year: 2020
   
 - title: OELCHECK
   summary: Developing a multiplatform app for managing submissions
+  platforms: android, ios
   url: https://de.oelcheck.com/app
   company: xroot
   year: 2019
   
+- title: Localization Plugin
+  summary: Developing a plugin to synchronize localizations cross-platform via Google Sheets
+  platforms: android, ios
+  technologies: Gradle
+  company: xroot
+  year: 2019
+  
 - title: NoID
-  summary: Supervising a team of four students of the Technische Hochschule Rosenheim to develop a dialing app for iOS and Android as proof of concept using Swift and Java
+  summary: Supervising a team of four students of the Technische Hochschule Rosenheim to develop a dialing app as proof of concept
+  platforms: android, ios
   url: https://play.google.com/store/apps/details?id=de.xroot.noid
   company: xroot
   year: 2019
   
 - title: Verkehrssicherung Hahn
-  summary: Developing the Android-part of a public app for displaying building sites
+  summary: Developing a public app for displaying building sites
+  platforms: android
+  technologies: Firebase
   url: https://play.google.com/store/apps/details?id=de.vshahn.bis
   company: xroot
   year: 2018
   
 - title: Thermomess Außendienst
-  summary: Developing an in-house Android app for managing data from heat cost allocators and other meters
+  summary: Developing an in-house app for managing data from heat cost allocators and other meters
+  platforms: android
+  technologies: ObjectBox
   url: https://www.x-root.de/referenz-app/ablese-app-thermomess-warmedienst-ag
   company: xroot
   year: 2018
   
 - title: x-android
-  summary: Developing an in-house library for sharing logic between Android projects using Kotlin
+  summary: Developing an in-house library for sharing logic between projects
+  platforms: android
+  technologies: Gradle
   company: xroot
   year: 2018
   
 - title: HEMI
-  summary: Developing the Android-part of a SDK for smart locks using Bluetooth LE and Kotlin
+  summary: Developing a SDK for smart locks
+  platforms: android
+  technologies: Bluetooth LE
   company: xroot
   year: 2017
   
 - title: StarSnoopy
-  summary: Supporting development of the Android-part of a public app for managing wishlists
+  summary: Supporting development of a public app for managing wishlists
+  platforms: android
+  technologies: Firebase
   url: https://www.x-root.de/referenz-app/starsnoopy-wunschlisten-x-root-software-gmbh
   company: xroot
   year: 2017
   
 - title: Dunkin Donuts
-  summary: Continuing development of the Android-part of a legacy app
+  summary: Continuing development of a legacy app
+  platforms: android
   url: https://www.x-root.de/referenz-app/food-app-dunkin-donuts
   company: xroot
   year: 2017
   
 - title: Marketing
-  summary: Supporting in-house marketing and public relations using Squarespace, Google Analytics and Google Adwords
+  summary: Supporting in-house marketing and public relations
+  platforms: web
+  technologies: Analytics, Adwords
   company: xroot
   year: 2017
   
-- title: Master thesis
-  summary: Redeveloping an in-house Android app for managing playlists for sound systems in shopping stores
+- title: Master Thesis
+  summary: Redeveloping an in-house app for managing playlists for sound systems in shopping stores
+  platforms: android
   url: https://www.ampsoundbranding.com
   company: xroot
   year: 2016
   
 - title: Gamification
-  summary: Supervising three small projects targeting mobile games using the Unity Engine
+  summary: Supervising three small projects targeting mobile games
+  platforms: android, ios
+  technologies: Unity
   company: xroot
   year: 2016
   
 - title: Thermomess Vertrieb
-  summary: Developing an in-house Android app for managing customer data
+  summary: Developing an in-house app for managing customer data
+  platforms: android
   url: https://www.thermomess.de
   company: xroot
   year: 2015
   
 - title: x-Cloud Monitoring
   summary: Continuing development of an in-house iOS monitoring app
+  platforms: ios
   company: xroot
   year: 2015
   
 - title: Adler Mannheim Fan App
-  summary: Developing the Android-part of a public app for fans of the ice hockey team of the Deutsche Eishockey Liga
+  summary: Developing a public app for fans of the ice hockey team
+  platforms: android
   url: https://www.x-root.de/referenz-app/fan-app-adler-mannheim-sap
   company: xroot
   year: 2015
 
 - title: Burger King
-  summary: Continuing development of the iOS-part of the formerly native legacy app using Objective-C
+  summary: Continuing development of the formerly native legacy app
+  platforms: ios
   company: xroot
   year: 2015
 
-- title: Bachelor thesis
-  summary: Enabling offline support for mobile clients within an existing client-server-architecture using C# and ASP.NET
+- title: Bachelor Thesis
+  summary: Enabling offline support for mobile clients within an existing client-server-architecture
+  platforms: windows
+  technologies: C#, ASP.NET, REST
   company: cubeware
   year: 2014
 
 - title: C8 Cockpit
-  summary: Supporting development of a business intelligence solution using C+ and C++
+  summary: Supporting development of a business intelligence solution
+  platforms: windows
+  technologies: C++, C#, .NET
   url: https://www.cubeware.com
   company: cubeware
   year: 2012
