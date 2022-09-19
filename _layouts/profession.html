@@ -15,7 +15,9 @@ layout: page
 {% for profession in professions_of_year %}
 <tr>
 <td>
+{% if profession.title == professions_of_year[0].title %}
 {{year}}
+{% endif %}
 </td> 
 <td>
   <a href="{{ profession.url }}">

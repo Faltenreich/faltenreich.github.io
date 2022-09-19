@@ -1,3 +1,9 @@
+- title: MediaMarktSaturn
+  summary: Maintaining native legacy apps for iOS and Android
+  url: https://www.mediamarktsaturn.com
+  company: xroot
+  year: 2022
+
 - title: 
   summary: Developing a proof of concept on Android for a braking system manufacturer
   company: xroot
@@ -95,7 +101,7 @@
   company: xroot
   year: 2017
   
-- title: amp retail music solution (Master thesis)
+- title: Master thesis
   summary: Redeveloping an in-house Android app for managing playlists for sound systems in shopping stores
   url: https://www.ampsoundbranding.com
   company: xroot
@@ -128,7 +134,7 @@
   company: xroot
   year: 2015
 
-- title: Offline reporting service (Bachelor thesis)
+- title: Bachelor thesis
   summary: Enabling offline support for mobile clients within an existing client-server-architecture using C# and ASP.NET
   company: cubeware
   year: 2014
