@@ -1,0 +1,43 @@
+---
+layout: page
+---
+
+{{ content }}
+
+<div class="software-list">
+
+    {%- for software in site.data.software -%}
+  
+    <div class="software">
+  
+      <div>{{- software.platform -}}</div>
+  
+      <div>
+      {% if software.url %}
+      <a href="{{ software.url }}" style="color:white;">
+      <h2>{{- software.name -}}</h2>
+      </a>
+      {% else %}
+      <h2>{{- software.name -}}</h2>
+      {% endif %}
+      </div>
+  
+      {% if software.image %}
+      <div class="software-image">
+      {% if software.url %}
+      <a href="{{ software.url }}">
+      <img src="{{- software.image -}}">
+      </a>
+      {% else %}
+      <img src="{{- software.image -}}">
+      {% endif %}
+      </div>
+      {% endif %}
+  
+      <div>{{- software.summary -}}</div>
+  
+    </div>
+  
+    {%- endfor -%}
+  
+  </div>
