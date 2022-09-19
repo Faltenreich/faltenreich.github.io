@@ -4,4 +4,4 @@ title: Profession
 permalink: /profession/
 ---
 
-Hello, World
+Following project were developed, co-developed or further developed by me in a professional environment.

@@ -3,12 +3,13 @@ layout: page
 ---
 
 {{ content }}
+<br/>
 
 {% for company in site.data.companies %}
-<p><a href="{{ company.url }}"><img src="{{ company.image }}" style="width:50%;"></a></p>
+<p><a href="{{ company.url }}"><img src="{{ company.image }}" style="height:50px;"></a></p>
 <table>
 {% assign professions_of_company = site.data.professions | where: "company", company.id %}
-{% for year in (2015..2022) reversed %}
+{% for year in (2010..2022) reversed %}
 {% assign professions_of_year = professions_of_company | where: "year", year %}
 {% if professions_of_year.size > 0 %}
 {% for profession in professions_of_year %}
