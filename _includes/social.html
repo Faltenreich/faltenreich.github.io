@@ -20,6 +20,6 @@
   {%- if social.devto -%}<li><a href="https://dev.to/{{ social.devto | cgi_escape | escape }}" target="_blank" title="{{ social.devto | escape }}"><svg class="svg-icon grey"><use xlink:href="{{ '/assets/minima-social-icons.svg#devto' | relative_url }}"></use></svg></a></li>{%- endif -%}
   {%- if social.google_scholar_id -%}<li><a href="https://scholar.google.com/citations?user={{ social.google_scholar_id | cgi_escape | escape }}" target="_blank" title="Google Scholar"><svg class="svg-icon grey"><use xlink:href="{{ '/assets/minima-social-icons.svg#google_scholar' | relative_url }}"></use></svg></a></li>{%- endif -%}
   <!-- Custom icons -->
-  {%- if social.xing -%}<li><a rel="me" href="https://www.xing.com/profile/{{ social.xing | cgi_escape | escape }}" target="_blank" title="{{ social.xing | escape }}"><svg class="svg-icon grey"><use xlink:href="{{ '/assets/minima-social-icons.svg#xing' | relative_url }}"></use></svg></a></li>{%- endif -%}
+  {%- if social.xing -%}<li><a rel="me" href="https://www.xing.com/profile/{{ social.xing | cgi_escape | escape }}" target="_blank" title="{{ social.xing | escape }}"><img class="svg-icon grey" src="/assets/images/xing.svg"></a></li>{%- endif -%}
   <li><a href="feed.xml" target="_blank" title="Subscribe"><svg class="svg-icon grey"><use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use></svg></a></li>
 </ul>
