@@ -21,6 +21,14 @@ layout: page
 {% endif %}
 </td>
 
+<td class="platform-icon">
+{% assign platform_ids = profession.platforms | split: ", " %}
+{% for platform_id in platform_ids %}
+{% assign platform = site.data.platforms | where: "id", platform_id | first %}
+<img src="{{ platform.image }}" title="{{ platform.name }}">
+{% endfor %}
+</td>
+
 <td>
   <a href="{{ profession.url }}">
   {% if profession.title %}
@@ -31,18 +39,6 @@ layout: page
   </a>
   <br/>
   {{ profession.summary }}
-</td>
-
-<td>
-{% assign platform_ids = profession.platforms | split: ", " %}
-{% for platform_id in platform_ids %}
-{% assign platform = site.data.platforms | where: "id", platform_id | first %}
-<img src="{{ platform.image }}" title="{{ platform.name }}" style="max-width: 24px; min-width: 24px;">
-{% endfor %}
-</td>
-
-<td>
-{{ profession.technologies }}
 </td>
 
 </tr>

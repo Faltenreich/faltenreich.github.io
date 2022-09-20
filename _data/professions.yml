@@ -1,8 +1,7 @@
 - title: MediaMarktSaturn
-  summary: Maintaining native legacy apps
+  summary: Maintaining native legacy apps using GraphQL and Fastlane
   url: https://www.mediamarktsaturn.com
   platforms: android, ios
-  technologies: GraphQL, Fastlane
   company: xroot
   year: 2022
 
@@ -13,41 +12,36 @@
   year: 2022
 
 - title: Infineon Technologies AG
-  summary: Developing a proof of concept for controlling smart locks
+  summary: Developing a proof of concept for controlling smart locks via NFC
   url: https://www.infineon.com/cms/en/product/power/contactless-power-sensing-ics/nfc-tag-side-controllers/nac1080
   platforms: ios
-  technologies: NFC
   company: xroot
   year: 2021
 
 - title: PSLocks
-  summary: Continuing development of an externally developed legacy app for smart locks
+  summary: Continuing development of an externally developed legacy app for controlling smart locks via Bluetooth LE
   url: https://pslocks.com/en/bluetooth-locker-locks-smart-bluetooth-lock-for-cabinet-ps-locks
   platforms: android, ios
-  technologies: Bluetooth LE
   company: xroot
   year: 2021
 
 - title: Penzkofer
-  summary: Developing an in-house showcase app on for real estate fairs
+  summary: Developing an in-house showcase app for real estate fairs using SwiftUI
   url: https://www.x-root.de/referenz-app/showroom-app-penzkofer-bau-gmbh
   platforms: ios
-  technologies: iPad OS, SwiftUI
   company: xroot
   year: 2021
 
 - title: 
-  summary: Supervising a team of four students of the Technische Hochschule Rosenheim to develop a platform for users and developers as proof of concept
+  summary: Supervising a team of four students of the Technische Hochschule Rosenheim to develop a platform for users and developers as proof of concept using Flutter and Parse Server
   platforms: android, ios
-  technologies: Flutter, Parse Server
   company: xroot
   year: 2021
 
 - title: Kind Metallteile 
-  summary: Developing an in-house showcase app for trade fairs
+  summary: Developing an in-house showcase app for trade fairs using SwiftUI
   url: https://www.x-root.de/referenz-app/showcase-app-rolf-kind-gmbh
   platforms: ios
-  technologies: iPad OS, SwiftUI
   company: xroot
   year: 2021
   
@@ -73,9 +67,8 @@
   year: 2019
   
 - title: Localization Plugin
-  summary: Developing a plugin to synchronize localizations cross-platform via Google Sheets
+  summary: Developing a plugin to synchronize localizations cross-platform via Google Sheets using Gradle and Run Scripts
   platforms: android, ios
-  technologies: Gradle
   company: xroot
   year: 2019
   
@@ -87,39 +80,34 @@
   year: 2019
   
 - title: Verkehrssicherung Hahn
-  summary: Developing a public app for displaying building sites
+  summary: Developing a public app for displaying building sites using Firebase
   platforms: android
-  technologies: Firebase
   url: https://play.google.com/store/apps/details?id=de.vshahn.bis
   company: xroot
   year: 2018
   
 - title: Thermomess Außendienst
-  summary: Developing an in-house app for managing data from heat cost allocators and other meters
+  summary: Developing an in-house app for managing data from heat cost allocators and other meters using ObjectBox
   platforms: android
-  technologies: ObjectBox
   url: https://www.x-root.de/referenz-app/ablese-app-thermomess-warmedienst-ag
   company: xroot
   year: 2018
   
 - title: x-android
-  summary: Developing an in-house library for sharing logic between projects
+  summary: Developing an in-house library for sharing logic between projects using Gradle
   platforms: android
-  technologies: Gradle
   company: xroot
   year: 2018
   
 - title: HEMI
-  summary: Developing a SDK for smart locks
+  summary: Developing a SDK for smart locks using Bluetooth LE
   platforms: android
-  technologies: Bluetooth LE
   company: xroot
   year: 2017
   
 - title: StarSnoopy
-  summary: Supporting development of a public app for managing wishlists
+  summary: Supporting development of a public app for managing wishlists using Firebase
   platforms: android
-  technologies: Firebase
   url: https://www.x-root.de/referenz-app/starsnoopy-wunschlisten-x-root-software-gmbh
   company: xroot
   year: 2017
@@ -132,9 +120,8 @@
   year: 2017
   
 - title: Marketing
-  summary: Supporting in-house marketing and public relations
+  summary: Supporting in-house marketing and public relations using Google Analytics and -Adwords
   platforms: web
-  technologies: Analytics, Adwords
   company: xroot
   year: 2017
   
@@ -146,9 +133,8 @@
   year: 2016
   
 - title: Gamification
-  summary: Supervising three small projects targeting mobile games
+  summary: Supervising three small projects targeting mobile games using Unity Engine
   platforms: android, ios
-  technologies: Unity
   company: xroot
   year: 2016
   
@@ -179,24 +165,14 @@
   year: 2015
 
 - title: Bachelor Thesis
-  summary: Enabling offline support for mobile clients within an existing client-server-architecture
+  summary: Enabling offline support for mobile clients within an existing client-server-architecture written in C# using ASP.NET
   platforms: windows
-  technologies: C#, ASP.NET, REST
   company: cubeware
   year: 2014
 
 - title: C8 Cockpit
-  summary: Supporting development of a business intelligence solution
+  summary: Supporting development of a business intelligence solution written in C++ and C#
   platforms: windows
-  technologies: C++, C#, .NET
   url: https://www.cubeware.com
   company: cubeware
   year: 2012
-
-- title: Internship
-  summary: Supporting marketing campaigns in the field of sports and communication
-  platforms: web
-  technologies: CMS
-  url: https://www.toctoc.info
-  company: toc
-  year: 2011
