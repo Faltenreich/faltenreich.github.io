@@ -6,7 +6,7 @@ layout: page
 
 <div class="software-list">
 
-    {%- for software in site.data.software -%}
+    {%- for software in site.data.oss -%}
   
     <div class="software">
   
@@ -23,13 +23,13 @@ layout: page
       </div>
   
       {% if software.image %}
-      <div class="software-image" style="margin-top: 16px; margin-bottom: 16px;">
+      <div style="margin-top: 16px; margin-bottom: 16px;">
       {% if software.url %}
       <a href="{{ software.url }}">
-      <img src="{{- software.image -}}">
+      <img class="software-image" src="{{- software.image -}}">
       </a>
       {% else %}
-      <img src="{{- software.image -}}">
+      <img class="software-image" src="{{- software.image -}}">
       {% endif %}
       </div>
       {% endif %}

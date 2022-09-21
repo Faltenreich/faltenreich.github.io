@@ -71,13 +71,12 @@
 
 - name: Food Manager
   platform: Python
-  image: "/assets/images/food-manager.webp"
   summary: >-
-    This Python application runs on a Raspberry Pi and manages a household’s food. 
+    This Python application manages a household's food from a Raspberry Pi. 
     Branded products are going to be identified through their barcode by a connected 
     camera and intrepreted via third party-REST API. Non-branded consumables are going 
     to be identified with the help of deep learning through an image processor. 
-    This application is currently being developed and primarily targeted for personal 
+    This application is a proof-of-concept and primarily targeted for personal 
     usage.
   
 - name: Writing Bits
