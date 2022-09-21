@@ -4,37 +4,37 @@ layout: page
 
 {{ content }}
 
-<div class="software-list">
+<div class="oss-list">
 
-    {%- for software in site.data.oss -%}
+    {%- for item in site.data.oss -%}
   
-    <div class="software">
+    <div class="oss">
   
-      <div>{{- software.platform -}}</div>
+      <div>{{- item.platform -}}</div>
   
       <div>
-      {% if software.url %}
-      <a href="{{ software.url }}" style="color:white;">
-      <h2 style="margin-top: 8px;">{{- software.name -}}</h2>
+      {% if item.url %}
+      <a href="{{ item.url }}" style="color:white;">
+      <h2 style="margin-top: 8px;">{{- item.name -}}</h2>
       </a>
       {% else %}
-      <h2 style="margin-top: 8px;">{{- software.name -}}</h2>
+      <h2 style="margin-top: 8px;">{{- item.name -}}</h2>
       {% endif %}
       </div>
   
-      {% if software.image %}
+      {% if item.image %}
       <div style="margin-top: 16px; margin-bottom: 16px;">
-      {% if software.url %}
-      <a href="{{ software.url }}">
-      <img class="software-image" src="{{- software.image -}}">
+      {% if item.url %}
+      <a href="{{ item.url }}">
+      <img class="item-image" src="{{- item.image -}}">
       </a>
       {% else %}
-      <img class="software-image" src="{{- software.image -}}">
+      <img class="item-image" src="{{- item.image -}}">
       {% endif %}
       </div>
       {% endif %}
   
-      <div>{{- software.summary -}}</div>
+      <div>{{- item.summary -}}</div>
   
     </div>
   

@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: software
 title: Software
 permalink: /software/
 ---
@@ -9,6 +9,3 @@ I have started development for <img src="/assets/images/android.png" class="plat
 I have conceptualized, developed, published and maintained multiple projects. My main focus is the development for mobile platforms but I am also experienced in developing small backends or setting up a Backend-as-a-service.
 
 I live and write by Clean Code ♥
-
-[Open Source](/oss)
-[Profession](/profession)

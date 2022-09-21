@@ -40,7 +40,7 @@ a {
 
 @media only screen and (min-width: 600px) {
   .home {
-    grid-template-columns: 1fr 275px;
+    grid-template-columns: 3fr 2fr;
   }
 }
 
@@ -101,7 +101,6 @@ a {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 16px;
-  color: white;
 }
 
 @media only screen and (min-width: 600px) {
@@ -115,7 +114,24 @@ a {
   padding: 32px;
 }
 
-.software-image {
+.oss-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+}
+
+@media only screen and (min-width: 600px) {
+  .oss-list {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+.oss {
+  background-color: #4444;
+  padding: 32px;
+}
+
+.oss-image {
   width: auto;
   height: auto;
   max-width: 100%;

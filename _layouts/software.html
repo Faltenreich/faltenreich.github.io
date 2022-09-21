@@ -1,0 +1,43 @@
+---
+layout: page
+---
+
+<div class="software-list">
+
+    <div class="software">
+        {{ content }}
+    </div>
+
+    <div class="software">
+      <h2 style="margin-top: 0px;">Skills</h2>
+      <p>
+        I have been developing mobile apps for over 10 years 
+        and working as software engineer for over 5 years.
+      </p>
+      {% for skill in site.data.skills %}
+      <p>
+        <div>{{ skill.title }}</div>
+        <div><progress value="{{ skill.experience }}" max="100"></progress></div>
+      </p>
+      {% endfor %}
+    </div>
+
+    <a href="/oss">
+      <div class="software">
+        <h2 style="margin-top: 0px;">Open Source</h2>
+      </div>
+    </a>
+
+    <a href="/profession">
+      <div class="software">
+        <h2 style="margin-top: 0px;">Profession</h2>
+      </div>
+    </a>
+
+    <a href="/cv">
+      <div class="software">
+        <h2 style="margin-top: 0px;">CV</h2>
+      </div>
+    </a>
+
+</div>

@@ -18,26 +18,12 @@ layout: default
   </div>
 
   <div class="home-item">
-    <h1>Activity</h2>
+    <h1>Activity</h1>
     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
     {%- assign items = site.posts | concat: site.poetry | sort: "date"  -%}
     {% for item in items reversed %}
     <div style="color: gray;">{{ item.date | date: date_format}}</div>
     <p><a href="{{ item.url }}">{{ item.title | escape }}</a></p>
-    {% endfor %}
-  </div>
-
-  <div class="home-item">
-    <h1>Skills</h2>
-    <p>
-      I have been developing mobile apps for over 10 years 
-      and working as software engineer for over 5 years.
-    </p>
-    {% for skill in site.data.skills %}
-    <p>
-      <div>{{ skill.title }}</div>
-      <div><progress value="{{ skill.experience }}" max="100"></progress></div>
-    </p>
     {% endfor %}
   </div>
 
