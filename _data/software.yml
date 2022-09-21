@@ -8,14 +8,66 @@
     like a food database or multiple exports. Diaguard is available via 
     Google Play and F-Droid.
 
-- name: Flavors for Kotlin Multiplatform Mobile
-  platform: Kotlin Multiplatform Mobile Gradle Plugin
+- name: KMM-Flavors
+  platform: Kotlin Multiplatform Mobile
   summary: >-
     This Gradle Plugin will generate flavors for Kotlin Multiplatform Mobile 
     which is currently not officially supported by Jetbrains. Both productFlavors 
     on Android and targets on iOS will be supported. This plugin is currently 
     being developed and will be open-sourced once it evolves from a proof-of-concept 
     to the alpha stage.
+
+- name: Release Report
+  platform: Android with Parse Server
+  image: "/assets/images/release-report.png"
+  url: https://github.com/Faltenreich/Release-Report
+  summary: >-
+    This Android app shows release dates for upcoming media. It merges movies, music 
+    and video games from different data sources into one cohesive user experience. 
+    Release Report is currently in a closed alpha and yet to be released.
+
+- name: Rhyme
+  platform: Flutter
+  url: https://github.com/Faltenreich/Rhyme
+  summary: >-
+    This multiplatform app finds and displays rhymes for a given input in six different 
+    languages by merging the results of multiple open APIs. Rhyme served as an 
+    introduction to Flutter development and may not be released publicly.
+
+- name: SkeletonLayout
+  platform: Android Library
+  image: "/assets/images/skeletonlayout.gif"
+  url: https://github.com/Faltenreich/SkeletonLayout
+  summary: >-
+    This library implements the Skeleton View pattern and provides an easy way for 
+    other developers to enable it in their apps. SkeletonLayout is being hosted on 
+    MavenCentral.
+
+- name: TextInputView
+  platform: Android Library
+  image: "/assets/images/textinputview.gif"
+  url: https://github.com/Faltenreich/TextInputView
+  summary: >-
+    This library offers a different way to display a hint without preserving extra 
+    space by placing it into the embedded EditText. TextInputView is being hosted on 
+    MavenCentral.
+
+- name: Watchfacer
+  platform: Android Wear
+  image: "/assets/images/watchfacer.jpg"
+  url: https://play.google.com/store/apps/details?id=com.faltenreich.watchcraft
+  summary: >-
+    This watchface for Android Wear 2 can be fully customized: analog or digital, 
+    seconds hand, date display or battery meter. Every element can be turned on and off 
+    as well as adjusted in color.
+
+- name: Alchemy
+  platform: Android Game
+  url: https://github.com/Faltenreich/Alchemy
+  summary: >-
+    This Android game is heavily inspired by Alchemie or Little Alchemy 2. 
+    Alchemy served as an introduction to native game development on Android 
+    and is not planned to be released publicly.
 
 - name: Food Manager
   platform: Python
@@ -27,63 +79,10 @@
     to be identified with the help of deep learning through an image processor. 
     This application is currently being developed and primarily targeted for personal 
     usage.
-
-- name: Rhyme
-  platform: Flutter
-  url: https://github.com/Faltenreich/Rhyme
-  summary: >-
-    This multiplatform app finds and displays rhymes for a given input in six different 
-    languages by merging the results of multiple open APIs. Rhyme served as an 
-    introduction to Flutter development and may not be released publicly.
-
-- name: Release Report
-  platform: Android with Parse Server
-  image: "/assets/images/release-report.png"
-  url: https://github.com/Faltenreich/Release-Report
-  summary: >-
-    This Android app shows release dates for upcoming media. It merges movies, music 
-    and video games from different data sources into one cohesive user experience. 
-    Release Report is currently in a closed alpha and yet to be released.
-
-- name: SkeletonLayout
-  platform: Android Library
-  image: "/assets/images/skeletonlayout.gif"
-  url: https://github.com/Faltenreich/SkeletonLayout
-  summary: >-
-    This library implements the Skeleton View pattern and provides an easy way for 
-    other developers to enable it in their apps. SkeletonLayout is being hosted on 
-    MavenCentral.
-
-- name: Alchemy
-  platform: Android Game
-  url: https://github.com/Faltenreich/Alchemy
-  summary: >-
-    This Android game is heavily inspired by Alchemie or Little Alchemy 2. 
-    Alchemy served as an introduction to native game development on Android 
-    and is not planned to be released publicly.
-
-- name: Watchfacer
-  platform: Android Wear
-  image: "/assets/images/watchfacer.jpg"
-  url: https://play.google.com/store/apps/details?id=com.faltenreich.watchcraft
-  summary: >-
-    This watchface for Android Wear 2 can be fully customized: analog or digital, 
-    seconds hand, date display or battery meter. Every element can be turned on and off 
-    as well as adjusted in color.
-
-- name: TextInputView
-  platform: Android Library
-  image: "/assets/images/textinputview.gif"
-  url: https://github.com/Faltenreich/TextInputView
-  summary: >-
-    This library offers a different way to display a hint without preserving extra 
-    space by placing it into the embedded EditText. TextInputView is being hosted on 
-    MavenCentral.
-
   
 - name: Writing Bits
-  platform: Static Website
-  url: /
+  platform: Website
+  url: "https://github.com/Faltenreich/faltenreich.github.io"
   summary: >-
     Last but not least the website you are currently on has been created using a static website generator named Jekyll, 
     developed using HTML5, SCSS and Liquid, filled with life using Markdown, deployed using GitHub Actions and hosted on GitHub Pages.

@@ -14,11 +14,8 @@ plugins:
 
 
 header_pages:
-  - blog.md
-  - poetry.md
   - software.md
-  - profession.md
-  - cv.md
+  - poetry.md
   - imprint.md
 
 remote_theme: jekyll/minima

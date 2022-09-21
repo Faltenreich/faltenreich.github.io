@@ -15,15 +15,15 @@ layout: page
       <div>
       {% if software.url %}
       <a href="{{ software.url }}" style="color:white;">
-      <h2>{{- software.name -}}</h2>
+      <h2 style="margin-top: 8px;">{{- software.name -}}</h2>
       </a>
       {% else %}
-      <h2>{{- software.name -}}</h2>
+      <h2 style="margin-top: 8px;">{{- software.name -}}</h2>
       {% endif %}
       </div>
   
       {% if software.image %}
-      <div class="software-image">
+      <div class="software-image" style="margin-top: 16px; margin-bottom: 16px;">
       {% if software.url %}
       <a href="{{ software.url }}">
       <img src="{{- software.image -}}">

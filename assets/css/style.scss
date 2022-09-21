@@ -98,19 +98,21 @@ a {
 }
 
 .software-list {
-  margin-top: 32px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
   color: white;
+}
+
+@media only screen and (min-width: 600px) {
+  .software-list {
+    grid-template-columns: 3fr 2fr;
+  }
 }
 
 .software {
   background-color: #4444;
   padding: 32px;
-  margin-bottom: 32px;
-}
-
-.software-image {
-  margin-top: 32px;
-  margin-bottom: 32px;
 }
 
 .platform-icon {
