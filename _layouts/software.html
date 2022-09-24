@@ -22,7 +22,7 @@ layout: page
       {% for project in site.data.projects limit: 5 %}
       <p>
       <div>{{ project.name }}</div>
-      <div style="color: gray;">{{ project.platform }}</div>
+      <div class="post-meta">{{ project.platform }}</div>
       </p>
       {% endfor %}
       </a>
@@ -32,8 +32,8 @@ layout: page
       {% for experience in site.data.experiences %}
       <p>
       <div>{{ experience.title }}</div>
-      <div style="color: gray;">{{ experience.time }}</div>
-      <div style="color: gray;">{{ experience.company }}</div>
+      <div class="post-meta">{{ experience.time }}</div>
+      <div class="post-meta">{{ experience.company }}</div>
       </p>
       {% endfor %}
       </a>

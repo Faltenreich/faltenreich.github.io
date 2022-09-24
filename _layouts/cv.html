@@ -55,10 +55,10 @@ layout: default
     {% for experience in site.data.experiences %}
     <p>
     <div>{{ experience.title }}</div>
-    <span style="color: gray; float:right;">{{ experience.time }}</span>
-    <div style="color: gray; margin-bottom: 12px;">{{ experience.company }}</div>
+    <span class="post-meta" style="float:right;">{{ experience.time }}</span>
+    <div class="post-meta" style="margin-bottom: 12px;">{{ experience.company }}</div>
     <div>{{ experience.summary }}</div>
-    <div style="color: gray; margin-top: 12px">Technologies: {{ experience.technologies }}</div>
+    <div class="post-meta" style="margin-top: 12px">Technologies: {{ experience.technologies }}</div>
     <br/>
     </p>
     {% endfor %}
@@ -71,7 +71,7 @@ layout: default
     {% else %}
     <div>- <i>{{ publication.title }}</i></div>
     {% endif %}
-    <div style="color: gray;">{{ publication.location }}, {{ publication.year }}</div>
+    <div class="post-meta">{{ publication.location }}, {{ publication.year }}</div>
     </p>
     {% endfor %}
   </div>
