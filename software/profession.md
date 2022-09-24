@@ -1,6 +1,7 @@
 ---
 layout: profession
 title: Profession
+subtitle: A marathon of many sprints
 permalink: /software/profession/
 ---
 

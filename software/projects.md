@@ -1,7 +1,7 @@
 ---
 layout: projects
 title: Projects
-subtitle: Open Source and more
+subtitle: Open source, open end
 permalink: /software/projects/
 ---
 
