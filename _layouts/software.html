@@ -10,46 +10,33 @@ layout: page
 
     <div class="software">
       <h2 style="margin-top: 0px;">Skills</h2>
-      <p>
-        I have been developing mobile apps for over 10 years 
-        and working as software engineer for over 5 years.
-      </p>
       {% for skill in site.data.skills %}
       <p>
         <div>{{ skill.title }}</div>
         <div><progress value="{{ skill.experience }}" max="100"></progress></div>
       </p>
       {% endfor %}
+      <br/>
+      <a href="/software/oss">
+      <h2 style="margin-top: 0px;">Projects</h2>
+      {% for oss in site.data.oss limit: 5 %}
+      <p>
+      <div>{{ oss.name }}</div>
+      <div style="color: gray;">{{ oss.platform }}</div>
+      </p>
+      {% endfor %}
+      </a>
+      <br/>
+      <a href="/software/profession">
+      <h2 style="margin-top: 0px;">Profession</h2>
+      {% for experience in site.data.experiences %}
+      <p>
+      <div>{{ experience.title }}</div>
+      <div style="color: gray;">{{ experience.time }}</div>
+      <div style="color: gray;">{{ experience.company }}</div>
+      </p>
+      {% endfor %}
+      </a>
     </div>
-
-    <div class="software" style="background-color: #78C257; color: black;">
-      <h2 style="margin-top: 0px;">Android</h2>
-    </div>
-
-    <a href="/software/oss">
-      <div class="software">
-        <h2 style="margin-top: 0px;">Open Source</h2>
-      </div>
-    </a>
-
-    <div class="software" style="background-color: #555555; color: black;">
-      <h2 style="margin-top: 0px;">iOS</h2>
-    </div>
-
-    <a href="/software/profession">
-      <div class="software">
-        <h2 style="margin-top: 0px;">Profession</h2>
-      </div>
-    </a>
-
-    <div class="software" style="background-color: #885ffe; color: black;">
-      <h2 style="margin-top: 0px;">Multiplatform</h2>
-    </div>
-
-    <a href="/cv">
-      <div class="software">
-        <h2 style="margin-top: 0px;">CV</h2>
-      </div>
-    </a>
 
 </div>

@@ -12,10 +12,10 @@ plugins:
   - jekyll-remote-theme
   - jekyll-feed
 
-
 header_pages:
   - software.md
   - poetry.md
+  - cv.md
   - imprint.md
 
 remote_theme: jekyll/minima
