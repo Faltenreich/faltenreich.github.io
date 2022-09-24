@@ -115,25 +115,25 @@ a {
   text-align: justify;
 }
 
-.oss-list {
+.project-list {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 16px;
 }
 
 @media only screen and (min-width: 600px) {
-  .oss-list {
+  .project-list {
     grid-template-columns: 3fr 2fr;
   }
 }
 
-.oss {
+.project {
   background-color: #4444;
   padding: 32px;
   text-align: justify;
 }
 
-.oss-image {
+.project-image {
   width: auto;
   height: auto;
   max-width: 100%;

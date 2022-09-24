@@ -17,12 +17,12 @@ layout: page
       </p>
       {% endfor %}
       <br/>
-      <a href="/software/oss">
+      <a href="/software/projects">
       <h2 style="margin-top: 0px;">Projects</h2>
-      {% for oss in site.data.oss limit: 5 %}
+      {% for project in site.data.projects limit: 5 %}
       <p>
-      <div>{{ oss.name }}</div>
-      <div style="color: gray;">{{ oss.platform }}</div>
+      <div>{{ project.name }}</div>
+      <div style="color: gray;">{{ project.platform }}</div>
       </p>
       {% endfor %}
       </a>
