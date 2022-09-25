@@ -6,6 +6,17 @@ layout: default
 
   <div class="home-item">
     {{ content }}
+    <br/>
+    <div class="home-image-list">
+      <div class="poetry">
+        <a href="/software"><img src="/assets/images/software.jpg"></a>
+        <div class="poetry-title">Software</div>
+      </div>
+      <div class="poetry">
+        <a href="/poetry"><img src="/assets/images/poetry.jpg"></a>
+        <div class="poetry-title">Poetry</div>
+      </div>
+    </div>
   </div>
 
   <div class="home-item">
@@ -15,9 +26,7 @@ layout: default
     <div><a href="https://www.google.com/maps?q={{ site.author.location }}">{{ site.author.location }}</a></div>
     <div><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></div>
     <div style="margin-top: 16px;">{% include social.html %}</div>
-  </div>
-
-  <div class="home-item">
+    <br/>
     <h1>Activity</h1>
     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
     {%- assign items = site.posts | concat: site.poetry | sort: "date"  -%}

@@ -5,12 +5,12 @@ layout: page
 {{ content }}
 
 <div class="poetry-list">
-    {% for poetry in site.poetry reversed %}
-    <div class="poetry">
-      <a href="{{ poetry.url }}"><img src="{{ poetry.header }}"></a>
-      <div class="poetry-title">
-        {{ poetry.title | escape }}
-      </div>
+  {% for poetry in site.poetry reversed %}
+  <div class="poetry">
+    <a href="{{ poetry.url }}"><img src="{{ poetry.header }}"></a>
+    <div class="poetry-title">
+      {{ poetry.title | escape }}
     </div>
-    {% endfor %}
   </div>
+  {% endfor %}
+</div>

@@ -49,6 +49,12 @@ a {
   background-color: #4444;
 }
 
+.home-image-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+
 .cv {
   display: grid;
   grid-template-columns: 1fr;

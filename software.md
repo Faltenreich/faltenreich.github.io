@@ -1,9 +1,11 @@
 ---
 layout: software
 title: Software
-subtitle: Live and write by Clean Code
+subtitle: Clean Code as a guiding light
 permalink: /software/
 ---
+
+I am a software developer from Germany who got his Master of Science at the Rosenheim University of Applied Sciences and is currently working for a software service provider in the field of mobile computing.
 
 I have conceptualized, developed, published and maintained multiple projects. My main focus is the development for mobile platforms but I am also experienced in developing small backends or setting up a Backend-as-a-service.
 
