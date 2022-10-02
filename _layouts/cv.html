@@ -5,7 +5,6 @@ layout: default
 <div class="cv">
 
   <div class="cv-menu">
-
     <div style="text-align: center;"><p>
       <img src="/assets/images/cv.jpg" style="max-width: 150px; border-radius: 250px; overflow: hidden;">
     </p></div>
@@ -27,27 +26,25 @@ layout: default
     {% endfor %}
     <br/>
 
-    <h2>Education</h2>
-    {% for education in site.data.education %}
-    <p>
-    <div><b>{{ education.title }}</b></div>
-    <div>{{ education.location }}</div>
-    <div>{{ education.year }}</div>
-    </p>
-    {% endfor %}
-    <br/>
-
     <h2>Languages</h2>
     {% for language in site.data.languages %}
     <p>
     <div>{{ language.language }} ({{ language.level }})</div>
     </p>
     {% endfor %}
+
   </div>
 
   <div class="cv-content">
 
-    <h2>Profile</h2>
+    <div style="display: flex;">
+      <span><h2>Profile</h2></span>
+      <span style="width: 100%; text-align: right;">
+        <a href="/assets/documents/cv.pdf" target="_blank">
+          <img src="/assets/images/download.svg" class="icon">
+        </a>
+      </span>
+    </div>
     {{ content }}
     <br/>
 
@@ -62,6 +59,16 @@ layout: default
     <br/>
     </p>
     {% endfor %}
+
+    <h2>Education</h2>
+    {% for education in site.data.education %}
+    <p>
+    <div>{{ education.title }}</div>
+    <div class="post-meta" >{{ education.location }}</div>
+    <div class="post-meta" >{{ education.year }}</div>
+    </p>
+    {% endfor %}
+    <br/>
 
     <h2>Publications</h2>
     {% for publication in site.data.publications %}

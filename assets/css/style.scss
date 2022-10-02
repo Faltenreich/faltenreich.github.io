@@ -32,6 +32,14 @@ a {
 
 // Custom
 
+.nav {
+  float: right;
+}
+
+.nav-item {
+  padding: 8px;
+}
+
 .home {
   display: grid;
   grid-template-columns: 1fr;
@@ -148,6 +156,10 @@ a {
 
 .platform-icon {
   width: 24px;
+}
+
+.icon {
+  width: 40px;
 }
 
 // rounded corners:
