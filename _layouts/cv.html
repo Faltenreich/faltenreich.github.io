@@ -56,7 +56,7 @@ layout: default
       {% for experience in site.data.experiences %}
       <p>
       <div>{{ experience.title }}</div>
-      <span class="post-meta" style="float:right;">{{ experience.time }}</span>
+      <span class="post-meta" style="float:right;">{{ experience.year }} - {{ experience.end }}</span>
       <div class="post-meta" style="margin-bottom: 12px;">{{ experience.company }}</div>
       <div>{{ experience.summary }}</div>
       <div class="post-meta" style="margin-top: 12px">Technologies: {{ experience.technologies }}</div>
@@ -78,11 +78,12 @@ layout: default
       {% for publication in site.data.publications %}
       <p>
       {% if publication.link %}
-      <div>- <i><a href="{{ publication.link }}" target="_blank">{{ publication.title }}</a></i></div>
+      <div><a href="{{ publication.link }}" target="_blank">{{ publication.title }}</a></div>
       {% else %}
-      <div>- <i>{{ publication.title }}</i></div>
+      <div>{{ publication.title }}</div>
       {% endif %}
-      <div class="post-meta">{{ publication.location }}, {{ publication.year }}</div>
+      <div class="post-meta">{{ publication.location }}</div>
+      <div class="post-meta">{{ publication.year }}</div>
       </p>
       {% endfor %}
     </div>

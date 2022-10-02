@@ -9,23 +9,13 @@ layout: page
     </div>
 
     <div class="software">
-      <div style="text-align: center;"><p>
-        <img src="/assets/images/cv.jpg" style="max-width: 150px; border-radius: 250px; overflow: hidden;">
-      </p></div>
-      <div><a href="https://www.google.com/maps?q={{ site.author.location }}">{{ site.author.location }}</a></div>
+      
+      <h2 style="margin-top: 0px;">Contact</h2>
       <div><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></div>
       <div style="margin-top: 16px;">{% include social.html %}</div>
-      <br/>
-      <h2 style="margin-top: 0px;">Skills</h2>
-      {% for skill in site.data.skills %}
-      <p>
-        <div>{{ skill.title }}</div>
-        <div><progress value="{{ skill.experience }}" max="100"></progress></div>
-      </p>
-      {% endfor %}
-      <br/>
+
       <a href="/software/projects">
-      <h2 style="margin-top: 0px;">Projects</h2>
+      <h2>Projects</h2>
       {% for project in site.data.projects limit: 5 %}
       <p>
       <div>{{ project.name }}</div>
@@ -33,17 +23,25 @@ layout: page
       </p>
       {% endfor %}
       </a>
-      <br/>
-      <a href="/software/profession">
-      <h2 style="margin-top: 0px;">Profession</h2>
-      {% for experience in site.data.experiences %}
+
+      <a href="/software/experience">
+      <h2>Experience</h2>
+      {%- assign items = site.data.experiences | concat: site.data.education | sort: "year"  -%}
+      {% for item in items reversed %}
       <p>
-      <div>{{ experience.title }}</div>
-      <div class="post-meta">{{ experience.time }}</div>
-      <div class="post-meta">{{ experience.company }}</div>
+      <div>{{ item.title }}</div>
+      <div class="post-meta">
+        {% if item.end %}
+        {{ item.year }} - {{ item.end }}
+        {% else %}
+        {{ item.year }}
+        {% endif %}
+      </div>
+      <div class="post-meta">{{ item.company }}</div>
       </p>
       {% endfor %}
       </a>
+
     </div>
 
 </div>
