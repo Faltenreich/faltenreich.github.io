@@ -63,35 +63,42 @@ a {
   grid-gap: 16px;
 }
 
-.cv {
+.cv-content {
   display: grid;
   grid-template-columns: 1fr;
 }
 
 .cv-title {
   font-size: 1.5em;
+  font-weight: bold;
 }
 
-.cv-menu {
+.cv-side {
   padding: 32px;
   background-color: #4444;
 }
 
-.cv-content {
+.cv-main {
   text-align: justify;
   padding: 32px;
 }
 
+.cv-download {
+  position: absolute; 
+  top: 8px; 
+  right: 8px;
+}
+
 @media only screen and (min-width: 600px) {
-  .cv {
+  .cv-content {
     grid-template-columns: 275px 1fr;
   }
-  .cv-content {
+  .cv-main {
     text-align: justify;
     padding-left: 48px;
     padding-top: 32px;
     padding-bottom: 32px;
-    padding-right: 0px;
+    padding-right: 8px;
   }
 }
 
