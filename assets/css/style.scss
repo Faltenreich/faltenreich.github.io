@@ -86,6 +86,13 @@ a {
   .cv {
     grid-template-columns: 275px 1fr;
   }
+  .cv-content {
+    text-align: justify;
+    padding-left: 48px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    padding-right: 0px;
+  }
 }
 
 .poetry-list {

@@ -2,19 +2,27 @@
 layout: default
 ---
 
+<p style="text-align: right;">
+  <a href="/assets/documents/cv.pdf" target="_blank">
+    <img src="/assets/images/download.svg" class="icon">
+  </a>
+</p>
+
 <div class="cv">
 
   <div class="cv-menu">
-    <div style="text-align: center;"><p>
+    <div style="text-align: center;">
       <img src="/assets/images/cv.jpg" style="max-width: 150px; border-radius: 250px; overflow: hidden;">
-    </p></div>
+    </div>
+    
     <div class="cv-title"><b>{{ site.author.name }}</b></div>
     <div>{{ site.author.title }}</div>
     <br/>
 
     <div><a href="https://www.google.com/maps?q={{ site.author.location }}" target="_blank">{{ site.author.location }}</a></div>
     <div><a href="mailto:{{ site.author.email }}" target="_blank">{{ site.author.email }}</a></div>
-    <div style="margin-top: 16px;">{% include social.html %}</div>
+    
+    <p>{% include social.html %}</p>
     <br/>
 
     <h2>Skills</h2>
@@ -37,14 +45,7 @@ layout: default
 
   <div class="cv-content">
 
-    <div style="display: flex;">
-      <span><h2>Profile</h2></span>
-      <span style="width: 100%; text-align: right;">
-        <a href="/assets/documents/cv.pdf" target="_blank">
-          <img src="/assets/images/download.svg" class="icon">
-        </a>
-      </span>
-    </div>
+    <h2>Profile</h2>
     {{ content }}
     <br/>
 
