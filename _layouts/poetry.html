@@ -6,11 +6,13 @@ layout: page
 
 <div class="poetry-list">
   {% for poetry in site.poetry reversed %}
-  <div class="poetry">
-    <a href="{{ poetry.url }}"><img src="{{ poetry.header }}"></a>
-    <div class="poetry-title">
-      {{ poetry.title | escape }}
+  <a href="{{ poetry.url }}">
+    <div class="poetry">
+      <img class="poetry-image" src="{{ poetry.header | default: "/assets/images/placeholder.jpg" }}" >
+      <div class="poetry-title">
+        {{ poetry.title | escape }}
+      </div>
     </div>
-  </div>
+  </a>
   {% endfor %}
 </div>
