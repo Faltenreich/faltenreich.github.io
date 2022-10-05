@@ -1,5 +1,6 @@
 ---
 layout: post
+header: /assets/images/chair.jpg
 title: Generationeneieruhr
 date: 2008-05-28
 ---

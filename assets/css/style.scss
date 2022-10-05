@@ -99,6 +99,11 @@ a {
   position: absolute; 
   top: 8px; 
   right: 8px;
+  transition: 0.3s;
+}
+
+.cv-download:hover {
+  filter: opacity(0.5);
 }
 
 @media only screen and (min-width: 600px) {
@@ -122,6 +127,11 @@ a {
 
 .poetry {
   position: relative;
+  transition: 0.3s;
+}
+
+.poetry:hover {
+  color:white;
 }
 
 .poetry-title {
