@@ -3,4 +3,9 @@ layout: cv
 title: CV
 ---
 
-I am an experienced software developer specialized in the conceptualization, development, publishing and maintainenance of mobile applications. Besides writing clean code and debugging legacy applications like an archaeological detective, I try to deepen my knowledge time and again before spreading it as wide as possible.
+I am specialized in mobile development: from the drawing board to the
+implementation up to the publishing and maintenance. I am as comfortable with new
+projects as I am with historical software. My aspiration is Clean Code.
+In my spare time, I discover new technologies and develop proof of concepts that
+potentially become full-fledged projects. I release these as open source and further
+develop them in close contact with the community.

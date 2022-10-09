@@ -3,25 +3,38 @@
   year: 2016
   end: Today
   summary: >-
-    Developing, publishing and maintaining mobile applications. 
-    Working in supervised or self-organizing teams and independently. 
-    Mentoring external student groups and training colleagues.
-  technologies: Kotlin, Java, Swift, Groovy, Gradle, Android, iOS, Flutter, Kotlin Multiplatform Mobile, SCRUM
+    Design, planning, development, publishing and 
+    maintenance of over 20 applications for e-commerce, real 
+    estate, semiconductors, smart home, thermal services,
+    construction industry and traffic safety, among others.
+    Agile working in dynamic teams, iterative and reflective.
+    Evaluation, decision-making and implementation of new 
+    technologies.
+    Training of colleagues and supervision of final theses or 
+    university projects.
+  technologies: Android, Kotlin, Java, iOS, Swift, Flutter, Gradle
 
 - title: Working Student
   company: x-root Software GmbH
   year: 2015
   end: 2016
   summary: >-
-    Maintaining legacy and supporting development of mobile applications. 
-    Writing master thesis about data logistics by implementing an Android service that is still running today.
-  technologies: Java, Swift, Objective-C, iOS, Android
+    Maintenance of existing projects and supporting
+    development of new mobile applications targeting
+    e-commerce, monitoring and sports.
+    Master thesis on data logistics by implementing a
+    continuously operating Android service that is still
+    running today.
+  technologies: Android, Java, iOS, Swift, Objective-C
 
 - title: Working Student
   company: Cubeware GmbH
   year: 2012
   end: 2015
   summary: >-
-    Maintaining and further supporting development of a B2B client-server platform. 
-    Writing bachelor thesis about a webservice that enabled existing mobile clients to work offline.
-  technologies: C+, C++, Swift, Objective-C, Java, iOS, Android, ASP.NET
+    Maintenance and further development of a B2B client
+    server platform in the Windows environment and a mobile
+    client for iOS.
+    Bachelor thesis on a web service that makes existing
+    mobile clients offline-capable.
+  technologies: .NET, C#, C++, iOS, Objective-C
