@@ -7,8 +7,9 @@ date: 2008-05-28
 
 Es tritt jemand auf eine Bühne,
 tippt ganz sacht ans Mikrofon,
-stellt sich kurz mit Namen vor,
-und bevor er wirklich merkt,
+stellt sich kurz mit Namen vor.
+
+Und bevor er dann wirklich merkt,
 dass ihm niemand hier mehr zuhört,
 wird der Vorhang zugezogen.
 
@@ -59,6 +60,6 @@ ein Palast dient uns als Schlachtfeld,
 denn gereinigt wurde es schon.
 
 Ohne Sinn und ohne Ziel,
-schreiben wir erneut Geschichte,
-dieses Volk hält sich im Spiel,
+schreiben wir erneut Geschichte.
+Dieses Volk hält sich im Spiel,
 bis man es braucht oder vernichtet.

@@ -1,17 +1,14 @@
-- title: Software Engineer
+- title: Senior Mobile Developer
   company: x-root Software GmbH
   year: 2016
   end: Today
   summary: >-
-    Design, planning, development, publishing and 
-    maintenance of over 20 applications for e-commerce, real 
-    estate, semiconductors, smart home, thermal services,
+    Design, planning, development, publishing and maintenance of over 20 applications 
+    for e-commerce, real estate, semiconductors, smart home, thermal services, 
     construction industry and traffic safety, among others.
-    Agile working in dynamic teams, iterative and reflective.
-    Evaluation, decision-making and implementation of new 
-    technologies.
-    Training of colleagues and supervision of final theses or 
-    university projects.
+    Agile working in dynamic teams, iterative and reflective. Evaluation, decision-making 
+    and implementation of new technologies. 
+    Training of colleagues and supervision of final theses or university projects.
   technologies: Android, Kotlin, Java, iOS, Swift, Flutter, Gradle
 
 - title: Working Student
@@ -19,12 +16,10 @@
   year: 2015
   end: 2016
   summary: >-
-    Maintenance of existing projects and supporting
-    development of new mobile applications targeting
-    e-commerce, monitoring and sports.
-    Master thesis on data logistics by implementing a
-    continuously operating Android service that is still
-    running today.
+    Maintenance of existing projects and supporting development of new mobile applications 
+    targeting e-commerce, monitoring and sports.
+    Master thesis on data logistics by implementing a continuously operating Android service 
+    that is still running today.
   technologies: Android, Java, iOS, Swift, Objective-C
 
 - title: Working Student
@@ -32,9 +27,7 @@
   year: 2012
   end: 2015
   summary: >-
-    Maintenance and further development of a B2B client
-    server platform in the Windows environment and a mobile
-    client for iOS.
-    Bachelor thesis on a web service that makes existing
-    mobile clients offline-capable.
+    Maintenance and further development of a B2B client server platform in the 
+    Windows environment and a mobile client for iOS.
+    Bachelor thesis on a web service that makes existing mobile clients offline-capable.
   technologies: .NET, C#, C++, iOS, Objective-C

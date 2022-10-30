@@ -14,19 +14,15 @@ layout: page
       <div><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></div>
       <div style="margin-top: 16px;">{% include social.html %}</div>
 
-      <a href="/software/projects">
-      <h2>Projects</h2>
-      {% for project in site.data.projects limit: 5 %}
-      <p>
-      <div>{{ project.name }}</div>
-      <div class="post-meta">{{ project.platform }}</div>
-      </p>
-      {% endfor %}
+      <h2>CV</h2>
+      <a href="/assets/documents/cv.pdf" target="_blank">
+        Download
+        <img src="/assets/images/download.svg" class="icon">
       </a>
 
       <a href="/software/experience">
       <h2>Experience</h2>
-      {%- assign items = site.data.experiences | concat: site.data.education | sort: "year"  -%}
+      {%- assign items = site.data.experiences | sort: "year"  -%}
       {% for item in items reversed %}
       <p>
       <div>{{ item.title }}</div>
@@ -38,6 +34,16 @@ layout: page
         {% endif %}
       </div>
       <div class="post-meta">{{ item.company }}</div>
+      </p>
+      {% endfor %}
+      </a>
+
+      <a href="/software/projects">
+      <h2>Projects</h2>
+      {% for project in site.data.projects limit: 5 %}
+      <p>
+      <div>{{ project.name }}</div>
+      <div class="post-meta">{{ project.platform }}</div>
       </p>
       {% endfor %}
       </a>

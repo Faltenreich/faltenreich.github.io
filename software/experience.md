@@ -1,7 +1,7 @@
 ---
 layout: experience
 title: Experience
-subtitle: A marathon of countless sprints
+subtitle: A marathon of sprints
 permalink: /software/experience/
 ---
 
