@@ -83,5 +83,5 @@
   platform: Website
   url: "https://github.com/Faltenreich/faltenreich.github.io"
   summary: >-
-    Last but not least the website you are currently on has been created using a static website generator named Jekyll, 
+    The website you are currently on has been created using a static website generator named Jekyll, 
     developed using HTML5, SCSS and Liquid, filled with life using Markdown, deployed using GitHub Actions and hosted on GitHub Pages.

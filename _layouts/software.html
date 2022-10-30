@@ -2,52 +2,36 @@
 layout: page
 ---
 
-<div class="software-list">
+<div class="home">
 
-    <div class="software">
+    <div class="home-item">
         {{ content }}
     </div>
 
-    <div class="software">
+    <div>
+      <div class="home-item">
+        <h2 style="margin-top: 0px;">Contact</h2>
+        <div><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></div>
+        <div style="margin-top: 16px;">{% include social.html %}</div>
+      </div>
       
-      <h2 style="margin-top: 0px;">Contact</h2>
-      <div><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></div>
-      <div style="margin-top: 16px;">{% include social.html %}</div>
-
-      <h2>CV</h2>
       <a href="/assets/documents/cv.pdf" target="_blank">
-        Download
-        <img src="/assets/images/download.svg" class="icon">
-      </a>
+      <div class="home-item" style="margin-top: 12px;">
+        <h2 style="margin: 0px;">CV</h2>
+      </div>
+    </a>
 
       <a href="/software/experience">
-      <h2>Experience</h2>
-      {%- assign items = site.data.experiences | sort: "year"  -%}
-      {% for item in items reversed %}
-      <p>
-      <div>{{ item.title }}</div>
-      <div class="post-meta">
-        {% if item.end %}
-        {{ item.year }} - {{ item.end }}
-        {% else %}
-        {{ item.year }}
-        {% endif %}
-      </div>
-      <div class="post-meta">{{ item.company }}</div>
-      </p>
-      {% endfor %}
+        <div class="home-item" style="margin-top: 12px;">
+          <h2 style="margin: 0px;">Experience</h2>
+        </div>
       </a>
 
       <a href="/software/projects">
-      <h2>Projects</h2>
-      {% for project in site.data.projects limit: 5 %}
-      <p>
-      <div>{{ project.name }}</div>
-      <div class="post-meta">{{ project.platform }}</div>
-      </p>
-      {% endfor %}
+        <div class="home-item" style="margin-top: 12px;">
+          <h2 style="margin: 0px;">Projects</h2>
+        </div>
       </a>
-
     </div>
 
 </div>
