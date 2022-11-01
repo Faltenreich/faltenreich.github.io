@@ -1,7 +1,7 @@
 - name: Diaguard
   platform: Android
   url: https://github.com/Faltenreich/Diaguard
-  image: "/assets/images/diaguard.png"
+  image: "/assets/images/software/diaguard.png"
   summary: >-
     This Android app supports people with Diabetes mellitus by 
     replacing their handwritten diary and offering additional features 
@@ -19,7 +19,7 @@
 
 - name: Release Report
   platform: Android with Parse Server
-  image: "/assets/images/release-report.png"
+  image: "/assets/images/software/release-report.png"
   url: https://github.com/Faltenreich/Release-Report
   summary: >-
     This Android app shows release dates for upcoming media. It merges movies, music 
@@ -36,7 +36,7 @@
 
 - name: SkeletonLayout
   platform: Android Library
-  image: "/assets/images/skeletonlayout.gif"
+  image: "/assets/images/software/skeletonlayout.gif"
   url: https://github.com/Faltenreich/SkeletonLayout
   summary: >-
     This library implements the Skeleton View pattern and provides an easy way for 
@@ -45,7 +45,7 @@
 
 - name: TextInputView
   platform: Android Library
-  image: "/assets/images/textinputview.gif"
+  image: "/assets/images/software/textinputview.gif"
   url: https://github.com/Faltenreich/TextInputView
   summary: >-
     This library offers a different way to display a hint without preserving extra 
@@ -54,7 +54,7 @@
 
 - name: Watchfacer
   platform: Android Wear
-  image: "/assets/images/watchfacer.jpg"
+  image: "/assets/images/software/watchfacer.jpg"
   url: https://play.google.com/store/apps/details?id=com.faltenreich.watchcraft
   summary: >-
     This watchface for Android Wear 2 can be fully customized: analog or digital, 
