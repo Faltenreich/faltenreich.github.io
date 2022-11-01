@@ -25,19 +25,18 @@ layout: default
     </div>
   </div>
 
-  <div class="tile">
-    <h1>Contact</h1>
-    <p><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>
-    <p>{% include social.html %}</p>
-    <h1>Activity</h1>
-    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-    {%- assign items = site.posts | concat: site.poetry | sort: "date"  -%}
-    {% for item in items reversed %}
-    <a href="{{ item.url }}">
-    <div class="post-meta">{{ item.date | date: date_format}}</div>
-    <p>{{ item.title | escape }}</p>
-    </a>
-    {% endfor %}
+  <div>
+    <div class="tile">
+      <h2>Activity</h2>
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      {%- assign items = site.posts | concat: site.poetry | sort: "date" -%}
+      {%- for item in items reversed | limit: 10 -%}
+      <a href="{{ item.url }}">
+      <div class="post-meta">{{ item.date | date: date_format}}</div>
+      <p>{{ item.title | escape }}</p>
+      </a>
+      {%- endfor -%}
+    </div>
   </div>
 
 </div>
