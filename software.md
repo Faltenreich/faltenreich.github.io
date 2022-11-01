@@ -9,7 +9,7 @@ I am a software developer from Germany who got his Master of Science at the Rose
 
 I have conceptualized, developed, published and maintained multiple projects. My main focus is the development for mobile platforms but I am also experienced in developing small backends or setting up a Backend-as-a-service.
 
-### Android <img src="/assets/images/android.png" class="icon"/> 
+### Android <img src="/assets/images/icons/android.png" class="icon"/> 
 
 I have started development for Android in 2012 during my Bachelor studies by creating first proof-of-concepts. Some of them evolved into full-fledged projects and one of them is still running more ten years later. I have used the following technologies and many more:
 
@@ -22,7 +22,7 @@ I have started development for Android in 2012 during my Bachelor studies by cre
 - Jetpack Compose
 - NFC, Bluetooth
 
-### iOS <img src="/assets/images/ios.png" class="icon"/>
+### iOS <img src="/assets/images/icons/ios.png" class="icon"/>
 
 I have started development for iOS in 2014 during my Master studies by taking courses and while working for a company which was developing an iOS client.
 
@@ -33,7 +33,7 @@ I have started development for iOS in 2014 during my Master studies by taking co
 - Core Data
 - NFC, Bluetooth
 
-### Multiplatform <img src="/assets/images/kotlin.png" class="icon"/> <img src="/assets/images/flutter.png" class="icon"/>
+### Multiplatform <img src="/assets/images/icons/kotlin.png" class="icon"/> <img src="/assets/images/icons/flutter.png" class="icon"/>
 
 I have dived into Flutter many times, implemented small projects and helped maintaining legacy projects. While Google's framework is today's standard to implement once and deploy everywhere, my bet is on Kotlin Multiplatform Mobile (and Compose Multiplatform) to revolutionize cross-platform development in the following years.
 
