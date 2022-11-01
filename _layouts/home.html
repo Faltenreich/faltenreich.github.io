@@ -2,34 +2,33 @@
 layout: default
 ---
 
-<div class="home">
+<div class="grid-uneven">
 
   <div>
-    <div class="home-item">
+    <div class="tile">
       {{ content }}
     </div>
     
-    <div class="home-image-list">
-      <div class="poetry">
-        <a href="/software">
+    <div class="tiles">
+      <a href="/software">
+        <div class="tile-image">
           <img src="/assets/images/software.jpg">
-          <div class="poetry-title">Software</div>
-        </a>
-      </div>
-      <div class="poetry">
-        <a href="/poetry">
+          <div class="tile-title">Software</div>
+        </div>
+      </a>
+      <a href="/poetry">
+        <div class="tile-image">
           <img src="/assets/images/reader.jpg">
-          <div class="poetry-title">Poetry</div>
-        </a>
-      </div>
+          <div class="tile-title">Poetry</div>
+        </div>
+      </a>
     </div>
   </div>
 
-  <div class="home-item">
+  <div class="tile">
     <h1>Contact</h1>
-    <div><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></div>
-    <div style="margin-top: 16px;">{% include social.html %}</div>
-    <br/>
+    <p><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>
+    <p>{% include social.html %}</p>
     <h1>Activity</h1>
     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
     {%- assign items = site.posts | concat: site.poetry | sort: "date"  -%}

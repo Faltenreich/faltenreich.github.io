@@ -22,7 +22,7 @@ layout: page
 {% endif %}
 </td>
 
-<td class="platform-icon">
+<td class="icon">
 {% assign platform_ids = profession.platforms | split: ", " %}
 {% for platform_id in platform_ids %}
 {% assign platform = site.data.platforms | where: "id", platform_id | first %}

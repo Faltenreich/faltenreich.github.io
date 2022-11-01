@@ -4,12 +4,12 @@ layout: page
 
 {{ content }}
 
-<div class="poetry-list">
+<div class="grid-even">
   {% for poetry in site.poetry reversed %}
   <a href="{{ poetry.url }}">
-    <div class="poetry">
-      <img class="poetry-image" src="{{ poetry.header | default: "/assets/images/placeholder.jpg" }}" >
-      <div class="poetry-title">
+    <div class="tile-image">
+      <img class="wallpaper" src="{{ poetry.header | default: "/assets/images/placeholder.jpg" }}" >
+      <div class="tile-title">
         {{ poetry.title | escape }}
       </div>
     </div>
