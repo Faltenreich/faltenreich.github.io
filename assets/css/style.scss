@@ -86,8 +86,14 @@ a {
 
 .tile {
   padding: 32px;
+  border-radius: 25px;
   background-color: #4444;
   text-align: justify;
+  transition: 0.3s;
+}
+
+.tile:hover {
+  background-color:#6666;
 }
 
 .tiles {
