@@ -7,35 +7,33 @@ layout: page
 <div class="grid-uneven">
 
     {%- for project in site.data.projects -%}
-  
-    <div class="tile">
-  
-      {{- project.platform -}}
-  
-      {% if project.url %}
-      <a href="{{ project.url }}" style="color:white;">
-      {% endif %}
-      <h2 style="margin-top: 8px;">{{- project.name -}}</h2>
-      {% if project.url %}
-      </a>
-      {% endif %}
-  
-      {{- project.summary -}}
 
-      <br/>
-      <br/>
+  
+        {% if project.url %}
+        <a href="{{ project.url }}" class="tile">
+        {% else %}
+        <div class="tile">
+        {% endif %}
+    
+        {{- project.platform -}}
+    
+        <h2 style="margin-top: 8px;">{{- project.name -}}</h2>
+    
+        {{- project.summary -}}
 
-      {%- if project.image -%}
-        {%- if project.url -%}
-        <a href="{{ project.url }}">
-        {%- endif -%}
+        <br/>
+        <br/>
+
+        {%- if project.image -%}
         <img class="project-image" src="{{- project.image -}}">
-        {%- if project.url -%}
-        </a>
         {%- endif -%}
-      {%- endif -%}
-  
-    </div>
+      
+        {% if project.url %}
+        </a>
+        {% else %}
+        </div>
+        {% endif %}
+    
   
     {%- endfor -%}
   
