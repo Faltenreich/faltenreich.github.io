@@ -22,11 +22,14 @@ remote_theme: jekyll/minima
 minima:
   skin: dark
   social_links:
-    twitter: faltendev
-    github: Faltenreich
-    stackoverflow: "3269827"
-    linkedin: philipp-fahlteich
-    xing: Philipp_Fahlteich
+    - platform: github
+      user_url: "https://github.com/Faltenreich"
+    - platform: stackoverflow
+      user_url: "https://stackoverflow.com/users/3269827/philipp-fahlteich"
+    - platform: linkedin
+      user_url: "https://www.linkedin.com/in/philipp-fahlteich"
+    - platform: xing
+      user_url: "https://www.xing.com/profile/Philipp_Fahlteich"
 
 kramdown:
   hard_wrap: true

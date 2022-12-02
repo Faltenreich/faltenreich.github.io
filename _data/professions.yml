@@ -1,29 +1,33 @@
-- title: E-Commerce
-  summary: Maintaining native legacy apps with large user bases and accompanying the transition to successors using GraphQL and Fastlane
+- title: MediaMarktSaturn
+  summary: Maintaining native legacy apps with large user bases and accompanying the transition to successors
+  url: https://www.mediamarktsaturn.com
   platforms: android, ios
   company: xroot
   year: 2022
 
-- title: Rail industry
+- title: 
   summary: Developing a proof of concept to accompany the digitalization process of a braking system manufacturer
   platforms: android
   company: xroot
   year: 2022
 
-- title: Semiconductor solutions
+- title: Infineon Technologies AG
   summary: Developing a proof of concept for controlling passive smart locks via NFC
+  url: https://www.infineon.com/cms/de/product/power/contactless-power-sensing-ics/nfc-tag-side-controllers/nac1080
   platforms: ios
   company: xroot
   year: 2021
 
-- title: Smart locks
+- title: PS GmbH
   summary: Continuing development of externally developed legacy apps for controlling smart locks via Bluetooth LE
+  url: https://pslocks.com/de/bluetooth
   platforms: android, ios
   company: xroot
   year: 2021
 
-- title: Real estate
-  summary: Developing an in-house showcase app for trade fairs using SwiftUI
+- title: Penzkofer Bau GmbH
+  summary: Developing an in-house app for configuring real estate
+  url: https://www.x-root.de/referenz-app/showroom-app-penzkofer-bau-gmbh
   platforms: ios
   company: xroot
   year: 2021
@@ -34,26 +38,30 @@
   company: xroot
   year: 2021
 
-- title: Metal industry
-  summary: Developing an in-house showcase app for trade fairs using SwiftUI
+- title: Rolf Kind GmbH
+  summary: Developing an in-house showcase app for trade fairs
+  url: https://www.x-root.de/referenz-app/showcase-app-rolf-kind-gmbh
   platforms: ios
   company: xroot
   year: 2021
   
-- title: Construction industry
+- title: OilQuick Deutschland KG
   summary: Developing a public showcase app for large-scale machinery systems
+  url: https://www.x-root.de/referenz-app/service-app-oilquick-deutschland-gmbh
   platforms: ios
   company: xroot
   year: 2020
   
-- title: E-Commerce
+- title: A. RIEPER AG/Spa
   summary: Developing a public shop app for large-scale farmers
+  url: https://play.google.com/store/apps/details?id=com.rieper.shop
   platforms: android
   company: xroot
   year: 2020
   
-- title: Laboratory analysis
+- title: OELCHECK GmbH
   summary: Developing apps for managing submissions regarding oil analysis
+  url: https://de.oelcheck.com/app
   platforms: android, ios
   company: xroot
   year: 2019
@@ -64,20 +72,23 @@
   company: xroot
   year: 2019
   
-- title: Telephony
+- title: NoID
   summary: Supervising a team of four students of the Technische Hochschule Rosenheim to develop a native dialing app as proof of concept
+  url: https://play.google.com/store/apps/details?id=de.xroot.noid
   platforms: android, ios
   company: xroot
   year: 2019
   
-- title: Traffic safety
-  summary: Developing a public app for displaying building sites using Firebase
+- title: Auf Straßen innovativ Guido M. Hahn GmbH & Co. KG
+  summary: Developing a public app for displaying building sites
+  url: https://play.google.com/store/apps/details?id=de.vshahn.bis
   platforms: android
   company: xroot
   year: 2018
   
-- title: Thermal services
-  summary: Developing an in-house app for managing data from heat cost allocators and other meters using ObjectBox
+- title: Thermomess Wärmemessdienst AG
+  summary: Developing an in-house app for managing data from heat cost allocators and other meters
+  url: https://www.x-root.de/referenz-app/ablese-app-thermomess-warmedienst-ag
   platforms: android
   company: xroot
   year: 2018
@@ -88,20 +99,23 @@
   company: xroot
   year: 2018
   
-- title: Smart locks
+- title: HEMI GmbH
   summary: Developing a SDK for smart locks using Bluetooth LE
+  url: http://www.hemi.de
   platforms: android
   company: xroot
   year: 2017
   
-- title: E-Commerce
-  summary: Supporting development of a public app for managing wishlists using Firebase
+- title: StarSnoopy
+  summary: Supporting development of a public app for managing wishlists
+  url: https://www.x-root.de/referenz-app/starsnoopy-wunschlisten-x-root-software-gmbh
   platforms: android
   company: xroot
   year: 2017
   
-- title: Fast-food franchise
+- title: Dunkin' Donuts
   summary: Continuing development of a legacy app
+  url: https://www.x-root.de/referenz-app/food-app-dunkin-donuts
   platforms: android
   company: xroot
   year: 2017
@@ -124,8 +138,9 @@
   company: xroot
   year: 2016
   
-- title: Thermal services
+- title: Thermomess Wärmemessdienst AG
   summary: Developing an in-house app for managing customer data
+  url: https://www.thermomess.de
   platforms: android
   company: xroot
   year: 2015
@@ -136,26 +151,28 @@
   company: xroot
   year: 2015
   
-- title: Sport industry
+- title: Adler Mannheim Fan App
   summary: Developing a public app for fans of a German ice hockey team
+  url: https://www.x-root.de/referenz-app/fan-app-adler-mannheim-sap
   platforms: android
   company: xroot
   year: 2015
 
-- title: Fast-food franchise
+- title: Burger King
   summary: Continuing development of the formerly native legacy app
   platforms: ios
   company: xroot
   year: 2015
 
 - title: Bachelor thesis
-  summary: Enabling offline support for mobile clients within an existing client-server-architecture written in C# using ASP.NET
+  summary: Enabling offline support for mobile clients within an existing client-server-architecture
   platforms: windows
   company: cubeware
   year: 2014
 
-- title: Business intelligence
-  summary: Supporting development of a business intelligence solution written in C++ and C#
+- title: C8 Cockpit
+  summary: Supporting development of a business intelligence solution
+  url: https://www.cubeware.com
   platforms: windows
   company: cubeware
   year: 2012
