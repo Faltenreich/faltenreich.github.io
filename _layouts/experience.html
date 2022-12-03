@@ -31,7 +31,21 @@ layout: page
 </td>
 
 <td>
+  {%- if profession.industry -%}
+  <span class="post-meta">{{ profession.industry }}</span>
+  <br/>
+  {%- endif -%}
+  {%- if profession.url -%}
+  <a href="{{ profession.url }}">
+  {%- endif -%}
+  {%- if profession.title -%}
   <b>{{ profession.title }}</b>
+  {%- else -%}
+  <i>Undisclosed project</i>
+  {%- endif -%}
+  {%- if profession.url -%}
+  </a>
+  {%- endif -%}
   <br/>
   {{ profession.summary }}
 </td>
