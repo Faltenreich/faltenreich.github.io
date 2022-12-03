@@ -1,4 +1,12 @@
-# Writing an app for Android and iOS with one codebase for business logic and UI using Kotlin Multiplatform Mobile and Compose Multiplatform
+---
+layout: post
+title:
+date: 2022-11-13
+categories:
+public: false
+---
+
+Writing an app for Android and iOS with one codebase for business logic and UI using Kotlin Multiplatform Mobile and Compose Multiplatform
 
 Write once, deploy everywhere. This promise has been made time and time again but has yet to be fulfilled.
 

@@ -28,7 +28,7 @@ layout: default
   <div class="tile">
     <h2>Activity</h2>
     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-    {%- assign items = site.posts | concat: site.poetry | sort: "date" | reverse -%}
+    {%- assign items = site.posts | where: "public", true | concat: site.poetry | sort: "date" | reverse -%}
     {%- for item in items limit: 10 -%}
     <a href="{{ item.url }}">
     <div class="post-meta">{{ item.date | date: date_format}}</div>
