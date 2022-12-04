@@ -8,33 +8,30 @@ layout: page
 
     {%- for project in site.data.projects -%}
 
-  
         {% if project.url %}
         <a href="{{ project.url }}" class="tile">
         {% else %}
         <div class="tile">
         {% endif %}
-    
+
         {{- project.platform -}}
-    
+
         <h2 style="margin-top: 8px;">{{- project.name -}}</h2>
-    
+
         {{- project.summary -}}
 
-        <br/>
-        <br/>
-
         {%- if project.image -%}
+        <br/>
+        <br/>
         <img class="project-image" src="{{- project.image -}}">
         {%- endif -%}
-      
+        
         {% if project.url %}
         </a>
         {% else %}
         </div>
         {% endif %}
-    
-  
+
     {%- endfor -%}
   
-  </div>
+</div>

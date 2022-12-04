@@ -8,14 +8,18 @@
 
     {%- include header.html -%}
 
-    {%- if page.header -%}
-    <img class="header" src="{{ page.header }}">
-    {%- endif -%}
-
     <main class="page-content" aria-label="Content">
+
       <div class="wrapper">
+
+        {%- if page.header -%}
+        <img class="header" src="{{ page.header }}">
+        {%- endif -%}
+
         {{ content }}
+
       </div>
+      
     </main>
 
     {%- include footer.html -%}

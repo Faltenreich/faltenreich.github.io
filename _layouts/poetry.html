@@ -6,7 +6,7 @@ layout: page
 
 <div class="grid-even">
   {% for poetry in site.poetry reversed %}
-  <a href="{{ poetry.url }}">
+  <a href="{{ poetry.url }}" class="tile-image">
     <div class="tile-image">
       <img class="wallpaper" src="{{ poetry.header | default: "/assets/images/placeholder.jpg" }}" >
       <div class="tile-title">
