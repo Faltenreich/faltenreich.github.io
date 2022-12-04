@@ -4,37 +4,42 @@ layout: default
 
 <div class="grid-uneven">
 
-  <div>
+  <div class="list">
     <div class="tile">
       {{ content }}
     </div>
-    
-    <div class="tiles">
-      <a href="/software">
-        <div class="tile-image">
-          <img src="/assets/images/software.jpg">
-          <div class="tile-title">Software</div>
+    <a href="/software" class="tile-image">
+      <div class="tile-image">
+        <img class="wallpaper" src="/assets/images/software.jpg">
+        <div class="tile-title">
+          <h2 style="margin-bottom: 4px;">Software</h2>
+          <span>Check my portfolio or private projects</span>
         </div>
-      </a>
-      <a href="/poetry">
-        <div class="tile-image">
-          <img src="/assets/images/poetry.jpg">
-          <div class="tile-title">Poetry</div>
+      </div>
+    </a>
+    <a href="/poetry" class="tile-image">
+      <div class="tile-image">
+        <img class="wallpaper" src="/assets/images/poetry.jpg">
+        <div class="tile-title">
+          <h2 style="margin-bottom: 4px;">Poetry</h2>
+          <span>Read about topics that are moving me or that I am dreaming of</span>
         </div>
-      </a>
-    </div>
+      </div>
+    </a>
   </div>
 
-  <div class="tile">
-    <h2>Activity</h2>
-    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-    {%- assign items = site.posts | where: "public", true | concat: site.poetry | sort: "date" | reverse -%}
-    {%- for item in items limit: 10 -%}
-    <a href="{{ item.url }}">
-    <div class="post-meta">{{ item.date | date: date_format}}</div>
-    <p>{{ item.title | escape }}</p>
-    </a>
-    {%- endfor -%}
+  <div class="list">
+    <div class="tile">
+      <h2>Activity</h2>
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      {%- assign items = site.posts | where: "public", true | concat: site.poetry | sort: "date" | reverse -%}
+      {%- for item in items limit: 10 -%}
+      <a href="{{ item.url }}">
+        <div class="post-meta">{{ item.date | date: date_format}}</div>
+        <p>{{ item.title | escape }}</p>
+      </a>
+      {%- endfor -%}
+    </div>
   </div>
 
 </div>

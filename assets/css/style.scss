@@ -61,6 +61,7 @@ table {
 .wallpaper {
   width: 100%;
   aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
 .icon {
@@ -83,6 +84,12 @@ table {
   display: grid;
   grid-template-columns: #{'repeat(auto-fit, minmax(min(300px, 100%), 1fr))'};
   grid-gap: 16px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .tile {
@@ -130,10 +137,10 @@ a.tile-image:hover {
 
 .tile-title {
   background-color: #4444;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 24px;
+  padding-right: 24px;
   text-decoration: none;
 }
 
