@@ -2,33 +2,14 @@
 layout: default
 ---
 
-<div class="grid-uneven">
+<div class="list">
 
-  <div class="list">
+  <div class="grid-uneven">
+
     <div class="tile">
       {{ content }}
     </div>
-    <a href="/software" class="tile-image">
-      <div class="tile-image">
-        <img class="wallpaper" src="/assets/images/software.jpg">
-        <div class="tile-title">
-          <h2 style="margin-bottom: 4px;">Software</h2>
-          <span>Check my portfolio or private projects</span>
-        </div>
-      </div>
-    </a>
-    <a href="/poetry" class="tile-image">
-      <div class="tile-image">
-        <img class="wallpaper" src="/assets/images/poetry.jpg">
-        <div class="tile-title">
-          <h2 style="margin-bottom: 4px;">Poetry</h2>
-          <span>Read about topics that are moving me or that I am dreaming of</span>
-        </div>
-      </div>
-    </a>
-  </div>
 
-  <div class="list">
     <div class="tile">
       <h2>Activity</h2>
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
@@ -40,6 +21,41 @@ layout: default
       </a>
       {%- endfor -%}
     </div>
+
+  </div>
+
+  <div class="grid-square">
+    
+    <a href="/software" class="tile-image">
+      <div class="tile-image covered">
+        <img src="/assets/images/software.jpg">
+        <div class="tile-title covering">
+          <h2 style="margin-bottom: 0px;">Software</h2>
+          <span class="post-meta">Portfolio, private projects</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="/poetry" class="tile-image">
+      <div class="tile-image covered">
+        <img src="/assets/images/poetry.jpg">
+        <div class="tile-title covering">
+          <h2 style="margin-bottom: 0px;">Poetry</h2>
+          <span class="post-meta">Words to drown in</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="/" class="tile-image">
+      <div class="tile-image covered">
+        <img src="/assets/images/placeholder.jpg">
+        <div class="tile-title covering">
+          <h2 style="margin-bottom: 0px;">Blog</h2>
+          <span class="post-meta"><i>Work in progress</i></span>
+        </div>
+      </div>
+    </a>
+    
   </div>
 
 </div>

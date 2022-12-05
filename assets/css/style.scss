@@ -5,6 +5,11 @@
   "minima/skins/{{ site.minima.skin | default: 'classic' }}",
   "minima/initialize";
 
+// TODO: Replace theme colors
+$background-gray: #242424;
+$background-gray-transparent: #242424CC;
+$background-gray-light: #333333;
+
 // Overrides
 // Minima
 
@@ -86,6 +91,12 @@ table {
   grid-gap: 16px;
 }
 
+.grid-square {
+  display: grid;
+  grid-template-columns: #{'repeat(auto-fit, minmax(min(200px, 100%), 1fr))'};
+  grid-gap: 16px;
+}
+
 .list {
   display: flex;
   flex-direction: column;
@@ -96,7 +107,7 @@ table {
   padding: 32px;
   border-radius: 25px;
   overflow: hidden;
-  background-color: #4444;
+  background-color: $background-gray;
   text-align: justify;
 }
 
@@ -104,14 +115,14 @@ a.tile {
   padding: 32px;
   border-radius: 25px;
   overflow: hidden;
-  background-color: #4444;
+  background-color: $background-gray;
   text-align: justify;
   transition: 0.3s;
   text-decoration: none;
 }
 
 a.tile:hover {
-  background-color:#6666;
+  background-color: $background-gray-light;
 }
 
 .tiles {
@@ -127,21 +138,44 @@ a.tile:hover {
   overflow: hidden;
 }
 
+.tile-image.covered {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
 a.tile-image {
   text-decoration: none;
 }
 
 a.tile-image:hover {
-  background-color:#6666;
+  .tile-title.uncovering {
+    background-color: $background-gray-light;
+  }
+  .tile-title.covering {
+    background-image: linear-gradient(transparent, $background-gray-light, $background-gray-light);
+  }
 }
 
 .tile-title {
-  background-color: #4444;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-left: 24px;
   padding-right: 24px;
   text-decoration: none;
+}
+
+.tile-title.uncovering {
+  background-color: $background-gray;
+}
+
+.tile-title.covering {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  padding-top: 80px;
+  background-image: linear-gradient(transparent, $background-gray, $background-gray);
 }
 
 .project-image {

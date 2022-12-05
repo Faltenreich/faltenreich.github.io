@@ -9,7 +9,7 @@ layout: page
   <a href="{{ poetry.url }}" class="tile-image">
     <div class="tile-image">
       <img class="wallpaper" src="{{ poetry.header | default: "/assets/images/placeholder.jpg" }}" >
-      <div class="tile-title">
+      <div class="tile-title uncovering">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <div class="post-meta">{{ poetry.date | date: date_format }}</div>
         <p style="margin: 0px;">{{ poetry.title | escape }}</p>
