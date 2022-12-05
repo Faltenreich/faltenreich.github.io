@@ -14,17 +14,17 @@ layout: page
         <div class="tile">
         {% endif %}
 
-        {{- project.platform -}}
+            {{- project.platform -}}
 
-        <h2 style="margin-top: 8px;">{{- project.name -}}</h2>
+            <h2 style="margin-top: 8px;">{{- project.name -}}</h2>
 
-        {{- project.summary -}}
+            {{- project.summary -}}
 
-        {%- if project.image -%}
-        <br/>
-        <br/>
-        <img class="project-image" src="{{- project.image -}}">
-        {%- endif -%}
+            {%- if project.image -%}
+            <br/>
+            <br/>
+            <img class="project-image" src="{{- project.image -}}">
+            {%- endif -%}
         
         {% if project.url %}
         </a>

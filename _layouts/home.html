@@ -2,13 +2,40 @@
 layout: default
 ---
 
-<div class="list">
+<div class="grid-uneven">
 
-  <div class="grid-uneven">
-
+  <div class="list">
     <div class="tile">
       {{ content }}
     </div>
+
+    <div class="grid-square">
+      
+      <a href="/software" class="tile-image">
+        <div class="tile-image covered">
+          <img src="/assets/images/software.jpg">
+          <div class="tile-title covering">
+            <h2 style="margin-bottom: 0px;">Software</h2>
+            <span class="post-meta">Portfolio, private projects</span>
+          </div>
+        </div>
+      </a>
+  
+      <a href="/poetry" class="tile-image">
+        <div class="tile-image covered">
+          <img src="/assets/images/poetry.jpg">
+          <div class="tile-title covering">
+            <h2 style="margin-bottom: 0px;">Poetry</h2>
+            <span class="post-meta">Words to drown in</span>
+          </div>
+        </div>
+      </a>
+    
+    </div>
+
+  </div>
+
+  <div class="list">
 
     <div class="tile">
       <h2>Activity</h2>
@@ -21,40 +48,6 @@ layout: default
       </a>
       {%- endfor -%}
     </div>
-
-  </div>
-
-  <div class="grid-square">
-    
-    <a href="/software" class="tile-image">
-      <div class="tile-image covered">
-        <img src="/assets/images/software.jpg">
-        <div class="tile-title covering">
-          <h2 style="margin-bottom: 0px;">Software</h2>
-          <span class="post-meta">Portfolio, private projects</span>
-        </div>
-      </div>
-    </a>
-
-    <a href="/poetry" class="tile-image">
-      <div class="tile-image covered">
-        <img src="/assets/images/poetry.jpg">
-        <div class="tile-title covering">
-          <h2 style="margin-bottom: 0px;">Poetry</h2>
-          <span class="post-meta">Words to drown in</span>
-        </div>
-      </div>
-    </a>
-
-    <a href="/" class="tile-image">
-      <div class="tile-image covered">
-        <img src="/assets/images/placeholder.jpg">
-        <div class="tile-title covering">
-          <h2 style="margin-bottom: 0px;">Blog</h2>
-          <span class="post-meta"><i>Work in progress</i></span>
-        </div>
-      </div>
-    </a>
     
   </div>
 

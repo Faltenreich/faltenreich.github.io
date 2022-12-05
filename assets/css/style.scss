@@ -7,7 +7,7 @@
 
 // TODO: Replace theme colors
 $background-gray: #242424;
-$background-gray-transparent: #242424CC;
+$background-gray-transparent: #242424DD;
 $background-gray-light: #333333;
 
 // Overrides
@@ -148,12 +148,23 @@ a.tile-image {
   text-decoration: none;
 }
 
+a.tile-image {
+  .tile-title.uncovering {
+    transition: 0.3s;
+    background-color: $background-gray;
+  }
+  .tile-title.covering {
+    transition: 0.3s;
+    background: linear-gradient(transparent, $background-gray-transparent, $background-gray);
+  }
+}
+
 a.tile-image:hover {
   .tile-title.uncovering {
     background-color: $background-gray-light;
   }
   .tile-title.covering {
-    background-image: linear-gradient(transparent, $background-gray-light, $background-gray-light);
+    background: linear-gradient(transparent, $background-gray-light, $background-gray-light);
   }
 }
 
@@ -165,17 +176,12 @@ a.tile-image:hover {
   text-decoration: none;
 }
 
-.tile-title.uncovering {
-  background-color: $background-gray;
-}
-
 .tile-title.covering {
   position: absolute;
   bottom: 0px;
   left: 0px;
   right: 0px;
-  padding-top: 80px;
-  background-image: linear-gradient(transparent, $background-gray, $background-gray);
+  padding-top: 60px;
 }
 
 .project-image {
