@@ -9,7 +9,7 @@ layout: page
     {%- for project in site.data.projects -%}
 
         {% if project.url %}
-        <a href="{{ project.url }}" class="tile">
+        <a href="{{ project.url }}" target="_blank" class="tile">
         {% else %}
         <div class="tile">
         {% endif %}

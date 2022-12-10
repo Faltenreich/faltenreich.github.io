@@ -7,10 +7,11 @@ layout: page
 <br/>
 
 {% for company in site.data.companies %}
-<p><a href="{{ company.url }}"><img src="{{ company.image }}" style="height:50px;"></a></p>
+<p><a href="{{ company.url }}" target="_blank"><img src="{{ company.image }}" style="height:50px;"></a></p>
 <table>
 {% assign professions_of_company = site.data.professions | where: "company", company.id %}
-{% for year in (2010..2022) reversed %}
+<!-- FIXME: Replace fixed dates with dynamic range -->
+{% for year in (2010..2030) reversed %}
 {% assign professions_of_year = professions_of_company | where: "year", year %}
 {% if professions_of_year.size > 0 %}
 {% for profession in professions_of_year %}
@@ -36,7 +37,7 @@ layout: page
   <br/>
   {%- endif -%}
   {%- if profession.url -%}
-  <a href="{{ profession.url }}">
+  <a href="{{ profession.url }}" target="_blank">
   {%- endif -%}
   {%- if profession.title -%}
   <b>{{ profession.title }}</b>

@@ -4,8 +4,6 @@ title: About me
 header: /assets/images/home.jpg
 ---
 
-# Writing Bits
-
 Welcome to this place which is all about the one thing I love doing the most: writing. Be it source code, a blogpost or every now and then a piece of poetry.
 
 My name is Philipp Fahlteich. I am a software developer from Germany working in the field of mobile computing. I have written almost all my life, be it poetic, prosaic, analogue or digital.
