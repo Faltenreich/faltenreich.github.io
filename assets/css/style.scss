@@ -5,7 +5,8 @@
   "minima/skins/{{ site.minima.skin | default: 'classic' }}",
   "minima/initialize";
 
-$code-background-color-light: $table-zebra-color;
+$text-color-light: lighten($text-color, 20%);
+$code-background-color-light: $table-header-bg-color;
 
 // Overrides
 // Minima
@@ -18,6 +19,11 @@ $code-background-color-light: $table-zebra-color;
 .site-title {
   letter-spacing: 0px;
   text-decoration: none !important;
+  transition: 0.3s;
+
+  &:hover {
+    color: $text-color-light;
+  }
 }
 
 .site-footer {
@@ -117,10 +123,10 @@ a.tile {
   text-align: justify;
   transition: 0.3s;
   text-decoration: none;
-}
 
-a.tile:hover {
-  background-color: $code-background-color-light;
+  &:hover {
+    background-color: $code-background-color-light;
+  }
 }
 
 .tiles {
