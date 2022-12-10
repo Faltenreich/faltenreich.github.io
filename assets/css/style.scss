@@ -13,6 +13,15 @@ $background-gray-light: #333333;
 // Overrides
 // Minima
 
+$content-width-custom: 800px;
+
+.wrapper {
+  max-width: calc(#{$content-width-custom} - (#{$spacing-unit}));
+  @media screen and (min-width: $on-large) {
+    max-width: calc(#{$content-width-custom} - (#{$spacing-unit} * 2));
+  }
+}
+
 .site-header {
   border-top: 0px;
 }

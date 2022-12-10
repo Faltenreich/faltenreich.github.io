@@ -1,6 +1,5 @@
 ---
 layout: home
-title: About me
 header: /assets/images/home.jpg
 ---
 
