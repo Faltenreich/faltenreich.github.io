@@ -32,3 +32,19 @@ Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unt
 #### [Datenschutzerklärung](/privacy-policy)
 
 *Quelle: [eRecht24](http://www.e-recht24.de){:target="_blank"}*
+
+## Lizenzen
+
+Nachfolgend werden Dienste aufgelistet, die unter ihren jeweiligen Lizenzen verwendet werden.
+
+#### [Pexels](https://www.pexels.com)
+
+Diese Website verwendet lizenzfreie Bilder von Pexels, einem Dienst der Pexels GmbH.
+
+*Quelle: [License](https://www.pexels.com/license){:target="_blank"}*
+
+#### [DALL·E 2](https://labs.openai.com)
+
+Diese Website verwendet künstlich generierte Bilder von DALL·E 2, einem Dienst von OpenAI LP.
+
+*Quelle: [Terms of Use](https://openai.com/api/policies/terms){:target="_blank"}*

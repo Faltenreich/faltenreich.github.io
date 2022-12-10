@@ -5,13 +5,13 @@ subtitle: Clean Code as a guiding light
 permalink: /software/
 ---
 
-I am a software developer from Germany who got his Master of Science at the Rosenheim University of Applied Sciences and is currently working for a software service provider in the field of mobile computing.
+I am a software developer from Germany who got his Master of Science at the Rosenheim University of Applied Sciences.
 
-I have conceptualized, developed, published and maintained multiple projects. My main focus is the development for mobile platforms but I am also experienced in developing small backends or setting up a Backend-as-a-service.
+I am specialized in mobile computing and have conceptualized, developed, published and maintained multiple projects including small backends or setting up a Backend-as-a-service.
 
 ### Android <img src="/assets/images/icons/android.png" class="icon"/> 
 
-I have started development for Android in 2012 during my Bachelor studies by creating first proof-of-concepts. Some of them evolved into full-fledged projects and one of them is still running more ten years later. I have used the following technologies and many more:
+I have started development for Android in 2012 during my Bachelor studies by creating first proof-of-concepts. Some of them evolved into full-fledged projects and one of them is still running almost ten years later. I have used the following technologies and many more:
 
 - Kotlin, Java
 - Android Architecture Components, Jetpack
