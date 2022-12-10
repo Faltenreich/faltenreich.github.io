@@ -5,35 +5,33 @@
   "minima/skins/{{ site.minima.skin | default: 'classic' }}",
   "minima/initialize";
 
-// TODO: Replace theme colors
-$background-gray: #242424;
-$background-gray-transparent: #242424DD;
-$background-gray-light: #333333;
+$code-background-color-light: $table-zebra-color;
 
 // Overrides
 // Minima
 
-$content-width-custom: 800px;
-
-.wrapper {
-  max-width: calc(#{$content-width-custom} - (#{$spacing-unit}));
-  @media screen and (min-width: $on-large) {
-    max-width: calc(#{$content-width-custom} - (#{$spacing-unit} * 2));
-  }
-}
-
 .site-header {
-  border-top: 0px;
+  border: 0px;
+  background-color: $code-background-color;
 }
 
 .site-title {
-  color: #fff;
   letter-spacing: 0px;
-  text-decoration: none;
-  &,
-  &:visited {
-    color: #fff;
-  }
+  text-decoration: none !important;
+}
+
+.site-footer {
+  border: 0px;
+  background-color: $code-background-color;
+  padding: $spacing-unit / 2;
+}
+
+.nav {
+  float: right;
+}
+
+.nav-item {
+  padding: $spacing-unit / 2;
 }
 
 a {
@@ -53,15 +51,6 @@ table {
 }
 
 // Custom
-
-.nav {
-  float: right;
-}
-
-.nav-item {
-  padding: 8px;
-  color: #fff;
-}
 
 .header {
   width: 100%;
@@ -116,7 +105,7 @@ table {
   padding: 32px;
   border-radius: 25px;
   overflow: hidden;
-  background-color: $background-gray;
+  background-color: $code-background-color;
   text-align: justify;
 }
 
@@ -124,14 +113,14 @@ a.tile {
   padding: 32px;
   border-radius: 25px;
   overflow: hidden;
-  background-color: $background-gray;
+  background-color: $code-background-color;
   text-align: justify;
   transition: 0.3s;
   text-decoration: none;
 }
 
 a.tile:hover {
-  background-color: $background-gray-light;
+  background-color: $code-background-color-light;
 }
 
 .tiles {
@@ -158,22 +147,15 @@ a.tile-image {
 }
 
 a.tile-image {
-  .tile-title.uncovering {
+  .tile-title {
     transition: 0.3s;
-    background-color: $background-gray;
-  }
-  .tile-title.covering {
-    transition: 0.3s;
-    background: linear-gradient(transparent, $background-gray-transparent, $background-gray);
+    background-color: $code-background-color;
   }
 }
 
 a.tile-image:hover {
-  .tile-title.uncovering {
-    background-color: $background-gray-light;
-  }
-  .tile-title.covering {
-    background: linear-gradient(transparent, $background-gray-light, $background-gray-light);
+  .tile-title {
+    background-color: $code-background-color-light;
   }
 }
 
@@ -183,14 +165,6 @@ a.tile-image:hover {
   padding-left: 24px;
   padding-right: 24px;
   text-decoration: none;
-}
-
-.tile-title.covering {
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  padding-top: 60px;
 }
 
 .project-image {

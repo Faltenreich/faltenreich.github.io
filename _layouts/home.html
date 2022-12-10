@@ -14,18 +14,8 @@ layout: default
 
   <div class="list">
 
-    <a href="/software" class="tile">
-      <h2 style="margin: 0px;">Software</h2>
-      <div class="post-meta">Portfolio, projects</div>
-    </a>
-
-    <a href="/poetry" class="tile">
-      <h2 style="margin: 0px;">Poetry</h2>
-      <div class="post-meta">Poems, stories</div>
-    </a>
-
     <div class="tile">
-      <h2>Activity</h2>
+      <h3>Activity</h3>
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       {%- assign items = site.posts | where: "public", true | concat: site.poetry | sort: "date" | reverse -%}
       {%- for item in items limit: 10 -%}
