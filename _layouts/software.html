@@ -2,35 +2,20 @@
 layout: page
 ---
 
-<div class="grid-uneven">
+<div class="list">
 
-    <div class="tile">
-      {{ content }}
-    </div>
+  <div class="grid-square">
 
-    <div class="list">
+    <a href="/software/experience" class="button">Experience</a>
 
-      <div class="tile">
-        <h3 style="margin-top: 0px;">Contact</h3>
-        <p><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>
-        {% include social.html %}
-      </div>
+    <a href="/software/projects" class="button">Projects</a>
   
-      <a href="/assets/documents/cv.pdf" class="tile" target="_blank">
-        <h3 style="margin: 0px;">CV</h3>
-        <div class="post-meta">downloadable</div>
-      </a>
-
-      <a href="/software/experience" class="tile">
-        <h3 style="margin: 0px;">Experience</h3>
-        <div class="post-meta">professionally</div>
-      </a>
+    <a href="/assets/documents/cv.pdf" class="button" target="_blank">CV 🡥</a>
   
-      <a href="/software/projects" class="tile">
-        <h3 style="margin: 0px;">Projects</h3>
-        <div class="post-meta">built by myself</div>
-      </a>
-
-    </div>
+  </div>
+  
+  <div class="tile">
+    {{ content }}
+  </div>
 
 </div>

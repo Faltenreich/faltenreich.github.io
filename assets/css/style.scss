@@ -97,7 +97,7 @@ table {
 
 .grid-square {
   display: grid;
-  grid-template-columns: #{'repeat(auto-fit, minmax(min(200px, 100%), 1fr))'};
+  grid-template-columns: #{'repeat(auto-fit, minmax(min(100px, 100%), 1fr))'};
   grid-gap: 16px;
 }
 
@@ -126,6 +126,20 @@ a.tile {
 
   &:hover {
     background-color: $code-background-color-light;
+  }
+}
+
+a.button {
+  padding: 8px;
+  border: 1.5px solid $text-color;
+  border-radius: 25px;
+  text-align: center;
+  transition: 0.3s;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $text-color;
+    color: $code-background-color-light;
   }
 }
 

@@ -44,7 +44,7 @@ I have dived into Flutter many times, implemented small projects and helped main
 
 ### Quality Assurance
 
-I have experience in developing and maintaining projects that are able to go to the middle school and beyond without rusting undetected and crumbling to dust. Starting on the green field is as possible as refactoring foreign legacy projects with a beard longer than mine. I ensure that level of quality by using:
+I have experience in maintaining projects until they enter middle school and evolve while neither rusting undetected nor crumbling to dust. I ensure that level of quality by using:
 
 - MVVM
 - Dependency Injection
