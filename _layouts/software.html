@@ -18,4 +18,19 @@ layout: page
     {{ content }}
   </div>
 
+  <div class="grid-even">
+    {%- for software in site.data.software -%}
+    {%- assign color = software.color -%}
+      <div class="tile" style="padding-top: 0px;">
+        <h3>{{ software.title }}</h3>
+        <p>{{ software.description }}</p>
+        <ul style="text-align: left;">
+          {%- for technology in software.technologies -%}
+            <li>{{ technology }}</li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    {%- endfor -%}
+  </div>
+
 </div>

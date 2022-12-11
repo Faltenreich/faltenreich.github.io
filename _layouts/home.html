@@ -3,30 +3,35 @@ layout: default
 ---
 
 <div class="grid-uneven">
-    
-  <div class="tile list">
 
-    {{ content }}
+  <div class="list">
+      
+    <div class="tile">
 
-    <div class="grid-square">
-    
-      <a href="/software" class="button">Software</a>
-    
-      <a href="/poetry" class="button">Poetry</a>
-    
+      {{ content }}
+
+      <div class="grid-square" style="margin-top: 32px;">
+      
+        <a href="/software" class="button">Software</a>
+      
+        <a href="/poetry" class="button">Poetry</a>
+      
+      </div>
+      
     </div>
+      
   </div>
 
   <div class="list">
   
     <div class="tile">
-      <h3>Contact</h3>
+      <h2>Contact</h2>
       <p><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>
       {%- include social.html -%}
     </div>
 
     <div class="tile">
-      <h3>Activity</h3>
+      <h2>Activity</h2>
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       {%- assign items = site.posts | where: "public", true | concat: site.poetry | sort: "date" | reverse -%}
       {%- for item in items limit: 10 -%}

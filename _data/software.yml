@@ -1,0 +1,54 @@
+- title: Android
+  color: "#7ac359"
+  description: >-
+    I have started development for Android in 2012 during my Bachelor studies by creating first proof-of-concepts. 
+    Some of them evolved into full-fledged projects and one of them is still running almost ten years later. 
+    I have used the following technologies and many more:
+  technologies:
+    - Kotlin, Java
+    - Android Architecture Components, Jetpack
+    - Gradle, Groovy, Library Development
+    - Firebase, Parse Server
+    - Retrofit, OkHttp
+    - Room, ObjectBox, OrmLite
+    - Jetpack Compose
+    - NFC, Bluetooth
+
+- title: iOS
+  color: "#7D7D7D"
+  description: >-
+    I have started development for iOS in 2014 during my Master studies by taking courses and while working for a 
+    company which was developing an iOS client.
+  technologies:
+    - Swift, Objective-C
+    - SwiftUI, UIKit
+    - Combine, RxSwift
+    - Firebase, Parse Server
+    - Core Data
+    - NFC, Bluetooth
+
+- title: Multiplatform
+  color: "#B125EA"
+  description: >-
+    I have dived into Flutter many times, implemented small projects and helped maintaining legacy projects. 
+    While Google's framework is today's standard to implement once and deploy everywhere, 
+    my bet is on Kotlin Multiplatform Mobile (and Compose Multiplatform) to revolutionize cross-platform development 
+    in the following years.
+  technologies:
+    - Flutter, Dart
+    - Internationalization, Material Components
+    - Kotlin Multiplatform Mobile, Kotlin Native
+    - SQLDelight, Ktor, Coroutines, mockK, Compose
+
+- title: Quality Assurance
+  color: "#5ec8f8"
+  description: >-
+    I have experience in maintaining projects until they enter middle school and evolve while neither 
+    rusting undetected nor crumbling to dust. I ensure that level of quality by using:
+  technologies:
+    - MVVM
+    - Dependency Injection
+    - Unit-, Instrumentation- and UI Testing
+    - Continuous Integration, -Deployment and -Delivery
+    - Code Reviews on Pull Requests
+    - Clean Code
