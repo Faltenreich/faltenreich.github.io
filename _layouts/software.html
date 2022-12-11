@@ -3,6 +3,8 @@ layout: page
 ---
 
 <div class="list">
+  
+  {{ content }}
 
   <div class="grid-square">
 
@@ -13,16 +15,15 @@ layout: page
     <a href="/assets/documents/cv.pdf" class="button" target="_blank">CV 🡥</a>
   
   </div>
-  
-  <div class="tile">
-    {{ content }}
-  </div>
 
   <div class="grid-even">
     {%- for software in site.data.software -%}
     {%- assign color = software.color -%}
       <div class="tile" style="padding-top: 0px;">
-        <h3>{{ software.title }}</h3>
+        <h3 class="centered">
+          {{ software.title }} 
+          <img src="{{ software.icon }}" class="icon"/>
+        </h3>
         <p>{{ software.description }}</p>
         <ul style="text-align: left;">
           {%- for technology in software.technologies -%}

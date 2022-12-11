@@ -77,6 +77,12 @@ table {
   width: 24px;
 }
 
+.centered {
+  display: flex; 
+  align-items: center; 
+  column-gap: 12px;
+}
+
 .grid-uneven {
   display: grid;
   grid-template-columns: 1fr;

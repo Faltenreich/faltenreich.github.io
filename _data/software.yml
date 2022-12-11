@@ -1,24 +1,46 @@
 - title: Android
   color: "#7ac359"
+  icon: "/assets/images/icons/android.png"
   description: >-
     I have started development for Android in 2012 during my Bachelor studies by creating first proof-of-concepts. 
     Some of them evolved into full-fledged projects and one of them is still running almost ten years later. 
     I have used the following technologies and many more:
   technologies:
     - Kotlin, Java
-    - Android Architecture Components, Jetpack
+    - Jetpack Compose, XML
+    - Android Architecture Components
+    - Coroutines, Flows
     - Gradle, Groovy, Library Development
     - Firebase, Parse Server
     - Retrofit, OkHttp
     - Room, ObjectBox, OrmLite
-    - Jetpack Compose
+    - Hilt, Koin
+    - Espresso, mockK
     - NFC, Bluetooth
+
+- title: Kotlin Multiplatform
+  color: "#B125EA"
+  icon: "/assets/images/icons/kotlin.png"
+  description: >-
+    Even though Flutter is on the rise, my bet is on Kotlin Multiplatform Mobile (and Compose Multiplatform) 
+    to revolutionize cross-platform development in the following years. Therefore I am developing first 
+    proof-of-concepts and going to use this technology for my next multiplatform project.
+  technologies:
+    - Kotlin Native
+    - Compose Multiplatform
+    - Material3
+    - MObile KOtlin (Moko Resources)
+    - SQLDelight
+    - Ktor, Coroutines
+    - Koin
+    - kotlin.test
 
 - title: iOS
   color: "#7D7D7D"
+  icon: "/assets/images/icons/ios.png"
   description: >-
     I have started development for iOS in 2014 during my Master studies by taking courses and while working for a 
-    company which was developing an iOS client.
+    company which was developing an iOS client. Since then I have been working on numerous native apps.
   technologies:
     - Swift, Objective-C
     - SwiftUI, UIKit
@@ -27,26 +49,25 @@
     - Core Data
     - NFC, Bluetooth
 
-- title: Multiplatform
-  color: "#B125EA"
+- title: Flutter
+  color: "#5ec8f8"
+  icon: "/assets/images/icons/flutter.png"
   description: >-
-    I have dived into Flutter many times, implemented small projects and helped maintaining legacy projects. 
-    While Google's framework is today's standard to implement once and deploy everywhere, 
-    my bet is on Kotlin Multiplatform Mobile (and Compose Multiplatform) to revolutionize cross-platform development 
-    in the following years.
+    I have dived into Flutter many times, implemented small projects and helped maintaining legacy projects.
   technologies:
-    - Flutter, Dart
-    - Internationalization, Material Components
-    - Kotlin Multiplatform Mobile, Kotlin Native
-    - SQLDelight, Ktor, Coroutines, mockK, Compose
+    - Dart
+    - Material Components
+    - Internationalization
+    - Firebase
+    - Hive, jaguar_orm
+    - Resolver
 
 - title: Quality Assurance
-  color: "#5ec8f8"
   description: >-
     I have experience in maintaining projects until they enter middle school and evolve while neither 
     rusting undetected nor crumbling to dust. I ensure that level of quality by using:
   technologies:
-    - MVVM
+    - Model-View-ViewModel
     - Dependency Injection
     - Unit-, Instrumentation- and UI Testing
     - Continuous Integration, -Deployment and -Delivery
