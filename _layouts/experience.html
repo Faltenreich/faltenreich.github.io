@@ -29,39 +29,42 @@ layout: page
         {% endif %}
       </td>
 
-      <td>
+      <td style="padding: 0px;">
 
-        <div class="table-content">
         {%- if profession.url -%}
-        <a href="{{ profession.url }}" target="_blank">
+        <a href="{{ profession.url }}" target="_blank" class="table-content">
+        {%- else -%}
+        <div class="table-content">
         {%- endif -%}
 
-        {%- if profession.industry -%}
-        <div class="post-meta">{{ profession.industry }}</div>
-        {%- endif -%}
-
-        <div>
-          {%- if profession.title -%}
-          <b>{{ profession.title }}</b>
-          {%- else -%}
-          <i>Undisclosed project</i>
+          {%- if profession.industry -%}
+          <div class="post-meta">{{- profession.industry -}}</div>
           {%- endif -%}
-        </div>
 
-        <div class="table-summary">{{ profession.summary }}</div>
+          <div>
+            {%- if profession.title -%}
+            <b>{{ profession.title }}</b>
+            {%- else -%}
+            <i>Undisclosed project</i>
+            {%- endif -%}
+          </div>
 
-        <div class="table-icon">
-          {% assign platform_ids = profession.platforms | split: ", " %}
-          {% for platform_id in platform_ids %}
-          {% assign platform = site.data.platforms | where: "id", platform_id | first %}
-          <img src="{{ platform.image }}" class="icon" title="{{ platform.name }}">
-          {% endfor %}
-        </div>
+          <div class="table-summary">{{ profession.summary }}</div>
+
+          <div class="table-icon">
+            {%- assign platform_ids = profession.platforms | split: ", " -%}
+            {%- for platform_id in platform_ids -%}
+            {%- assign platform = site.data.platforms | where: "id", platform_id | first -%}
+            <img src="{{ platform.image }}" class="icon" title="{{ platform.name }}">
+            {%- endfor -%}
+          </div>
 
         {%- if profession.url -%}
         </a>
+        {%- else -%}
+        </div>
         {%- endif -%}
-      </div>
+
       </td>
 
     </tr>

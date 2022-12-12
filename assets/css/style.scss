@@ -86,11 +86,12 @@ tr:nth-child(even) {
   background-color: $code-background-color;
 }
 
-a.tile {
+a.table-content {
   padding: 12px 24px;
   border-radius: 25px;
   overflow: hidden;
   position: relative;
+  display: block;
   background-color: $code-background-color;
   transition: 0.3s;
   text-decoration: none;
