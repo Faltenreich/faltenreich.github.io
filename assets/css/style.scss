@@ -49,11 +49,65 @@ a {
 }
 
 table {
-  border: none;
+  border: none !important;
+  border-collapse:separate;
+  border-spacing:0 15px;
+}
+tr {
+  border: none !important;
+}
+td {
+  border: none !important;
+}
+tr:nth-child(odd) {
+  background: transparent !important;
+  padding-bottom: 10em !important;
+}
+tr:nth-child(even) {
+  background: transparent !important;
 }
 
 .social-media-list {
   display: table-row;
+}
+
+.table-year {
+  padding: 12px;
+  border-radius: 25px;
+  display: inline-block;
+  background-color: $code-background-color;
+}
+
+.table-content {
+  padding: 12px 24px;
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+  background-color: $code-background-color;
+}
+
+a.tile {
+  padding: 12px 24px;
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+  background-color: $code-background-color;
+  transition: 0.3s;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $code-background-color-light;
+  }
+}
+
+.table-summary {
+  margin-top: 8px;
+}
+
+.table-icon {
+  position: absolute;
+  top: 12px;
+  right: 18px;
 }
 
 // Custom
@@ -75,6 +129,10 @@ table {
 
 .icon {
   width: 24px;
+}
+
+.icon-company {
+  height: 50px;
 }
 
 .centered {
