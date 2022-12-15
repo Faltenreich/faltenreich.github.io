@@ -4,75 +4,74 @@ layout: page
 
 {{ content }}
 
-<table>
+<div class="experiences">
 
   {% for company in site.data.companies %}
 
-  <tr>
-    <td colspan="3">
-      <a href="{{ company.url }}" target="_blank"><img src="{{ company.image }}" class="icon-company"></a>
-    </td>
-  </tr>
+    <div class="company">
 
-  {% assign professions_of_company = site.data.professions | where: "company", company.id %}
-  <!-- FIXME: Replace fixed dates with dynamic range -->
-  {% for year in (2010..2030) reversed %}
+      <a href="{{ company.url }}" target="_blank">
+        <img src="{{ company.image }}" class="icon-company">
+      </a>
 
-    {% assign professions_of_year = professions_of_company | where: "year", year %}
-    {% for profession in professions_of_year %}
+      {% assign professions_of_company = site.data.professions | where: "company", company.id %}
+      <!-- FIXME: Replace fixed dates with dynamic range -->
+      {% for year in (2010..2030) reversed %}
 
-    <tr>
+        {% assign professions_of_year = professions_of_company | where: "year", year %}
+        {% for profession in professions_of_year %}
 
-      <td>
-        {% if profession.title == professions_of_year[0].title %}
-        <div class="table-year">{{year}}</div>
-        {% endif %}
-      </td>
-
-      <td style="padding: 0px;">
-
-        {%- if profession.url -%}
-        <a href="{{ profession.url }}" target="_blank" class="table-content">
-        {%- else -%}
-        <div class="table-content">
-        {%- endif -%}
-
-          {%- if profession.industry -%}
-          <div class="post-meta">{{- profession.industry -}}</div>
+          {%- if profession.url -%}
+          <a href="{{ profession.url }}" target="_blank" class="table-content">
+          {%- else -%}
+          <div class="table-content">
           {%- endif -%}
 
-          <div>
-            {%- if profession.title -%}
-            <b>{{ profession.title }}</b>
-            {%- else -%}
-            <i>Undisclosed project</i>
+            {%- if profession.industry -%}
+            <div class="post-meta">{{- profession.industry -}}</div>
             {%- endif -%}
+
+            <div>
+              {%- if profession.title -%}
+              <b>{{ profession.title }}</b>
+              {%- else -%}
+              <i>Undisclosed project</i>
+              {%- endif -%}
+            </div>
+
+            <div class="table-summary">{{ profession.summary }}</div>
+
+            <div class="table-icon">
+              {%- assign platform_ids = profession.platforms | split: ", " -%}
+              {%- for platform_id in platform_ids -%}
+              {%- assign platform = site.data.platforms | where: "id", platform_id | first -%}
+              <img src="{{ platform.image }}" class="icon" title="{{ platform.name }}">
+              {%- endfor -%}
+            </div>
+
+          {%- if profession.url -%}
+          </a>
+          {%- else -%}
           </div>
+          {%- endif -%}
 
-          <div class="table-summary">{{ profession.summary }}</div>
+          {% if profession.title == professions_of_year[0].title %}
+          <div class="table-divider"></div>
+          <div class="table-year">{{year}}</div>
+          {% endif %}
 
-          <div class="table-icon">
-            {%- assign platform_ids = profession.platforms | split: ", " -%}
-            {%- for platform_id in platform_ids -%}
-            {%- assign platform = site.data.platforms | where: "id", platform_id | first -%}
-            <img src="{{ platform.image }}" class="icon" title="{{ platform.name }}">
-            {%- endfor -%}
-          </div>
+          <div class="table-divider"></div>
 
-        {%- if profession.url -%}
-        </a>
-        {%- else -%}
-        </div>
-        {%- endif -%}
+        {% endfor %}
 
-      </td>
+      {% endfor %}
+      
+    </div>
 
-    </tr>
-
-    {% endfor %}
+    <div class="table-divider"></div>
 
   {% endfor %}
 
-{% endfor %}
+  <!-- TODO: Add end point -->
 
-</table>
+</div>
