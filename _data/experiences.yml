@@ -4,14 +4,15 @@
   industry: E-Commerce
   platforms: android, ios
   company: xroot
-  year: 2022
+  start: 2022-08-01
 
 - title: 
   summary: Developing a proof of concept to accompany the digitalization process of a braking system manufacturer
   industry: Rail industry
   platforms: android
   company: xroot
-  year: 2022
+  end: 2022-06-22
+  start: 2022-01-03
 
 - title: Infineon Technologies AG
   summary: Developing a proof of concept for controlling passive smart locks via NFC
@@ -19,7 +20,7 @@
   industry: Semiconductor
   platforms: ios
   company: xroot
-  year: 2021
+  start: 2021-09-15
 
 - title: PS GmbH
   summary: Continuing development of externally developed legacy apps for controlling smart locks via Bluetooth LE
@@ -27,7 +28,8 @@
   industry: Smart home
   platforms: android, ios
   company: xroot
-  year: 2021
+  end: 2022-11-30
+  start: 2020-09-01
 
 - title: Penzkofer Bau GmbH
   summary: Developing an in-house app for configuring interiors
@@ -35,14 +37,16 @@
   industry: Real estate
   platforms: ios
   company: xroot
-  year: 2021
+  end: 2022-10-31
+  start: 2021-01-01
 
 - title: 
   summary: Supervising students to develop a platform for developers as proof of concept using Flutter and Parse Server
   industry: Academic study
   platforms: android, ios
   company: xroot
-  year: 2021
+  end: 2021-07-31
+  start: 2021-01-01
 
 - title: Rolf Kind GmbH
   summary: Developing an in-house showcase app for trade fairs
@@ -50,7 +54,8 @@
   industry: Metal industry
   platforms: ios
   company: xroot
-  year: 2021
+  end: 2021-07-16
+  start: 2020-02-01
   
 - title: OilQuick Deutschland KG
   summary: Developing a public showcase app for large-scale machinery systems
@@ -58,7 +63,8 @@
   industry: Construction industry
   platforms: ios
   company: xroot
-  year: 2020
+  end: 2021-01-12
+  start: 2018-11-28
   
 - title: A. RIEPER AG/Spa
   summary: Developing a public shop app for large-scale farmers
@@ -66,7 +72,7 @@
   industry: E-Commerce
   platforms: android
   company: xroot
-  year: 2020
+  start: 2019-10-07
   
 - title: OELCHECK GmbH
   summary: Developing apps for managing submissions regarding oil analysis
@@ -74,22 +80,24 @@
   industry: Laboratory analysis
   platforms: android, ios
   company: xroot
-  year: 2019
+  end: 2022-04-30
+  start: 2019-01-22
   
 - title: Localization
   summary: Developing a plugin to synchronize localizations cross-platform via Google Sheets using Gradle and Run Scripts
   industry: Reusable components
   platforms: android, ios
   company: xroot
-  year: 2019
+  start: 2018-03-01
   
 - title: NoID
-  summary: Supervising students to develop a proof of concept of a native dialing app
+  summary: Supervising students to develop a proof of concept of a native dialing app which since then has been continued and published
   url: https://play.google.com/store/apps/details?id=de.xroot.noid
   industry: Telephony
   platforms: android, ios
   company: xroot
-  year: 2019
+  end: 2020-05-14
+  start: 2019-04-01
   
 - title: Auf Straßen innovativ Guido M. Hahn GmbH & Co. KG
   summary: Developing a public app for displaying building sites
@@ -97,7 +105,8 @@
   industry: Traffic security
   platforms: android
   company: xroot
-  year: 2018
+  end: 2019-04-02
+  start: 2018-10-04
   
 - title: Thermomess Wärmemessdienst AG
   summary: Developing an in-house app for managing data from heat cost allocators and other meters
@@ -105,14 +114,14 @@
   industry: Thermal services
   platforms: android
   company: xroot
-  year: 2018
+  start: 2018-02-01
   
 - title: Code sharing
   summary: Developing an in-house library for sharing logic between projects
   industry: Reusable components
   platforms: android
   company: xroot
-  year: 2018
+  start: 2018-03-01
   
 - title: HEMI GmbH
   summary: Developing a SDK for smart locks using Bluetooth LE
@@ -120,7 +129,8 @@
   industry: Smart home
   platforms: android
   company: xroot
-  year: 2017
+  end: 2018-10-25
+  start: 2017-11-21
   
 - title: StarSnoopy
   summary: Supporting development of a public app for managing wishlists
@@ -128,7 +138,8 @@
   industry: E-Commerce
   platforms: android
   company: xroot
-  year: 2017
+  end: 2017-07-28
+  start: 2017-01-31
   
 - title: Dunkin' Donuts
   summary: Continuing development of a legacy app
@@ -136,28 +147,33 @@
   industry: Food franchise
   platforms: android
   company: xroot
-  year: 2017
+  end: 2018-06-10
+  start: 2017-04-06
   
 - title: Push marketing
   summary: Supporting in-house marketing and public relations via analytics- and advertisement tools
   industry: Marketing
   platforms: web
   company: xroot
-  year: 2017
+  end: 2017-05-10
+  start: 2017-01-19
   
-- title: Master thesis
-  summary: Redeveloping an in-house app for managing playlists for sound systems in shopping stores
+- title: amp GmbH
+  summary: Writing master thesis about redeveloping an in-house app for managing playlists in shopping stores
+  url: https://www.ampsoundbranding.com
   industry: Sound branding
   platforms: android
   company: xroot
-  year: 2016
+  end: 2017-09-27
+  start: 2015-09-24
   
 - title: Mobile gamification
   summary: Supervising three small projects targeting mobile games using Unity Engine
   industry: Gamification
   platforms: android, ios
   company: xroot
-  year: 2016
+  end: 2017-06-30
+  start: 2016-07-28
   
 - title: Thermomess Wärmemessdienst AG
   summary: Developing an in-house app for managing customer data
@@ -165,14 +181,16 @@
   industry: Thermal services
   platforms: android
   company: xroot
-  year: 2015
+  end: 2022-08-10
+  start: 2015-09-03
   
 - title: x-cloud Monitoring
   summary: Continuing development of an in-house iOS monitoring app
   industry: Monitoring
   platforms: ios
   company: xroot
-  year: 2015
+  end: 2015-05-12
+  start: 2015-04-27
   
 - title: Adler Mannheim Fan App
   summary: Developing a public app for fans of a German ice hockey team
@@ -180,21 +198,23 @@
   industry: Sport industry
   platforms: android
   company: xroot
-  year: 2015
+  start: 2015-02-01
 
 - title: Burger King
   summary: Continuing development of the formerly native app
   industry: Food franchise
   platforms: ios
   company: xroot
-  year: 2015
+  end: 2017-08-23
+  start: 2015-04-01
 
 - title: Bachelor thesis
   summary: Enabling offline support for mobile clients within an existing client-server-architecture
   industry: Business intelligence
   platforms: windows
   company: cubeware
-  year: 2014
+  end: 2014-03-10
+  start: 2013-12-01
 
 - title: C8 Cockpit
   summary: Supporting development of an enterprise resource planning solution
@@ -202,4 +222,5 @@
   industry: Business intelligence
   platforms: windows
   company: cubeware
-  year: 2012
+  end: 2015-03-31
+  start: 2012-10-01

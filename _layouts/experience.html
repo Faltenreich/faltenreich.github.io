@@ -8,15 +8,18 @@ layout: page
 
   {% for company in site.data.companies %}
 
-    <div class="company">
+    <div class="tile small">
 
-      <a href="{{ company.url }}" target="_blank">
-        <img src="{{ company.image }}" class="icon-company">
-      </a>
+      <div class="grid-header">
+        <a href="{{ company.url }}" target="_blank">
+          <img src="{{ company.image }}" class="grid-icon">
+        </a>
+        <div class="post-meta grid-date">{{ company.start | date: "%m/%Y" }} - {{ company.end | date: "%m/%Y" | default: "Today" }}</div>
+      </div>
 
       {% assign experience_in_company = site.data.experiences | where: "company", company.id %}
 
-      <div class="grid">
+      <div class="grid small">
 
         {%- for experience in experience_in_company -%}
 
@@ -32,13 +35,15 @@ layout: page
 
             <div>
               {%- if experience.title -%}
-              <b>{{ experience.title }}</b>
+              {{ experience.title }}
               {%- else -%}
               <i>Undisclosed project</i>
               {%- endif -%}
             </div>
 
-            <div class="table-summary">{{ experience.summary }}</div>
+            <div class="post-meta">{{ experience.start | date: "%m/%Y" }} - {{ experience.end | date: "%m/%Y" | default: "Today" }}</div>
+
+            <div class="table-summary post-meta">{{ experience.summary }}</div>
 
             <div class="table-icon">
               {%- assign platform_ids = experience.platforms | split: ", " -%}

@@ -2,8 +2,11 @@
   name: x-root Software GmbH
   url: https://www.x-root.de
   image: "/assets/images/software/xroot.png"
+  start: 2015-04-01
 
 - id: cubeware
   name: Cubeware GmbH
   url: https://www.cubeware.com
   image: "/assets/images/software/cubeware.png"
+  end: 2015-03-31
+  start: 2012-10-01

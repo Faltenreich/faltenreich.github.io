@@ -52,16 +52,14 @@ a {
   display: table-row;
 }
 
-.company {
-  padding: 0px 16px;
-  border-radius: 25px;
-  background-color: $code-background-color;
-}
-
 .grid {
   display: grid;
   grid-gap: 16px;
   grid-template-columns: #{'repeat(auto-fit, minmax(min(300px, 100%), 1fr))'};
+}
+
+.grid.small {
+  grid-gap: 12px;
 }
 
 .grid.uneven {
@@ -78,17 +76,25 @@ a {
   grid-template-columns: #{'repeat(auto-fit, minmax(min(100px, 100%), 1fr))'};
 }
 
-.grid-label {
-  padding: 12px 24px;
-  border-radius: 25px;
-  background-color: $code-background-color-light;
+.grid-header {
+  margin: 16px 16px 24px 16px;
+  position: relative;
+}
+
+.grid-icon {
+  height: 40px;
+}
+
+.grid-date {
+  position: absolute;
+  top: 0px;
+  right: 0px;
 }
 
 .grid-cell {
   padding: 12px 24px;
   border-radius: 25px;
   position: relative;
-  text-align: justify;
   border-color: $code-background-color-light;
   border-style: solid;
 }
@@ -136,12 +142,6 @@ a.grid-cell {
   width: 24px;
 }
 
-.icon-company {
-  padding: 8px;
-  height: 50px;
-  margin: 16px;
-}
-
 .centered {
   display: flex; 
   align-items: center; 
@@ -160,6 +160,10 @@ a.grid-cell {
   overflow: hidden;
   background-color: $code-background-color;
   text-align: justify;
+}
+
+.tile.small {
+  padding: 12px 16px;
 }
 
 a.tile {
