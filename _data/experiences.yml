@@ -208,8 +208,8 @@
   end: 2017-08-23
   start: 2015-04-01
 
-- title: Bachelor thesis
-  summary: Enabling offline support for mobile clients within an existing client-server-architecture
+- title: Offline reporting
+  summary: Writing bachelor thesis about enabling offline support for mobile clients within an existing client-server-architecture
   industry: Business intelligence
   platforms: windows
   company: cubeware
