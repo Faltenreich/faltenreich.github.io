@@ -1,33 +1,205 @@
-- title: Senior Mobile Developer
-  company: x-root Software GmbH
+- title: MediaMarktSaturn
+  summary: Maintaining native legacy apps with large user bases and accompanying the transition to successors
+  url: https://www.mediamarktsaturn.com
+  industry: E-Commerce
+  platforms: android, ios
+  company: xroot
+  year: 2022
+
+- title: 
+  summary: Developing a proof of concept to accompany the digitalization process of a braking system manufacturer
+  industry: Rail industry
+  platforms: android
+  company: xroot
+  year: 2022
+
+- title: Infineon Technologies AG
+  summary: Developing a proof of concept for controlling passive smart locks via NFC
+  url: https://www.infineon.com/cms/de/product/power/contactless-power-sensing-ics/nfc-tag-side-controllers/nac1080
+  industry: Semiconductor
+  platforms: ios
+  company: xroot
+  year: 2021
+
+- title: PS GmbH
+  summary: Continuing development of externally developed legacy apps for controlling smart locks via Bluetooth LE
+  url: https://pslocks.com/de/bluetooth
+  industry: Smart home
+  platforms: android, ios
+  company: xroot
+  year: 2021
+
+- title: Penzkofer Bau GmbH
+  summary: Developing an in-house app for configuring interiors
+  url: https://www.x-root.de/referenz-app/showroom-app-penzkofer-bau-gmbh
+  industry: Real estate
+  platforms: ios
+  company: xroot
+  year: 2021
+
+- title: 
+  summary: Supervising students to develop a platform for developers as proof of concept using Flutter and Parse Server
+  industry: Academic study
+  platforms: android, ios
+  company: xroot
+  year: 2021
+
+- title: Rolf Kind GmbH
+  summary: Developing an in-house showcase app for trade fairs
+  url: https://www.x-root.de/referenz-app/showcase-app-rolf-kind-gmbh
+  industry: Metal industry
+  platforms: ios
+  company: xroot
+  year: 2021
+  
+- title: OilQuick Deutschland KG
+  summary: Developing a public showcase app for large-scale machinery systems
+  url: https://www.x-root.de/referenz-app/service-app-oilquick-deutschland-gmbh
+  industry: Construction industry
+  platforms: ios
+  company: xroot
+  year: 2020
+  
+- title: A. RIEPER AG/Spa
+  summary: Developing a public shop app for large-scale farmers
+  url: https://play.google.com/store/apps/details?id=com.rieper.shop
+  industry: E-Commerce
+  platforms: android
+  company: xroot
+  year: 2020
+  
+- title: OELCHECK GmbH
+  summary: Developing apps for managing submissions regarding oil analysis
+  url: https://de.oelcheck.com/app
+  industry: Laboratory analysis
+  platforms: android, ios
+  company: xroot
+  year: 2019
+  
+- title: Localization
+  summary: Developing a plugin to synchronize localizations cross-platform via Google Sheets using Gradle and Run Scripts
+  industry: Reusable components
+  platforms: android, ios
+  company: xroot
+  year: 2019
+  
+- title: NoID
+  summary: Supervising students to develop a proof of concept of a native dialing app
+  url: https://play.google.com/store/apps/details?id=de.xroot.noid
+  industry: Telephony
+  platforms: android, ios
+  company: xroot
+  year: 2019
+  
+- title: Auf Straßen innovativ Guido M. Hahn GmbH & Co. KG
+  summary: Developing a public app for displaying building sites
+  url: https://play.google.com/store/apps/details?id=de.vshahn.bis
+  industry: Traffic security
+  platforms: android
+  company: xroot
+  year: 2018
+  
+- title: Thermomess Wärmemessdienst AG
+  summary: Developing an in-house app for managing data from heat cost allocators and other meters
+  url: https://www.x-root.de/referenz-app/ablese-app-thermomess-warmedienst-ag
+  industry: Thermal services
+  platforms: android
+  company: xroot
+  year: 2018
+  
+- title: Code sharing
+  summary: Developing an in-house library for sharing logic between projects
+  industry: Reusable components
+  platforms: android
+  company: xroot
+  year: 2018
+  
+- title: HEMI GmbH
+  summary: Developing a SDK for smart locks using Bluetooth LE
+  url: http://www.hemi.de
+  industry: Smart home
+  platforms: android
+  company: xroot
+  year: 2017
+  
+- title: StarSnoopy
+  summary: Supporting development of a public app for managing wishlists
+  url: https://www.x-root.de/referenz-app/starsnoopy-wunschlisten-x-root-software-gmbh
+  industry: E-Commerce
+  platforms: android
+  company: xroot
+  year: 2017
+  
+- title: Dunkin' Donuts
+  summary: Continuing development of a legacy app
+  url: https://www.x-root.de/referenz-app/food-app-dunkin-donuts
+  industry: Food franchise
+  platforms: android
+  company: xroot
+  year: 2017
+  
+- title: Push marketing
+  summary: Supporting in-house marketing and public relations via analytics- and advertisement tools
+  industry: Marketing
+  platforms: web
+  company: xroot
+  year: 2017
+  
+- title: Master thesis
+  summary: Redeveloping an in-house app for managing playlists for sound systems in shopping stores
+  industry: Sound branding
+  platforms: android
+  company: xroot
   year: 2016
-  end: Today
-  summary: >-
-    Design, planning, development, publishing and maintenance of over 20 applications 
-    for e-commerce, real estate, semiconductors, smart home, thermal services, 
-    construction industry and traffic safety, among others.
-    Agile working in dynamic teams, iterative and reflective. Evaluation, decision-making 
-    and implementation of new technologies. 
-    Training of colleagues and supervision of final theses or university projects.
-  technologies: Android, Kotlin, Java, iOS, Swift, Flutter, Gradle
-
-- title: Working Student
-  company: x-root Software GmbH
+  
+- title: Mobile gamification
+  summary: Supervising three small projects targeting mobile games using Unity Engine
+  industry: Gamification
+  platforms: android, ios
+  company: xroot
+  year: 2016
+  
+- title: Thermomess Wärmemessdienst AG
+  summary: Developing an in-house app for managing customer data
+  url: https://www.thermomess.de
+  industry: Thermal services
+  platforms: android
+  company: xroot
   year: 2015
-  end: 2016
-  summary: >-
-    Maintenance of existing projects and supporting development of new mobile applications 
-    targeting e-commerce, monitoring and sports.
-    Master thesis on data logistics by implementing a continuously operating Android service 
-    that is still running today.
-  technologies: Android, Java, iOS, Swift, Objective-C
+  
+- title: x-cloud Monitoring
+  summary: Continuing development of an in-house iOS monitoring app
+  industry: Monitoring
+  platforms: ios
+  company: xroot
+  year: 2015
+  
+- title: Adler Mannheim Fan App
+  summary: Developing a public app for fans of a German ice hockey team
+  url: https://www.x-root.de/referenz-app/fan-app-adler-mannheim-sap
+  industry: Sport industry
+  platforms: android
+  company: xroot
+  year: 2015
 
-- title: Working Student
-  company: Cubeware GmbH
+- title: Burger King
+  summary: Continuing development of the formerly native app
+  industry: Food franchise
+  platforms: ios
+  company: xroot
+  year: 2015
+
+- title: Bachelor thesis
+  summary: Enabling offline support for mobile clients within an existing client-server-architecture
+  industry: Business intelligence
+  platforms: windows
+  company: cubeware
+  year: 2014
+
+- title: C8 Cockpit
+  summary: Supporting development of an enterprise resource planning solution
+  url: https://www.cubeware.com
+  industry: Business intelligence
+  platforms: windows
+  company: cubeware
   year: 2012
-  end: 2015
-  summary: >-
-    Maintenance and further development of a B2B client server platform in the 
-    Windows environment and a mobile client for iOS.
-    Bachelor thesis on a web service that makes existing mobile clients offline-capable.
-  technologies: .NET, C#, C++, iOS, Objective-C

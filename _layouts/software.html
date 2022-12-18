@@ -6,7 +6,7 @@ layout: page
   
   {{ content }}
 
-  <div class="grid-square">
+  <div class="grid button">
 
     <a href="/software/experience" class="button">Experience</a>
 
@@ -16,7 +16,7 @@ layout: page
   
   </div>
 
-  <div class="grid-even">
+  <div class="grid even">
     {%- for software in site.data.software -%}
     {%- assign color = software.color -%}
       <div class="tile" style="padding-top: 0px;">

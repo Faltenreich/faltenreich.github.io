@@ -4,7 +4,7 @@ layout: page
 
 {{ content }}
 
-<div class="experiences">
+<div class="list">
 
   {% for company in site.data.companies %}
 
@@ -14,61 +14,51 @@ layout: page
         <img src="{{ company.image }}" class="icon-company">
       </a>
 
-      {% assign professions_of_company = site.data.professions | where: "company", company.id %}
-      <!-- FIXME: Replace fixed dates with dynamic range -->
-      {% for year in (2010..2030) reversed %}
+      {% assign experience_in_company = site.data.experiences | where: "company", company.id %}
 
-        {% assign professions_of_year = professions_of_company | where: "year", year %}
-        {% for profession in professions_of_year %}
+      <div class="grid">
 
-          {%- if profession.url -%}
-          <a href="{{ profession.url }}" target="_blank" class="table-content">
+        {%- for experience in experience_in_company -%}
+
+          {%- if experience.url -%}
+          <a href="{{ experience.url }}" target="_blank" class="grid-cell">
           {%- else -%}
-          <div class="table-content">
+          <div class="grid-cell">
           {%- endif -%}
 
-            {%- if profession.industry -%}
-            <div class="post-meta">{{- profession.industry -}}</div>
+            {%- if experience.industry -%}
+            <div class="post-meta">{{- experience.industry -}}</div>
             {%- endif -%}
 
             <div>
-              {%- if profession.title -%}
-              <b>{{ profession.title }}</b>
+              {%- if experience.title -%}
+              <b>{{ experience.title }}</b>
               {%- else -%}
               <i>Undisclosed project</i>
               {%- endif -%}
             </div>
 
-            <div class="table-summary">{{ profession.summary }}</div>
+            <div class="table-summary">{{ experience.summary }}</div>
 
             <div class="table-icon">
-              {%- assign platform_ids = profession.platforms | split: ", " -%}
+              {%- assign platform_ids = experience.platforms | split: ", " -%}
               {%- for platform_id in platform_ids -%}
               {%- assign platform = site.data.platforms | where: "id", platform_id | first -%}
               <img src="{{ platform.image }}" class="icon" title="{{ platform.name }}">
               {%- endfor -%}
             </div>
 
-          {%- if profession.url -%}
+          {%- if experience.url -%}
           </a>
           {%- else -%}
           </div>
           {%- endif -%}
 
-          {% if profession.title == professions_of_year[0].title %}
-          <div class="table-divider"></div>
-          <div class="table-year">{{year}}</div>
-          {% endif %}
-
-          <div class="table-divider"></div>
-
         {% endfor %}
 
-      {% endfor %}
+      </div>
       
     </div>
-
-    <div class="table-divider"></div>
 
   {% endfor %}
 

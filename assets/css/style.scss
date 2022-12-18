@@ -48,31 +48,8 @@ a {
   }
 }
 
-table {
-  border: none !important;
-  border-collapse:separate;
-  border-spacing:0 15px;
-}
-tr {
-  border: none !important;
-}
-td {
-  border: none !important;
-}
-tr:nth-child(odd) {
-  background: transparent !important;
-  padding-bottom: 10em !important;
-}
-tr:nth-child(even) {
-  background: transparent !important;
-}
-
 .social-media-list {
   display: table-row;
-}
-
-.experiences {
-  text-align: center;
 }
 
 .company {
@@ -81,25 +58,42 @@ tr:nth-child(even) {
   background-color: $code-background-color;
 }
 
-.table-year {
+.grid {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: #{'repeat(auto-fit, minmax(min(300px, 100%), 1fr))'};
+}
+
+.grid.uneven {
+  grid-template-columns: 1fr;
+}
+
+@media only screen and (min-width: 600px) {
+  .grid.uneven {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+.grid.button {
+  grid-template-columns: #{'repeat(auto-fit, minmax(min(100px, 100%), 1fr))'};
+}
+
+.grid-label {
   padding: 12px 24px;
   border-radius: 25px;
-  display: inline-block;
   background-color: $code-background-color-light;
 }
 
-.table-content {
+.grid-cell {
   padding: 12px 24px;
   border-radius: 25px;
-  overflow: hidden;
   position: relative;
-  text-align: left;
+  text-align: justify;
   border-color: $code-background-color-light;
   border-style: solid;
 }
 
-a.table-content {
-  display: block;
+a.grid-cell {
   transition: 0.3s;
   text-decoration: none;
 
@@ -119,15 +113,6 @@ a.table-content {
   justify-content: space-between;
   display: flex;
   column-gap: $spacing-unit / 2;
-}
-
-// TODO: Set fixed width
-.table-divider {
-  margin-left: 49%;
-  margin-right: 49%;
-  height: 16px; 
-  background-color: $code-background-color-light;
-  text-align: center;
 }
 
 // Custom
@@ -152,6 +137,7 @@ a.table-content {
 }
 
 .icon-company {
+  padding: 8px;
   height: 50px;
   margin: 16px;
 }
@@ -160,30 +146,6 @@ a.table-content {
   display: flex; 
   align-items: center; 
   column-gap: 12px;
-}
-
-.grid-uneven {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 16px;
-}
-
-@media only screen and (min-width: 600px) {
-  .grid-uneven {
-    grid-template-columns: 3fr 2fr;
-  }
-}
-
-.grid-even {
-  display: grid;
-  grid-template-columns: #{'repeat(auto-fit, minmax(min(300px, 100%), 1fr))'};
-  grid-gap: 16px;
-}
-
-.grid-square {
-  display: grid;
-  grid-template-columns: #{'repeat(auto-fit, minmax(min(100px, 100%), 1fr))'};
-  grid-gap: 16px;
 }
 
 .list {
