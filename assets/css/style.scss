@@ -16,7 +16,14 @@ $code-background-color-light: $table-header-bg-color;
   background-color: $code-background-color;
 }
 
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .site-title {
+  margin-right: auto;
   letter-spacing: 0px;
   text-decoration: none !important;
   transition: 0.3s;
@@ -26,18 +33,14 @@ $code-background-color-light: $table-header-bg-color;
   }
 }
 
-.site-footer {
-  border: 0px;
-  background-color: $code-background-color;
+a.nav-item {
   padding: $spacing-unit / 2;
-}
+  text-decoration: none;
+  transition: 0.3s;
 
-.nav {
-  float: right;
-}
-
-.nav-item {
-  padding: $spacing-unit / 2;
+  &:hover {
+    color: $text-color-light;
+  }
 }
 
 a {
@@ -46,6 +49,19 @@ a {
   &:visited {
     color: $text-color;
   }
+}
+
+.site-footer {
+  border: 0px;
+  background-color: $code-background-color;
+  padding: $spacing-unit / 2;
+}
+
+.footer {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .social-media-list {
