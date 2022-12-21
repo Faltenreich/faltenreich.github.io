@@ -20,11 +20,11 @@ Entering Kotlin Multiplatform Mobile.
 
 > Disclaimer: This blogpost is not meant as a rating of or comparison between multiplatform frameworks. They all have their right to exist and the choice depends on numerous factors, some of them even beyond the developers' control.
 
-# Kotlin Multiplatform Mobile
+## Kotlin Multiplatform Mobile
 
 Kotlin Multiplatform Mobile (KMM) supports both Android and iOS. Since its introduction in 2020 many companies have been joining the platform, such as Netflix, VMWare and Philips. In October 2022 [it finally went Beta](https://blog.jetbrains.com/kotlin/2022/10/kmm-beta) and has been declared production-ready which was accompanied by Google's announcement of an [experimental preview of libraries for this platform](https://android-developers.googleblog.com/2022/10/announcing-experimental-preview-of-jetpack-multiplatform-libraries.html). Therefore it is safe to say that KMM has left its early days and is finally starting to gain track.
 
-This blogpost focusses on the transition from native- to multiplatform development with KMM. Readers will get a quick overview of the tools (not) available in 2023 including toolchain, frameworks and libraries. This is not a guide about how to setup and run a multiplatform project as this has already been covered by numerous articles out there.
+This blogpost focusses on the transition from native- to multiplatform development using KMM. Readers will get an overview of the tools (not) available in 2023 regarding toolchain, frameworks and libraries. This is not a guide about how to setup and run a multiplatform project as this has already been covered by numerous articles out there.
 
 ## Toolchain
 
@@ -44,79 +44,44 @@ Android and iOS both started with an established programming language before swi
 
 ### Build automation
 
-
+TBD
 
 **Gradle** is used as build automation tool which feels like home for native Android developers. iOS developers on the other hand have to learn yet another tool after Carthage, Cocoapods and Swift Package Manager while keeping one of them for the native side of the build process.
 
-## Quality assurance
+## Frameworks and libraries
 
-### Dependency Injection
+Frameworks and libraries . They are not mandatory and the same for every project but they simplify . Over the years, standards came and go and with KMM many will leave the stage once again. 
 
-Forget your state-of-the-art dependency injection framework as it is platform-dependent. This refers to [Hilt](https://developer.android.com/training/dependency-injection/hilt-android) on Android, which relies on the JVM, and to [Resolver](https://github.com/hmlongco/Resolver), [Swinject](https://github.com/Swinject/Swinject), [needle](https://github.com/uber/needle) and any other popular framework for iOS, which all are written in native Swift.
+### Migrating dependencies
 
-Fortunately Kotlin is being ported to more and more platforms and therefore some of its dependency inection frameworks have already made the transition to Kotlin/Native which makes them compatible with KMM. [Koin](https://insert-koin.io) and [Kodein](https://kodein.net/oss.html) are two heavily used, extensively documented and thoroughly tested examples.
+To keep this chapter at a reasonable length, these frameworks and libraries will be listed in a table and potentially explained in-depth at a later point. 
 
-## Testing
+> Disclaimer: The following examples for every platform are not representative and may be switched out for other options. They shall simply illustrate a potential migration path when moving to KMM.
 
-Unit tests can be implemented using [kotlin.test](https://kotlinlang.org/api/latest/kotlin.test) which shares many parts of its API with JUnit, a testing framework familiar to Android- or Java developers. 
+| Requirement | Android | iOS | KMM |
+| ----------- | ------ |
+| Date and time | [Date/Time](https://www.baeldung.com/java-8-date-time-intro) | [Date](https://developer.apple.com/documentation/foundation/date) | [kotlinx.datetime](https://github.com/Kotlin/kotlinx-datetime) | 
+| Serialization | [Moshi](https://github.com/square/moshi) | [Codable](https://developer.apple.com/documentation/foundation/archives_and_serialization) | [kotlinx.serialization](https://github.com/Kotlin/kotlinx.serialization) |
+| Persistence | [Room](https://developer.android.com/training/data-storage/room) | [Core Data](https://developer.apple.com/documentation/coredata) | [SQLDelight](https://cashapp.github.io/sqldelight/1.5.4/multiplatform_sqlite) |
+| Networking | [Retrofit](https://square.github.io/retrofit) | [AFNetworking](https://github.com/AFNetworking/AFNetworking) | [Ktor](https://ktor.io) |
+| Image loading | [Glide](https://github.com/bumptech/glide) | [Kingfisher](https://github.com/onevcat/Kingfisher) | [KorIM](https://docs.korge.org/korim/) |
+| Concurrency | [Kotlin Coroutines](https://kotlinlang.org/docs/coroutines-overview.html) | [async/await](https://docs.swift.org/swift-book/LanguageGuide/Concurrency.html) | [Kotlin Coroutines](https://kotlinlang.org/docs/coroutines-overview.html) |
+| Streaming | [Kotlin Flow](https://kotlinlang.org/docs/flow.html) | [Combine](https://developer.apple.com/documentation/combine) | [Kotlin Flow](https://kotlinlang.org/docs/flow.html) |
+| Dependency injection | [Hilt](https://developer.android.com/training/dependency-injection/hilt-android) | [Swinject](https://github.com/Swinject/Swinject) | [Koin](https://insert-koin.io) |
+| Mocking | [MockK](https://mockk.io/) | *[none](https://blog.pragmaticengineer.com/swift-the-only-modern-language-with-no-mocking-framework)* | *[heavily limited](https://github.com/mockative/mockative)* |
+| Testing (Unit) | [JUnit](https://junit.org) | [XCTest](https://developer.apple.com/documentation/xctest) | [kotlin.test](https://kotlinlang.org/api/latest/kotlin.test) |
+| Testing (UI) | [Espresso](https://developer.android.com/training/testing/espresso) | [XCTest](https://developer.apple.com/documentation/xctest) | *none yet*
+| User interface | [Jetpack Compose](https://developer.android.com/jetpack/compose) | [SwiftUI](https://developer.apple.com/xcode/swiftui) | [Compose Multiplatform](https://www.jetbrains.com/de-de/lp/compose-mpp) |
 
-```
-import kotlin.test.Test
-import kotlin.test.assertEquals
+## Resources
 
-internal class SampleTest {
+[moko-resources](https://github.com/icerockdev/moko-resources)
 
-    @Test
-    fun testSum() {
-        assertEquals(42, 40 + 2)
-    }
-}
-```
+## Backend-as-a-service
 
-There is no way yet to test user interfaces created with Compose Multiplatform. This can be compensated by writing the UI tests natively with Espresso or XCTest.
-
-### Mocking
-
-Android embraces mocking due to its relaxed reflection and its tight relation to the JVM which makes it compatible to multiple well-established mocking frameworks like Mockito. iOS on the other hand does not have this luxury since Swift is "[The Only Modern Language without Mocking Frameworks](https://blog.pragmaticengineer.com/swift-the-only-modern-language-with-no-mocking-framework)" due to its restrictive nature and read-only reflection. Therefore there are only a handful options to mock in KMM and they are heavily limited. [Mockative](https://github.com/mockative/mockative) and [MocKMP](https://github.com/kosi-libs/MocKMP) for example only support mocking interfaces.
-
-# Libraries
-
-## Date
-
-[kotlinx.datetime](https://github.com/Kotlin/kotlinx-datetime)
-[Klock](https://github.com/korlibs/klock)
-
-## Persistence
-
-SQLDelight
 Realm
-Kodein-DB
-
-## Backend-as-a-Service
-
+https://github.com/objectbox/objectbox-java/issues/601
 [Firebase](https://firebaseopensource.com/projects/gitliveapp/firebase-kotlin-sdk) (Third party)
-
-## Asynchronicity
-
-[Coroutines](https://kotlinlang.org/docs/coroutines-overview.html)
-
-## Serialization
-
-[kotlinx.serialization](https://github.com/Kotlin/kotlinx.serialization)
-
-## Networking
-
-[Ktor](https://ktor.io)
-
-## Image loading
-
-Korim
-
-# User interface
-
-Up to this point, we have moved under the hood. Up to this point, KMM allows us to reuse business logic but requires separate implementations regarding the user interface for each platform. What if we could reuse this implementation as well?
-
-Entering Compose Multiplatform.
 
 ## Compose Multiplatform
 
@@ -154,7 +119,3 @@ Compose Multiplatform is working fine on Android and technically also on iOS. Su
 ## Material 3
 
 Google's design language received its latest update with Material 3 including Material You. This dependency is experimental but works for KMM as well as natively. The only difference is the amount of supported components since every ui element must be supported on both platforms. If there is no pendant on iOS, then Android will not be supported either.
-
-## Resources
-
-[moko-resources](https://github.com/icerockdev/moko-resources)
