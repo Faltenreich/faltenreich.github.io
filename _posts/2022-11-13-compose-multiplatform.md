@@ -146,11 +146,22 @@ fun MainViewController(): UIViewController {
 
 Compose Multiplatform is working on Android and technically also on iOS. Support for the latter has been introduced with version 1.2.0-alpha1 early 2022 and is still in alpha state. This becomes apparent as the experimental support for Apple's UIKit has to be enabled via opt-in and features like the preview or JUnit 4 extensions do not work yet.
 
+### Material
+
+If KMM is the easel and Compose Multiplatform the canvas we are painting on, then we are still missing brush and paint. This is where Material Design come into play. Google's design language is well-established on Android and at least temporarily known on iOS (until sunsetting this implementation on July 15, 2021 at the rise of SwiftUI), so most teams should be familiar with this framework. It is yet to be seen how and when Apple's design language will be introduced to Compose Multiplatform, but that may just be another expected and actual declaration, similarily to how Flutter handled platform-dependant theming. Time will tell.
+
+Material for Compose Multiplatform offers a slightly different set of components compared to Android's Jetpack Compose since KMM requires support for every platform. If there is no pendant on iOS, then Android will not be supported either. One example for this is the DropdownMenu which has no counterpart on iOS and is therefore not available. Material Design is currently transitioning to version 3 which is already available but still experimental and therefore has to be enabled via opt-in.
+
+| Requirement | Android | iOS | KMM |
+| ----------- | ------- | --- | --- |
+| Material | [Compose Material](https://developer.android.com/jetpack/androidx/releases/compose-material) | [Material Components for iOS](https://github.com/material-components/material-components-ios) (Maintenance Mode) | [Compose Material Components](https://mvnrepository.com/artifact/org.jetbrains.compose.material/material) |
+| Material3 | [Compose Material 3](https://developer.android.com/jetpack/androidx/releases/compose-material3) | *unavailable* | [Compose Material3 Components](https://mvnrepository.com/artifact/org.jetbrains.compose.material3/material3) |
+
 ### Resources
 
-Since Compose Multiplatform allows multiplatform user interfaces, it would be nice to have a single source of truth for resources as well. Currently there is no integrated way to share resources, so they have to be declared natively on each platform. 
+Currently there is no integrated way to share resources between platforms, so they have to be declared individually using the corresponding native approach. 
 
-**[moko-resources](https://github.com/icerockdev/moko-resources)** offers a solution for this missing link and supports the multiplatform declaration of resources. It seems to be heavily inspired by Android which uses code generation to create a Java file at build time that contains references to all resources declared in XML files (see [App resources overview](https://developer.android.com/guide/topics/resources/providing-resources)). moko-resources works similarly.
+**[moko-resources](https://github.com/icerockdev/moko-resources)** offers a solution for this missing link in order to create a single source of truth for resources. Android developers may experience a déjà-vu as this library seems to be heavily inspired by [Android's resource mechanism](https://developer.android.com/guide/topics/resources/providing-resources). Both use build-time code generation to create references for resources declared in XML according to the current device configuration. This enables shared Composeables to access resources declared in the same module.
 
 ```
 import <package>.MR
@@ -161,7 +172,7 @@ fun ExampleView(localization: Localization) {
 }
 ```
 
-With the help of moko-resources, resources can be declared in the shared module and accessed via built-in methods. These methods are platform-dependant but can be encapsulated furthermore using expected and actual declarations in order to offer a platform-independent way to access resources.
+moko-resources provides built-in methods to access shared resources. These methods are platform-dependant but can be encapsulated furthermore using expected and actual declarations to streamline the API for accessing resources.
 
 ```
 // shared
@@ -184,7 +195,7 @@ actual class Localization actual constructor(context: Context) {
 }
 ```
 
-Since Android relies on its context to load resources according to its configuration, we need to pass it to the localization mechanism using expected and actual declarations once more. iOS does not use a context for localizing resources, so we implement its actual class as Never in order to fail fast and early if we mistakingly decide to use the context anyway.
+Since Android relies on its context to load resources according to its configuration, we need to pass it to its localization mechanism using expected and actual declarations once more. iOS does not use a context for localizing resources, so we implement its actual class as Never in order to fail fast and early if we mistakingly decide to use the context anyway.
 
 ```
 // shared
@@ -197,14 +208,27 @@ actual typealias Context = android.content.Context
 actual class Context: Never
 ```
 
-### Material
+The end result is another piece of the puzzle that completely resides within the shared module.
 
-Google's design components are available for Compose Multiplatform but offer a different set of components compared to Android since KMM requires support for every platform. If there is no pendant on iOS, then Android will not be supported either. One example of this is the DropdownMenu which has no counterpart on iOS and is therefore not available. Material is currently transitioning to version 3 which is still experimental and has to be enabled via opt-in.
-
-| Requirement | Android | iOS | KMM |
-| ----------- | ------- | --- | --- |
-| Material | [Compose Material](https://developer.android.com/jetpack/androidx/releases/compose-material) | [Material Components for iOS](https://github.com/material-components/material-components-ios) | [Compose Material Components](https://mvnrepository.com/artifact/org.jetbrains.compose.material/material) |
-| Material3 | [Compose Material 3](https://developer.android.com/jetpack/androidx/releases/compose-material3) | *unsupported* | [Compose Material3 Components](https://mvnrepository.com/artifact/org.jetbrains.compose.material3/material3) |
+```
+- shared
+    - androidMain
+        - kotlin
+            - Context.kt // actual declaration
+            - Localization.kt // actual declaration
+    - iosMain
+        - kotlin
+            - Context.kt // actual declaration
+            - Localization.kt // actual declaration
+    - commonMain
+        - kotlin
+            - Context.kt // expected declaration
+            - Localization.kt // expected declaration
+        - resources
+            - MR
+                - base
+                    - strings.xml // accessible from within this module
+```
 
 ## Addendum
 

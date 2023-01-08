@@ -5,6 +5,7 @@
   "minima/skins/{{ site.minima.skin | default: 'classic' }}",
   "minima/initialize";
 
+$link-color: #fff;
 $text-color-light: lighten($text-color, 20%);
 $code-background-color-light: $table-header-bg-color;
 
@@ -48,6 +49,21 @@ a {
 
   &:visited {
     color: $text-color;
+  }
+}
+
+// FIXME: Only apply to this div class
+.post-content a {
+  color: $link-color;
+  transition: 0.3s;
+
+  &:visited {
+    color: $link-color;
+  }
+
+  &:hover {
+    color: $text-color;
+    text-decoration: none;
   }
 }
 
