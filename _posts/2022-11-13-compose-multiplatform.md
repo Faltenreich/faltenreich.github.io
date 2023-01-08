@@ -44,6 +44,8 @@ In short: most dependencies only available on iOS or strongly dependant on the J
 
 ### Data handling
 
+While concepts were adopted and both platforms influenced each other, frameworks and libraries for handling data have largely been developed in isolation.
+
 | Requirement | Android | iOS | KMM |
 | ----------- | ------- | --- | --- |
 | Date and time | [Date/Time](https://www.baeldung.com/java-8-date-time-intro) | [Date](https://developer.apple.com/documentation/foundation/date) | [kotlinx.datetime](https://github.com/Kotlin/kotlinx-datetime) | 
@@ -52,6 +54,14 @@ In short: most dependencies only available on iOS or strongly dependant on the J
 | Networking | [Retrofit](https://square.github.io/retrofit) | [AFNetworking](https://github.com/AFNetworking/AFNetworking) | [Ktor](https://ktor.io) |
 | Concurrency | [Kotlin Coroutines](https://kotlinlang.org/docs/coroutines-overview.html) | [async/await](https://docs.swift.org/swift-book/LanguageGuide/Concurrency.html) | [Kotlin Coroutines](https://kotlinlang.org/docs/coroutines-overview.html) |
 | Streaming | [Kotlin Flow](https://kotlinlang.org/docs/flow.html) | [Combine](https://developer.apple.com/documentation/combine) | [Kotlin Flow](https://kotlinlang.org/docs/flow.html) |
+
+Technologies that are marketed cross-platform on the other hand, do support multiple platforms but tend to being implemented natively and separatedly. [ObjectBox](https://objectbox.io) for example is still [looking for help](https://github.com/objectbox/objectbox-java/issues/601) to migrate to Kotlin/Native while [Realm](https://realm.io) has percieved it as a separate platform and therefore introduced a new project for [Realm Kotlin](https://github.com/realm/realm-kotlin) (including an extensive [migration guide](https://www.mongodb.com/docs/realm/sdk/kotlin/migrate-from-java-sdk-to-kotlin-sdk)).
+
+### Backend-as-a-Service
+
+Firebase is one of the most important tools when it comes to mobile-Backend-as-a-Service (mBaaS). Unfortunately there is no official support for KMM yet, but there are multiple options available to implement Firebase into a KMM project. [Firebase Kotlin SDK](https://github.com/gitliveapp/firebase-kotlin-sdk) is a Kotlin-first SDK for Firebase that wraps the respective official Firebase SDK for each supported platform and provides a common API, even though its coverage is far from complete and new releases are a long time in coming. Touchlab introduced a [Firestore SDK for Kotlin Multiplatform](https://github.com/touchlab-lab/FirestoreKMP) in 2019 without ongoing support but at that time already showed how multiplatform wrappers for KMM may look like. 
+
+[Parse Server](https://parseplatform.org) has one closed issue regarding Kotlin/Native with one developer summarizing: "I'm not sure this is a direction / strategy that we'll pursue in any case. If this is something you want to pursue (build a kotlin SDK) feel free to get started." (via [github.com](https://github.com/parse-community/Parse-SDK-Android/issues/728)). The [AWS Amplify](https://aws.amazon.com/de/amplify/) team has stated that "it's unlikely that we we'll ever prioritize a full multi-platform build. But if we see enough customer demand, we could potentially add more explicit support for Multiplatform Mobile." (via [stackoverflow](https://stackoverflow.com/a/66234604/3269827)) and this seems to be the gist for most mBaaS: They have only recently gone to great lengths to support Flutter, so KMM may not be a top priority in the near future.
 
 ### Hardware
 
@@ -74,12 +84,6 @@ Forget your state-of-the-art dependency injection framework as it is platform-de
 | Dependency injection | [Hilt](https://developer.android.com/training/dependency-injection/hilt-android) | [Swinject](https://github.com/Swinject/Swinject) | [Koin](https://insert-koin.io) |
 | Mocking | [MockK](https://mockk.io/) | *none* | *heavily limited* |
 | Testing | [JUnit](https://junit.org) | [XCTest](https://developer.apple.com/documentation/xctest) | [kotlin.test](https://kotlinlang.org/api/latest/kotlin.test) |
-
-### Backend-as-a-service
-
-Realm
-https://github.com/objectbox/objectbox-java/issues/601
-[Firebase](https://firebaseopensource.com/projects/gitliveapp/firebase-kotlin-sdk) (Third party)
 
 ## User interface
 
@@ -140,7 +144,58 @@ fun MainViewController(): UIViewController {
 }
 ```
 
-Compose Multiplatform is working on Android and technically also on iOS. Support for the latter has been introduced with version 1.2.0-alpha1 early 2022 and is still in alpha state. This becomes apparent as the experimental support for Apple's UIKit has to be enabled via opt-in and features like the preview or JUnit 4 extensions do not work yet. In my opinion there might be at least another year around the corner until Compose Multiplatform becomes production-ready for mobile, but the foundation has been laid out and shows big potential.
+Compose Multiplatform is working on Android and technically also on iOS. Support for the latter has been introduced with version 1.2.0-alpha1 early 2022 and is still in alpha state. This becomes apparent as the experimental support for Apple's UIKit has to be enabled via opt-in and features like the preview or JUnit 4 extensions do not work yet.
+
+### Resources
+
+Since Compose Multiplatform allows multiplatform user interfaces, it would be nice to have a single source of truth for resources as well. Currently there is no integrated way to share resources, so they have to be declared natively on each platform. 
+
+**[moko-resources](https://github.com/icerockdev/moko-resources)** offers a solution for this missing link and supports the multiplatform declaration of resources. It seems to be heavily inspired by Android which uses code generation to create a Java file at build time that contains references to all resources declared in XML files (see [App resources overview](https://developer.android.com/guide/topics/resources/providing-resources)). moko-resources works similarly.
+
+```
+import <package>.MR
+
+@Composable
+fun ExampleView(localization: Localization) {
+    Text(localization.getString(MR.strings.example))
+}
+```
+
+With the help of moko-resources, resources can be declared in the shared module and accessed via built-in methods. These methods are platform-dependant but can be encapsulated furthermore using expected and actual declarations in order to offer a platform-independent way to access resources.
+
+```
+// shared
+expect class Localization constructor(context: Context) {
+    override fun getString(resource: StringResource): String
+}
+
+// androidMain
+actual class Localization actual constructor(private val context: Context) {
+    actual override fun getString(resource: StringResource): String {
+        return StringDesc.Resource(resource).toString(context)
+    }
+}
+
+// iosMain
+actual class Localization actual constructor(context: Context) {
+    actual override fun getString(resource: StringResource): String {
+        return StringDesc.Resource(resource).localized()
+    }
+}
+```
+
+Since Android relies on its context to load resources according to its configuration, we need to pass it to the localization mechanism using expected and actual declarations once more. iOS does not use a context for localizing resources, so we implement its actual class as Never in order to fail fast and early if we mistakingly decide to use the context anyway.
+
+```
+// shared
+expect abstract class Context
+
+// androidMain
+actual typealias Context = android.content.Context
+
+// iosMain
+actual class Context: Never
+```
 
 ### Material
 
@@ -151,54 +206,8 @@ Google's design components are available for Compose Multiplatform but offer a d
 | Material | [Compose Material](https://developer.android.com/jetpack/androidx/releases/compose-material) | [Material Components for iOS](https://github.com/material-components/material-components-ios) | [Compose Material Components](https://mvnrepository.com/artifact/org.jetbrains.compose.material/material) |
 | Material3 | [Compose Material 3](https://developer.android.com/jetpack/androidx/releases/compose-material3) | *unsupported* | [Compose Material3 Components](https://mvnrepository.com/artifact/org.jetbrains.compose.material3/material3) |
 
-### Resources
+## Addendum
 
+In my opinion there might be at least another year around the corner until Compose Multiplatform becomes production-ready for mobile, but the foundation has been laid out and shows big potential.
 
-
-So sharing user interfaces is possible, but what about resources like strings, colors or images? 
-
-Currently there is no integrated way to share resources, so they have to be declared natively for each platform and then be collected via [expect/actual](https://kotlinlang.org/docs/multiplatform-connect-to-apis.html). [moko-resources](https://github.com/icerockdev/moko-resources) offers a missing link for sharing resources by placing them in the shared module. This tool seems to be heavily inspired by the mechanism Android uses which generates a Java file at the build time that contains references to all resources declared in XML (see [App resources overview](https://developer.android.com/guide/topics/resources/providing-resources)). moko-resources uses code generation similarly 
-
-```
-// shared
-expect class Localization constructor(context: Context) {
-    override fun getString(resource: StringResource): String
-}
-```
-
-```
-// androidMain
-actual class Localization actual constructor(private val context: Context) {
-    actual override fun getString(resource: StringResource): String {
-        return StringDesc.Resource(resource).toString(context)
-    }
-}
-```
-
-```
-// iosMain
-actual class Localization actual constructor(context: Context) {
-    actual override fun getString(resource: StringResource): String {
-        return StringDesc.Resource(resource).localized()
-    }
-}
-```
-
-
-
-```
-// shared
-expect abstract class Context
-```
-
-```
-// androidMain
-actual typealias Context = android.content.Context
-```
-
-iOS does not use a context for localizing resources, so its implementation does not matter. We implement the actual class as Never in order to let the program fail fast and early if we mistakingly decide to use the Context on iOS.
-
-```
-// iosMain
-actual class Context: Never
-```
+Firebase shows. There may not be a SDK for every yet, but 
