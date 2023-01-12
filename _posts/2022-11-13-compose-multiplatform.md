@@ -1,5 +1,6 @@
 ---
 layout: post
+header: /assets/images/posts/adventure.jpg
 title: Migrating to Kotlin Multiplatform Mobile
 date: 2022-11-13
 categories:
@@ -24,6 +25,8 @@ This blogpost focuses on the transition from native- to multiplatform developmen
 
 ## Toolchain
 
+![alt text](/assets/images/posts/blacksmith.jpg)
+
 **Android Studio** is being used as an integrated development environment (IDE). This means a well-known environment for native Android- and Flutter developers and a potential return to an IntelliJ-based IDE since the [sunset of AppCode](https://blog.jetbrains.com/appcode/2022/12/appcode-2022-3-release-and-end-of-sales-and-support). Xcode is still being used for the native iOS part as its build tools are needed to compile, sign and archive apps for Apple's ecosystem. This also means that macOS is required to deploy an iOS app, even though some constellations may use Linux or Windows when focussing on Android while leaving iOS for others like the build server.
 
 **Kotlin** is the one and only programming language for KMM, as the name implies. This means no change for Android developers already using Kotlin - at least on the language-level, since there is no JVM anymore to rely on. iOS developers will have to learn a new programming language but should be able to quickly gain a foothold by transferring existing knowledge from Swift to Kotlin. Both share many paradigms, since they have been created in a similar time frame, and both put a heavy focus on extensibility which is why they are quickly adopting modern techniques like functional, reactive or declarative programming.
@@ -37,6 +40,8 @@ This blogpost focuses on the transition from native- to multiplatform developmen
 | Build automation | [Gradle](https://gradle.org) | [Swift Package Manager](https://www.swift.org/package-manager) | [Gradle](https://gradle.org) |
 
 ## Frameworks and libraries
+
+![alt text](/assets/images/posts/library.jpg)
 
 Frameworks and libraries are not mandatory and the same for every project but they amplify the development process enormously. Over the years, standards came and go and with KMM many will leave the stage once again. 
 
@@ -86,6 +91,10 @@ Forget your state-of-the-art dependency injection framework as it is platform-de
 | Testing | [JUnit](https://junit.org) | [XCTest](https://developer.apple.com/documentation/xctest) | [kotlin.test](https://kotlinlang.org/api/latest/kotlin.test) |
 
 ## User interface
+
+![alt text](/assets/images/posts/drawing.jpg)
+
+KMM allows sharing the business logic between platforms which is the first big step in gobut still a from a full multiplatform framework with one single source of truth. 
 
 ### Compose Multiplatform
 
