@@ -230,8 +230,8 @@ The end result is another piece of the puzzle that completely resides within the
                     - strings.xml // accessible from within this module
 ```
 
-## Addendum
+## Conclusion
 
-In my opinion there might be at least another year around the corner until Compose Multiplatform becomes production-ready for mobile, but the foundation has been laid out and shows big potential.
+KMM shows great potential and has already been declared production-ready which matches my experience. It surely has its pitfalls and unfinished sections but so does Xcode or *these* Google libraries skipping their release candidate again and again. The gap to other multiplatform frameworks is closing and with Compose Multiplatform the biggest disadvantage should be eradicated. This though may still take a while considering the early state of Compose Multiplatform for iOS and important pieces like Firebase missing official support. 
 
-Firebase shows. There may not be a SDK for every yet, but 
+My prediction is that 2024 may be the year for this development environment to become production-ready. The years after will then close the gap between Flutter regarding the matureness of tooling, frameworks and libraries. Mobile development is rapidly evolving since its beginning and we are used to adopting new technologies: Kotlin as one of them, which has been heavily adopted by Android developers since 2017, and declarative design being another, introduced to every first-party mobile framework. KMM with Compose Multiplatform seems to be the next logical step in this book and I am eager to read the next pages during the upcoming months.
