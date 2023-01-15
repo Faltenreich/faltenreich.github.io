@@ -7,27 +7,31 @@ categories:
 public: false
 ---
 
-Write once, deploy everywhere. This promise has been made time and time again for many years but there is still so much potential left before the final answer.
+Write once, deploy everywhere. This promise has been made time and time again.
 
-Microsoft introduced its Universal Windows Platform in 2015 which supported many Windows platforms and was used by the author with great enthusiasm until Windows Mobile became a thing of the past. The acquisition of Xamarin in 2016 marked the next stepping stone in going multiplatform and will soon be superseded by the [.NET Multi-Platform App UI](https://learn.microsoft.com/de-de/dotnet/maui) (MAUI). Microsoft may have lost their platform, but they are far from leaving the field. 
+Microsoft introduced its Universal Windows Platform in 2015 which supported many Windows platforms and was used by the author with great enthusiasm until Windows on mobile became a thing of the past. The acquisition of Xamarin in 2016 marked the next stepping stone in going multiplatform and will soon be superseded by the [.NET Multi-Platform App UI](https://learn.microsoft.com/de-de/dotnet/maui) (MAUI). Microsoft may have lost their platform, but they are far from leaving the field. 
 
-Apple does not live under the same rock it started iOS with by going open-source with Swift and making iOS apps compatible with macOS. This new-found openness ends at the borders of its own ecosystem though.
+Apple does not live under the same rock it started iOS with and open-sourced Swift or made iOS apps compatible with macOS. This new-found openness though ends at the borders of their own ecosystem.
 
-Google on the other hand does not only feature its own platform but introduced one of the leading multiplatform frameworks as well. Flutter supports mobile on both Android and iOS, desktop and web, has a steep learning curve and is completely open-source. While this framework is one of the best options to implement once and deploy everywhere in 2023, it also introduces an additional platform with its own programming language and layer of complexity.
+Google on the other hand does not only feature its own platform but introduced one of the leading multiplatform frameworks as well. Flutter supports Android, iOS, desktop and web. While this framework stands tall among all available options to write once and deploy everywhere, it also introduces an additional platform with its own programming language and layer of complexity.
 
 > Disclaimer: This blogpost is not meant as a rating of or comparison between multiplatform frameworks. They all have their right to exist and the choice depends on numerous factors, some of them even beyond the developers' control. Examples for tools, frameworks or libaries are not representative and may be switched out for other options. They shall simply illustrate a potential migration path when moving to KMM.
 
 Entering Kotlin Multiplatform Mobile.
 
+## Kotlin Multiplatform Mobile
+
 Kotlin Multiplatform Mobile (KMM) supports a similar number of platforms as Flutter, including Android and iOS. Since its introduction in 2020 many companies have been joining the platform, such as Netflix, VMWare and Philips. In October 2022 [it went Beta](https://blog.jetbrains.com/kotlin/2022/10/kmm-beta) and has been declared production-ready which was accompanied by Google's announcement of an [experimental preview of libraries for this platform](https://android-developers.googleblog.com/2022/10/announcing-experimental-preview-of-jetpack-multiplatform-libraries.html). Therefore it is safe to say that KMM has left its early days and is finally starting to gain track.
 
-This blogpost focuses on the transition from native- to multiplatform development using KMM. Readers will get an overview of the tools (not) available in 2023 regarding toolchain, frameworks and libraries. This is not a guide about how to set up and run a multiplatform project as this has already been covered by numerous articles out there.
+This blogpost focuses on the transition of seasoned native developers to a multiplatform platform. This is not a guide about how to set up and run a multiplatform project as this has already been covered by numerous articles out there. Instead, readers receive an overview of the tools (not) available in 2023 regarding toolchain, frameworks and libraries in order to get a better feeling for this young technology. 
+
+Imagine two rooms, one representative for native development and one for multiplatform. You perceive the room you are in more clearly, but the voices from the other room can be heard as well. People change rooms from time to time to exchange or stay. This blogpost is the hallway between.
 
 ## Toolchain
 
 ![alt text](/assets/images/posts/blacksmith.jpg)
 
-**Android Studio** is being used as an integrated development environment (IDE). This means a well-known environment for native Android- and Flutter developers and a potential return to an IntelliJ-based IDE since the [sunset of AppCode](https://blog.jetbrains.com/appcode/2022/12/appcode-2022-3-release-and-end-of-sales-and-support). Xcode is still being used for the native iOS part as its build tools are needed to compile, sign and archive apps for Apple's ecosystem. This also means that macOS is required to deploy an iOS app, even though some constellations may use Linux or Windows when focussing on Android while leaving iOS for others like the build server.
+**Android Studio** is being used as an integrated development environment (IDE). This means a well-known environment for native Android- or Flutter developers and a potential return to an IntelliJ-based IDE for native iOS developers since the [sunset of AppCode](https://blog.jetbrains.com/appcode/2022/12/appcode-2022-3-release-and-end-of-sales-and-support). Xcode is still being used for the native iOS part as its build tools are needed to compile, sign and archive apps for Apple's ecosystem. This also means that macOS is required to deploy an iOS app, even though some constellations may use Linux or Windows when focussing on Android while leaving iOS for others like the build server.
 
 **Kotlin** is the one and only programming language for KMM, as the name implies. This means no change for Android developers already using Kotlin - at least on the language-level, since there is no JVM anymore to rely on. iOS developers will have to learn a new programming language but should be able to quickly gain a foothold by transferring existing knowledge from Swift to Kotlin. Both share many paradigms, since they have been created in a similar time frame, and both put a heavy focus on extensibility which is why they are quickly adopting modern techniques like functional, reactive or declarative programming.
 
@@ -35,7 +39,7 @@ This blogpost focuses on the transition from native- to multiplatform developmen
 
 | Requirement | Android | iOS | KMM |
 | ----------- | ------- | --- | --- |
-| IDE | [Android Studio](https://developer.android.com/studio) | [Xcode](https://developer.apple.com/xcode) (RIP AppCode) | [Android Studio](https://developer.android.com/studio) |
+| IDE | [Android Studio](https://developer.android.com/studio) | [Xcode](https://developer.apple.com/xcode) | [Android Studio](https://developer.android.com/studio) |
 | Programming language | [Kotlin/JVM](https://developer.android.com/kotlin) | [Swift](https://developer.apple.com/swift) | [Kotlin/Native](https://kotlinlang.org/docs/native-overview.html) |
 | Build automation | [Gradle](https://gradle.org) | [Swift Package Manager](https://www.swift.org/package-manager) | [Gradle](https://gradle.org) |
 
@@ -43,13 +47,13 @@ This blogpost focuses on the transition from native- to multiplatform developmen
 
 ![alt text](/assets/images/posts/library.jpg)
 
-Frameworks and libraries are not mandatory and the same for every project but they amplify the development process enormously. Over the years, standards came and go and with KMM many will leave the stage once again. 
+Frameworks and libraries are not mandatory and the same for every project but they amplify the development process enormously. Over the years, standards came and go, and with KMM many will leave the stage once again. 
 
-In short: most dependencies only available on iOS or strongly dependant on the JVM may not (yet) be available for KMM and and many compatible with Kotlin/Native already are. Technically native dependencies of one platform could be made compatible via the [expect/actual](https://kotlinlang.org/docs/multiplatform-connect-to-apis.html) mechanism but this would imply an implementation for the other platform that is unfamiliar with the corresponding APIs and therefore debatable.
+To summarize: most dependencies only available on iOS or strongly dependant on the JVM may not (yet) be available for KMM, and many compatible with Kotlin/Native already are. Native dependencies of one platform could be made compatible using the [expect/actual](https://kotlinlang.org/docs/multiplatform-connect-to-apis.html) mechanism, but this would require an implementation on the other platform, which is unfamiliar with the corresponding APIs, and is therefore debatable.
 
 ### Data handling
 
-While concepts were adopted and both platforms influenced each other, frameworks and libraries for handling data have largely been developed in isolation.
+While concepts were adopted and both platforms influence each other, frameworks and libraries for handling data have largely been developed in isolation.
 
 | Requirement | Android | iOS | KMM |
 | ----------- | ------- | --- | --- |
@@ -60,17 +64,17 @@ While concepts were adopted and both platforms influenced each other, frameworks
 | Concurrency | [Kotlin Coroutines](https://kotlinlang.org/docs/coroutines-overview.html) | [async/await](https://docs.swift.org/swift-book/LanguageGuide/Concurrency.html) | [Kotlin Coroutines](https://kotlinlang.org/docs/coroutines-overview.html) |
 | Streaming | [Kotlin Flow](https://kotlinlang.org/docs/flow.html) | [Combine](https://developer.apple.com/documentation/combine) | [Kotlin Flow](https://kotlinlang.org/docs/flow.html) |
 
-Technologies that are marketed cross-platform on the other hand, do support multiple platforms but tend to being implemented natively and separatedly. [ObjectBox](https://objectbox.io) for example is still [looking for help](https://github.com/objectbox/objectbox-java/issues/601) to migrate to Kotlin/Native while [Realm](https://realm.io) has percieved it as a separate platform and therefore introduced a new project for [Realm Kotlin](https://github.com/realm/realm-kotlin) (including an extensive [migration guide](https://www.mongodb.com/docs/realm/sdk/kotlin/migrate-from-java-sdk-to-kotlin-sdk)).
+Technologies that are marketed cross-platform on the other hand, do support multiple platforms but tend to be implemented natively and separatedly. [ObjectBox](https://objectbox.io) for example is still [looking for help](https://github.com/objectbox/objectbox-java/issues/601) to migrate to Kotlin/Native while [Realm](https://realm.io) has percieved it as a separate platform and therefore introduced a new project for [Realm Kotlin](https://github.com/realm/realm-kotlin) (including an extensive [migration guide](https://www.mongodb.com/docs/realm/sdk/kotlin/migrate-from-java-sdk-to-kotlin-sdk)).
 
 ### Backend-as-a-Service
 
-Firebase is one of the most important tools when it comes to mobile-Backend-as-a-Service (mBaaS). Unfortunately there is no official support for KMM yet, but there are multiple options available to implement Firebase into a KMM project. [Firebase Kotlin SDK](https://github.com/gitliveapp/firebase-kotlin-sdk) is a Kotlin-first SDK for Firebase that wraps the respective official Firebase SDK for each supported platform and provides a common API, even though its coverage is far from complete and new releases are a long time in coming. Touchlab introduced a [Firestore SDK for Kotlin Multiplatform](https://github.com/touchlab-lab/FirestoreKMP) in 2019 without ongoing support but at that time already showed how multiplatform wrappers for KMM may look like. 
+Firebase is one of the most important tools when it comes to mobile-Backend-as-a-Service (mBaaS). Unfortunately there is no official support for KMM yet, but there are multiple options available to implement Firebase into a KMM project. [Firebase Kotlin SDK](https://github.com/gitliveapp/firebase-kotlin-sdk) is an inofficial Kotlin-first SDK for Firebase that wraps the respective official Firebase SDK for each supported platform and provides a common API, even though its coverage is far from complete and new releases are a long time in coming. Touchlab introduced a [Firestore SDK for Kotlin Multiplatform](https://github.com/touchlab-lab/FirestoreKMP) in 2019 without ongoing support but at that time already showed how multiplatform wrappers for KMM may look like. 
 
-[Parse Server](https://parseplatform.org) has one closed issue regarding Kotlin/Native with one developer summarizing: "I'm not sure this is a direction / strategy that we'll pursue in any case. If this is something you want to pursue (build a kotlin SDK) feel free to get started." (via [github.com](https://github.com/parse-community/Parse-SDK-Android/issues/728)). The [AWS Amplify](https://aws.amazon.com/de/amplify/) team has stated that "it's unlikely that we we'll ever prioritize a full multi-platform build. But if we see enough customer demand, we could potentially add more explicit support for Multiplatform Mobile." (via [stackoverflow](https://stackoverflow.com/a/66234604/3269827)) and this seems to be the gist for most mBaaS: They have only recently gone to great lengths to support Flutter, so KMM may not be a top priority in the near future.
+[Parse Server](https://parseplatform.org) has one closed issue regarding Kotlin/Native with one developer summarizing: "I'm not sure this is a direction / strategy that we'll pursue in any case. If this is something you want to pursue (build a kotlin SDK) feel free to get started." (via [github.com](https://github.com/parse-community/Parse-SDK-Android/issues/728)). The [AWS Amplify](https://aws.amazon.com/de/amplify/) team has stated that "it's unlikely that we we'll ever prioritize a full multi-platform build. But if we see enough customer demand, we could potentially add more explicit support for Multiplatform Mobile." (via [stackoverflow](https://stackoverflow.com/a/66234604/3269827)) and this seems to be the gist for most mBaaS: They have only recently gone to great lengths to support Flutter, so KMM may not be a top priority for now.
 
 ### Hardware
 
-Early Flutter adopters remember that time and history repeats itself regarding low-level frameworks for KMM. Dependencies are far and few between, mostly under heavy development, and therefore not yet suited for production. Currently the best alternative is to branch manually via [expect/actual](https://kotlinlang.org/docs/multiplatform-connect-to-apis.html) or omit KMM yet if the whole application revolves around hardware features.
+Early Flutter adopters remember that time, and history repeats itself regarding low-level frameworks for KMM. Dependencies are far and few between, mostly under heavy development, and therefore not yet suited for production. Currently the best alternative is to branch manually via [expected and actual declaration](https://kotlinlang.org/docs/multiplatform-connect-to-apis.html) or omit KMM completely if the whole application revolves around hardware features.
 
 | Requirement | Android | iOS | KMM |
 | ----------- | ------- | --- | --- |
@@ -94,13 +98,11 @@ Forget your state-of-the-art dependency injection framework as it is platform-de
 
 ![alt text](/assets/images/posts/drawing.jpg)
 
-KMM allows sharing the business logic between platforms which is the first big step in gobut still a from a full multiplatform framework with one single source of truth. 
+KMM allows sharing business logic between platforms which covers a majority of the source code for most apps and enforces a clear architecture as an additional benefit. The biggest remaining native component separating us from a single source of truth is the user interface. Entering Compose Multiplatform.
 
 ### Compose Multiplatform
 
-[Compose Multiplatform](https://www.jetbrains.com/de-de/lp/compose-mpp) elevates [Jetpack Compose](https://developer.android.com/jetpack/compose) and makes this declarative design framework compatible with KMM. This marks the next step in programming with KMM as not only the business layer can be shared between platforms but the user interface itself. 
-
-The code for Compose Multiplatform behaves exactly like for Jetpack Compose.
+[Compose Multiplatform](https://www.jetbrains.com/de-de/lp/compose-mpp) elevates [Jetpack Compose](https://developer.android.com/jetpack/compose) and makes this declarative design framework compatible with KMM. The code for Compose Multiplatform behaves exactly like for Jetpack Compose.
 
 ```
 // shared/MainView.kt
@@ -110,7 +112,7 @@ fun MainView() {
 }
 ```
 
-The only native components left are one Android Activity and one iOS ViewController respectively that each embed the multiplatform composables in their native app.
+The only native components left are one Android Activity and one iOS ViewController respectively that each embed the multiplatform composables in the corresponding native app.
 
 For Android we need an Activity to include Jetpack Compose by using the [Interoperability APIs](https://developer.android.com/jetpack/compose/interop/interop-apis) and then its content as entry point from our shared Compose Multiplatform code.
 
@@ -153,13 +155,13 @@ fun MainViewController(): UIViewController {
 }
 ```
 
-Compose Multiplatform is working on Android and technically also on iOS. Support for the latter has been introduced with version 1.2.0-alpha1 early 2022 and is still in alpha state. This becomes apparent as the experimental support for Apple's UIKit has to be enabled via opt-in and features like the preview or JUnit 4 extensions do not work yet.
+Compose Multiplatform is working on Android and theoretically also on iOS. Support for the latter has been introduced with version 1.2.0-alpha1 early 2022 and is still in alpha state. This becomes apparent as the experimental support for Apple's UIKit has to be enabled via opt-in and features like the preview or JUnit 4 extensions do not work yet. Getting Compose for iOS to work alone is like a gamble and requires some workarounds, depending on the local machine.
 
 ### Material
 
-If KMM is the easel and Compose Multiplatform the canvas we are painting on, then we are still missing brush and paint. This is where Material Design come into play. Google's design language is well-established on Android and at least temporarily known on iOS (until sunsetting this implementation on July 15, 2021 at the rise of SwiftUI), so most teams should be familiar with this framework. It is yet to be seen how and when Apple's design language will be introduced to Compose Multiplatform, but that may just be another expected and actual declaration, similarily to how Flutter handled platform-dependant theming. Time will tell.
+If KMM is the easel and Compose Multiplatform the canvas, then we are still missing brush and paint. This is where Material Design come into play. Google's design language is well-established on Android and at least temporarily known on iOS (until [sunsetting this implementation in 2021](https://github.com/material-components/material-components-ios/#what-maintenance-mode-means-for-mdc-ios) at the rise of SwiftUI), so most teams should be familiar with this framework. It is yet to be seen how and when Apple's design language will be introduced to Compose Multiplatform, but that may just be another expected and actual declaration, similarily to how Flutter handled platform-dependant theming. Time will tell.
 
-Material for Compose Multiplatform offers a slightly different set of components compared to Android's Jetpack Compose since KMM requires support for every platform. If there is no pendant on iOS, then Android will not be supported either. One example for this is the DropdownMenu which has no counterpart on iOS and is therefore not available. Material Design is currently transitioning to version 3 which is already available but still experimental and therefore has to be enabled via opt-in.
+Material for Compose Multiplatform offers a slightly different set of components compared to Android's Jetpack Compose, since KMM requires support for every platform. If there is no pendant on iOS, then Android will not be supported either. One example for this is the DropdownMenu which has no counterpart on iOS and is therefore not available. Material Design is currently transitioning to version 3 which is already available but still experimental and therefore has to be enabled via opt-in.
 
 | Requirement | Android | iOS | KMM |
 | ----------- | ------- | --- | --- |
@@ -168,7 +170,7 @@ Material for Compose Multiplatform offers a slightly different set of components
 
 ### Resources
 
-Currently there is no integrated way to share resources between platforms, so they have to be declared individually using the corresponding native approach. 
+There is no integrated way yet to share resources between platforms, so they have to be declared individually using the corresponding native approach. 
 
 **[moko-resources](https://github.com/icerockdev/moko-resources)** offers a solution for this missing link in order to create a single source of truth for resources. Android developers may experience a déjà-vu as this library seems to be heavily inspired by [Android's resource mechanism](https://developer.android.com/guide/topics/resources/providing-resources). Both use build-time code generation to create references for resources declared in XML according to the current device configuration. This enables shared Composeables to access resources declared in the same module.
 
@@ -204,7 +206,7 @@ actual class Localization actual constructor(context: Context) {
 }
 ```
 
-Since Android relies on its context to load resources according to its configuration, we need to pass it to its localization mechanism using expected and actual declarations once more. iOS does not use a context for localizing resources, so we implement its actual class as Never in order to fail fast and early if we mistakingly decide to use the context anyway.
+Since Android relies on its context to load resources, we need to pass it to its localization mechanism using expected and actual declarations once more. iOS does not use a context for localizing resources, so we implement its actual class as Never in order to fail fast and early if we mistakingly decide to use the context anyway.
 
 ```
 // shared
@@ -241,6 +243,6 @@ The end result is another piece of the puzzle that completely resides within the
 
 ## Conclusion
 
-KMM shows great potential and has already been declared production-ready which matches my experience. It surely has its pitfalls and unfinished sections but so does Xcode or *these* Google libraries skipping their release candidate again and again. The gap to other multiplatform frameworks is closing and with Compose Multiplatform the biggest disadvantage should be eradicated. This though may still take a while considering the early state of Compose Multiplatform for iOS and important pieces like Firebase missing official support. 
+KMM shows great potential and has already been declared production-ready which matches my experience. It surely has its pitfalls and unfinished sections but so does Xcode or *these* Google libraries skipping their release candidate again and again. The gaps are slowly closing and important pieces like Firebase may not be officially supported yet, but can nevertheless be used in one way or another. Compose Multiplatform removes the biggest disadvantage compared to other multiplatform frameworks, although this may take a while considering the early state for iOS.
 
 My prediction is that 2024 may be the year for this development environment to become production-ready. The years after will then close the gap between Flutter regarding the matureness of tooling, frameworks and libraries. Mobile development is rapidly evolving since its beginning and we are used to adopting new technologies: Kotlin as one of them, which has been heavily adopted by Android developers since 2017, and declarative design being another, introduced to every first-party mobile framework. KMM with Compose Multiplatform seems to be the next logical step in this book and I am eager to read the next pages during the upcoming months.
