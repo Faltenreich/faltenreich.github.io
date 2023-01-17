@@ -37,14 +37,30 @@ Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unt
 
 Nachfolgend werden Dienste aufgelistet, die unter ihren jeweiligen Lizenzen verwendet werden.
 
-#### [Pexels](https://www.pexels.com)
-
-Diese Website verwendet lizenzfreie Bilder von Pexels, einem Dienst der Pexels GmbH.
-
-*Quelle: [License](https://www.pexels.com/license){:target="_blank"}*
-
 #### [DALL·E 2](https://labs.openai.com)
 
 Diese Website verwendet künstlich generierte Bilder von DALL·E 2, einem Dienst von OpenAI LP.
 
-*Quelle: [Terms of Use](https://openai.com/api/policies/terms){:target="_blank"}*
+> You may access, and we grant you a non-exclusive right to use, the Services in accordance with these Terms. You will comply with these Terms and all applicable laws when using the Services. We and our affiliates own all rights, title, and interest in and to the Services.
+>
+> -- <cite>[Terms of Use](https://openai.com/api/policies/terms){:target="_blank"}</cite>
+
+#### [Midjourney](https://midjourney.com)
+
+Diese Website verwendet künstlich generierte Bilder von Midjourney, einem Dienst von Midjourney, Inc.
+
+> Subject to the above license, you own all Assets you create with the Services.
+>
+> -- <cite>[Terms of Service](https://midjourney.gitbook.io/docs/terms-of-service#4.-copyright-and-trademark){:target="_blank"}</cite>
+
+
+
+#### [Pexels](https://www.pexels.com)
+
+Diese Website verwendet lizenzfreie Bilder von Pexels, einem Dienst der Pexels GmbH.
+
+> All photos and videos on Pexels are free to use.
+> Attribution is not required. Giving credit to the photographer or Pexels is not necessary but always appreciated.
+> You can modify the photos and videos from Pexels. Be creative and edit them as you like.
+>
+> -- <cite>[License](https://www.pexels.com/license){:target="_blank"}</cite>
