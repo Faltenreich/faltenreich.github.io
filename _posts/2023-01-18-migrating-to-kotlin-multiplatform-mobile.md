@@ -2,7 +2,8 @@
 layout: post
 header: /assets/images/posts/2023-01-kmm.jpg
 title: Migrating to Kotlin Multiplatform Mobile
-categories:
+categories: mobile
+tags: kmm kotlin multiplatform
 ---
 
 Write once, deploy everywhere. This promise has been made time and time again.

@@ -8,11 +8,11 @@ Deploy to client via `bundle exec jekyll serve --livereload` and access via `htt
 Deploy to server via push to main branch and access via `https://faltenreich.github.io`.
 
 ```
-bundle exec jekyll serve --livereload
+bundle exec jekyll serve --drafts --livereload
 ```
 
 ## License
 
-    Copyright (C) 2022 Philipp Fahlteich
+    Copyright (C) 2023 Philipp Fahlteich
 
     All rights served to the copyright holder
