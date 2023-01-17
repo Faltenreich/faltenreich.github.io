@@ -1,8 +1,8 @@
 ---
 layout: post
-header: /assets/images/posts/adventure.jpg
+header: /assets/images/posts/2023-01-kmm.jpg
 title: Migrating to Kotlin Multiplatform Mobile
-date: 2022-11-13
+date: 2023-01-17
 categories:
 public: false
 ---
@@ -45,7 +45,7 @@ Imagine two rooms, one representative for native development and one for multipl
 
 ## Toolchain
 
-![Blacksmith working on a machine](/assets/images/posts/blacksmith.jpg)
+![](/assets/images/posts/2023-01-kmm-toolchain.jpg)
 
 **Android Studio** is being used as an integrated development environment (IDE). This means a well-known environment for native Android- or Flutter developers and a potential return to an IntelliJ-based IDE for native iOS developers since the [sunset of AppCode](https://blog.jetbrains.com/appcode/2022/12/appcode-2022-3-release-and-end-of-sales-and-support). Xcode is still being used for the native iOS part as its build tools are needed to compile, sign and archive apps for Apple's ecosystem. This also means that macOS is required to deploy an iOS app, even though some constellations may use Linux or Windows when focussing on Android while leaving iOS for others like the build server.
 
@@ -63,7 +63,7 @@ One important new feature introduced especially for KMM is called [expected and 
 
 ## Frameworks and libraries
 
-![Girl reading a book in a library](/assets/images/posts/library.jpg)
+![](/assets/images/posts/2023-01-kmm-frameworks-and-libraries.jpg)
 
 Frameworks and libraries are not mandatory and the same for every project but they amplify the development process enormously. Over the years, standards came and go, and with KMM many will leave the stage once again. 
 
@@ -126,7 +126,7 @@ Forget your state-of-the-art dependency injection framework as it is platform-de
 
 ## User interface
 
-![alt text](/assets/images/posts/drawing.jpg)
+![](/assets/images/posts/2023-01-kmm-user-interface.jpg)
 
 KMM allows sharing business logic between platforms which covers a majority of the source code for most apps and enforces a clear architecture as an additional benefit. The biggest remaining native component separating us from a single source of truth is the user interface. Entering Compose Multiplatform.
 
@@ -273,7 +273,7 @@ The end result is another piece of the puzzle that completely resides within the
 
 ## Conclusion
 
-![Super hero overlooking a city at sunrise](/assets/images/posts/kids.jpg)
+![](/assets/images/posts/2023-01-kmm-conclusion.jpg)
 
 KMM shows great potential and has already been declared production-ready which matches my experience. It surely has its pitfalls and unfinished sections but so does Xcode or *these* Google libraries skipping their release candidate again and again. The gaps are slowly closing and important pieces like Firebase may not be officially supported yet, but can nevertheless be used in one way or another. Compose Multiplatform removes the biggest disadvantage compared to other multiplatform frameworks, although this may take a while considering the early state for iOS.
 
