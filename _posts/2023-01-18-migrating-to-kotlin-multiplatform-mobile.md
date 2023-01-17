@@ -2,7 +2,7 @@
 layout: post
 header: /assets/images/posts/2023-01-kmm.jpg
 title: Migrating to Kotlin Multiplatform Mobile
-date: 2023-01-17
+date: 2023-01-18
 categories:
 public: false
 ---
