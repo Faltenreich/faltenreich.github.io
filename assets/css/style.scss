@@ -52,7 +52,10 @@ a {
   }
 }
 
-// FIXME: Only apply to this div class
+.post-content {
+  text-align: justify;
+}
+
 .post-content a {
   color: $link-color;
   transition: 0.3s;
@@ -192,6 +195,10 @@ a.grid-cell {
   overflow: hidden;
   background-color: $code-background-color;
   text-align: justify;
+}
+
+.tile.no-justify {
+  text-align: left ;
 }
 
 .tile.small {
