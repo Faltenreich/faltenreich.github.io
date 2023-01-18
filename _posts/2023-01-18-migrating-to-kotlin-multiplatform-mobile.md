@@ -133,7 +133,7 @@ KMM allows sharing business logic between platforms which covers a majority of t
 
 [Compose Multiplatform](https://www.jetbrains.com/de-de/lp/compose-mpp) elevates [Jetpack Compose](https://developer.android.com/jetpack/compose) and makes this declarative design framework compatible with KMM. The code for Compose Multiplatform behaves exactly like for Jetpack Compose.
 
-```
+```kotlin
 // shared/MainView.kt
 @Composable
 fun MainView() {
@@ -145,7 +145,7 @@ The only native components left are one Android Activity and one iOS ViewControl
 
 For Android we need an Activity to include Jetpack Compose by using the [Interoperability APIs](https://developer.android.com/jetpack/compose/interop/interop-apis) and then its content as entry point from our shared Compose Multiplatform code.
 
-```
+```kotlin
 // androidApp/MainActivity.kt
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -158,7 +158,7 @@ class MainActivity : ComponentActivity() {
 
 For iOS we need an AppDelegate to set its root UIViewController which is being created using androidx.compose.ui.window.Application in our shared module. SwiftUI is currently not supported.
 
-```
+```swift
 // iosApp/AppDelegate.swift
 @UIApplicationMain
 struct AppDelegate: UIResponder, UIApplicationDelegate {
@@ -203,7 +203,7 @@ There is no integrated way yet to share resources between platforms, so they hav
 
 **[moko-resources](https://github.com/icerockdev/moko-resources)** offers a solution for this missing link in order to create a single source of truth for resources. Android developers may experience a déjà-vu as this library seems to be heavily inspired by [Android's resource mechanism](https://developer.android.com/guide/topics/resources/providing-resources). Both use build-time code generation to create references for resources declared in XML according to the current device configuration. This enables shared Composeables to access resources declared in the same module.
 
-```
+```kotlin
 import <package>.MR
 
 @Composable
@@ -214,7 +214,7 @@ fun ExampleView(localization: Localization) {
 
 moko-resources provides built-in methods to access shared resources. These methods are platform-dependant but can be encapsulated furthermore using expected and actual declarations to streamline the API for accessing resources.
 
-```
+```kotlin
 // shared
 expect class Localization constructor(context: Context) {
     override fun getString(resource: StringResource): String
@@ -237,7 +237,7 @@ actual class Localization actual constructor(context: Context) {
 
 Since Android relies on its context to load resources, we need to pass it to its localization mechanism using expected and actual declarations once more. iOS does not use a context for localizing resources, so we implement its actual class as Never in order to fail fast and early if we mistakingly decide to use the context anyway.
 
-```
+```kotlin
 // shared
 expect abstract class Context
 
@@ -250,7 +250,7 @@ actual class Context: Never
 
 The end result is another piece of the puzzle that completely resides within the shared module.
 
-```
+```kotlin
 - shared
     - androidMain
         - kotlin
@@ -279,3 +279,7 @@ KMM shows great potential and has already been declared production-ready which m
 My prediction is that 2024 may be the year for KMM to become a full-fledged alternative for multiplatform development. The years after will then close the gap to other frameworks regarding the matureness of tooling, frameworks and libraries. Mobile development is rapidly evolving since its beginning and we are used to adopting new technologies: Kotlin as one of them, which has been heavily adopted by Android developers since 2017, and declarative design being another, introduced to every first-party mobile framework. KMM with Compose Multiplatform seems to be the next logical step in this book and I am eager to read the next pages during the upcoming months.
 
 I will be there.
+
+---
+
+*Check out my [sample project](https://github.com/Faltenreich/rhyme-kmm){:target="_blank"} which serves as proof of concept for most of the technologies described*
