@@ -17,11 +17,6 @@ $code-background-color-light: $table-header-bg-color;
   background-color: $code-background-color;
 }
 
-.wrapper {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .site-title {
   margin-right: auto;
   letter-spacing: 0px;
@@ -31,6 +26,10 @@ $code-background-color-light: $table-header-bg-color;
   &:hover {
     color: $text-color-light;
   }
+}
+
+.nav {
+  float: right;
 }
 
 a.nav-item {
