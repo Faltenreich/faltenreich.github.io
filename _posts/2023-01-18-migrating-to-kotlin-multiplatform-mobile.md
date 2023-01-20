@@ -14,13 +14,13 @@ Apple does not live under the same rock it started iOS with and open-sourced its
 
 Google on the other hand does not only feature its own platform but introduced one of the leading multiplatform frameworks as well. [Flutter](https://flutter.dev) supports Android, iOS, desktop and web. While this framework stands tall among all available options to write once and deploy everywhere, it also introduces an additional platform with its own programming language and layer of complexity.
 
-> Disclaimer: This blogpost is not meant as a rating of or comparison between multiplatform frameworks. They all have their right to exist and the choice depends on numerous factors, some of them beyond the developers' control. Examples for tools, frameworks or libaries are not representative and may be switched out for other options. They shall simply illustrate a potential migration path when transitioning from one technology to another.
-
 Entering Kotlin Multiplatform Mobile.
+
+> Disclaimer: This blogpost is not meant as a rating of or comparison between multiplatform frameworks. They all have their right to exist and the choice depends on numerous factors, some of them beyond the developers' control. Examples for tools, frameworks or libaries are not representative and may be switched out for other options. They shall simply illustrate a potential migration path when transitioning from one technology to another.
 
 ---
 
-Table of Contents
+##### [Table of Contents](#table-of-contents)
 
 1. [Toolchain](#toolchain)
 2. [Frameworks and libraries](#frameworks-and-libraries)
@@ -89,13 +89,13 @@ Technologies that are marketed cross-platform on the other hand, do support mult
 
 One question about [AWS Amplify](https://aws.amazon.com/de/amplify) regarding KMM has been answered by one of its developers:
 
-> "Amplify products are intended as a front-end framework. Therefore, it's unlikely that we we'll ever prioritize a full multi-platform build. But if we see enough customer demand, we could potentially add more explicit support for Multiplatform Mobile."
+> Amplify products are intended as a front-end framework. Therefore, it's unlikely that we we'll ever prioritize a full multi-platform build. But if we see enough customer demand, we could potentially add more explicit support for Multiplatform Mobile.
 >
 > -- <cite>[Jameson Williams, engineer on the Amplify team](https://stackoverflow.com/a/66234604/3269827)</cite>
 
 [Parse Server](https://parseplatform.org) has one closed issue regarding Kotlin/Native with one developer summarizing: 
 
-> "I'm not sure this is a direction / strategy that we'll pursue in any case. If this is something you want to pursue (build a kotlin SDK) feel free to get started."
+> I'm not sure this is a direction / strategy that we'll pursue in any case. If this is something you want to pursue (build a kotlin SDK) feel free to get started.
 >
 > -- <cite>[Florent Vilmart, contributor to Parse Server](https://github.com/parse-community/Parse-SDK-Android/issues/728#issuecomment-408607292)</cite>
 
@@ -276,7 +276,7 @@ The end result is another piece of the puzzle that completely resides within the
 
 KMM shows great potential and has already been declared production-ready which matches my experience. It surely has its pitfalls and unfinished sections but so does Xcode or *these* Google libraries skipping their release candidate again and again. The gaps are slowly closing and important pieces like Firebase may not be officially supported yet, but can nevertheless be used in one way or another. Compose Multiplatform removes the biggest disadvantage compared to other multiplatform frameworks, although this may take a while considering the early state for iOS.
 
-My prediction is that 2024 may be the year for KMM to become a full-fledged alternative for multiplatform development. The years after will then close the gap to other frameworks regarding the matureness of tooling, frameworks and libraries. Mobile development is rapidly evolving since its beginning and we are used to adopting new technologies: Kotlin as one of them, which has been heavily adopted by Android developers since 2017, and declarative design being another, introduced to every first-party mobile framework. KMM with Compose Multiplatform seems to be the next logical step in this book and I am eager to read the next pages during the upcoming months.
+My prediction is that 2025 will be the first year for KMM to become a full-fledged alternative for multiplatform development. The years after will then close the gap to other frameworks regarding the matureness of tooling, frameworks and libraries. Mobile development is rapidly evolving since its beginning and we are used to adopting new technologies: Kotlin as one of them, which has been heavily adopted by Android developers since 2017, and declarative design being another, introduced to every first-party mobile framework. KMM with Compose Multiplatform seems to be the next logical step in this book and I am eager to read the next pages during the upcoming months.
 
 I will be there.
 

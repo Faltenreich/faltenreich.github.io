@@ -19,11 +19,11 @@ layout: page
   <div class="grid even">
     {%- for software in site.data.software -%}
     {%- assign color = software.color -%}
-      <div class="tile" style="padding-top: 0px;">
-        <h3 class="centered">
+      <div class="tile">
+        <h1 class="centered">
           {{ software.title }} 
           <img src="{{ software.icon }}" class="icon"/>
-        </h3>
+        </h1>
         <p>{{ software.description }}</p>
         <ul style="text-align: left;">
           {%- for technology in software.technologies -%}
