@@ -5,43 +5,35 @@ layout: default
 <div class="home header">
   <img src="/assets/images/icon.png" class="home icon"/>
   <h1 class="home title">{{ site.title }}</h1>
-  <span class="home description">{{ site.description }}</span>
+  <p class="home subtitle">{{ site.description }}</p>
+  {%- include social.html -%}
 </div>
 
 <div class="grid uneven">
       
   <div class="tile">
 
-    {{ content }}<br/>
-    
-    <div class="grid button">
-      <a href="/blog" class="button">Blog</a>
-      <a href="/software" class="button">Software</a>
-      <a href="/poetry" class="button">Poetry</a>
+    <div class="home author">
+      <p>
+        <img src="/assets/images/face.png" class="home icon"/>
+      </p>
+      <div>
+        <h1 class="home title small">{{ site.author.name }}</h1>
+        <h1 class="home subtitle">{{ site.author.title }}</h1>
+      </div>
     </div>
-
+    {{ content }}
   </div>
 
-  <div class="list">
-  
-    <div class="tile">
-      <h2>Contact</h2>
-      <p><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>
-      {%- include social.html -%}
-    </div>
-
-    <div class="tile no-justify">
-      <h2>Activity</h2>
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      {%- assign items = site.posts | concat: site.poetry | sort: "date" | reverse -%}
-      {%- for item in items limit: 10 -%}
-      <a href="{{ item.url }}">
-        <div class="post-meta">{{ item.date | date: date_format}}</div>
-        <p>{{ item.title | escape }}</p>
-      </a>
-      {%- endfor -%}
-    </div>
-    
+  <div class="tile no-justify">
+    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+    {%- assign items = site.posts | concat: site.poetry | sort: "date" | reverse -%}
+    {%- for item in items limit: 10 -%}
+    <a href="{{ item.url }}">
+      <div class="post-meta">{{ item.date | date: date_format}}</div>
+      <p>{{ item.title | escape }}</p>
+    </a>
+    {%- endfor -%}
   </div>
 
 </div>

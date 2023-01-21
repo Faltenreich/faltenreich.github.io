@@ -14,17 +14,21 @@ $code-background-color-light: $table-header-bg-color;
 
 .site-header {
   border: 0px;
-  background-color: $code-background-color;
 }
 
 .site-title {
-  margin-right: auto;
+  font-weight: 400;
   letter-spacing: 0px;
   text-decoration: none !important;
+  margin-right: auto;
   transition: 0.3s;
 
   &:hover {
     color: $text-color-light;
+
+    @media only screen and (min-width: 600px) {
+      letter-spacing: 1px;
+    }
   }
 }
 
@@ -79,10 +83,6 @@ a {
   flex-grow: 1;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-
-.social-media-list {
-  display: table-row;
 }
 
 .grid {
@@ -175,6 +175,11 @@ a.grid-cell {
   width: 24px;
 }
 
+.icon.medium {
+  width: 28px;
+  height: 28px;
+}
+
 .icon.large {
   width: 72px;
   height: 72px;
@@ -193,11 +198,15 @@ a.grid-cell {
 }
 
 .tile {
-  padding: 24px 32px;
+  padding: 20px 24px;
   border-radius: 25px;
   overflow: hidden;
   background-color: $code-background-color;
   text-align: justify;
+
+  @media only screen and (min-width: 600px) {
+    padding: 24px 32px;
+  }
 }
 
 .tile.no-justify {
@@ -309,6 +318,7 @@ a.showcase {
 .home.icon {
   width: 200px;
   height: 200px;
+  object-fit: contain;
 }
 
 .home.header {
@@ -317,15 +327,31 @@ a.showcase {
   align-items: center;
   margin-bottom: $spacing-unit;
   flex-direction: column;
-  text-align: center;
+}
+
+.home.author {
+  display: flex;
+  align-items: center;
+  gap: $spacing-unit;
 }
 
 .home.title {
   font-size: 3rem;
   margin-top: $spacing-unit / 2;
   margin-bottom: 0px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
-.home.description {
-  font-size: 1rem;
+.home.subtitle {
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.home.title.small {
+  font-weight: 500;
+  font-size: 1.7rem;
+  letter-spacing: 1.2px;
 }

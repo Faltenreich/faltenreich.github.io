@@ -1,7 +1,7 @@
 title: Writing Bits
 author:
   name: Philipp Fahlteich
-  title: Senior Mobile Developer
+  title: Mobile Developer
   email: "philipp.fahlteich@gmail.com"
   location: Türkheim, Bavaria, Germany
 description: "Source code and other novels"
@@ -35,6 +35,12 @@ minima:
     - platform: xing
       user_url: "https://www.xing.com/profile/Philipp_Fahlteich"
       title: XING
+    - platform: mail
+      user_url: "mailto:philipp.fahlteich@gmail.com"
+      title: E-Mail
+    - platform: rss
+      user_url: "feed.xml"
+      title: RSS
 
 kramdown:
   hard_wrap: true
