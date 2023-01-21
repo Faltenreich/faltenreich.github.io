@@ -17,6 +17,7 @@ layout: default
   <div itemprop="articleBody" class="post-content">
     {{ content }}
     
+    {%- if page.github -%}
     {%- assign github = site.minima.social_links | where: 'platform', 'github' | first -%}
     {%- if github -%}
     {%- assign github_url = github.user_url | append: '/' -%}
@@ -32,6 +33,7 @@ layout: default
             </span>
         </div>
     </a>
+    {%- endif -%}
     {%- endif -%}
     {%- endif -%}
   </div>
