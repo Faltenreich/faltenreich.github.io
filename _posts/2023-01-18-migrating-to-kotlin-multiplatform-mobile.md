@@ -3,7 +3,6 @@ layout: post
 header: /assets/images/posts/2023-01-kmm.jpg
 title: Migrating to Kotlin Multiplatform Mobile
 github: rhyme-kmm
-categories: mobile
 tags: kmm kotlin multiplatform
 ---
 
