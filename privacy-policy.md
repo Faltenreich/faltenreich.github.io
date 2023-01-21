@@ -1,15 +1,15 @@
 ---
 layout: page
-title: Privacy Policy
+title: Privacy policy
 permalink: /privacy-policy/
 ---
+ 
+ *[This page is also available in German language](/datenschutzerklaerung)*
 
-### Datenschutz
+The use of our website is generally possible without providing personal data. Insofar as personal data (for example name, address or e-mail addresses) is collected on our pages, this is always done, as far as possible, on a voluntary basis. This data will not be passed on to third parties without your express consent.
 
-Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder eMail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.
+We point out that data transmission over the Internet (eg communication by e-mail) security gaps. A complete protection of data against access by third parties is not possible.
 
-Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.
+The use of contact data published within the framework of the imprint obligation by third parties for the purpose of sending unsolicited advertising and information material is hereby expressly prohibited. The operators of the pages expressly reserve the right to take legal action in the event of the unsolicited sending of advertising information, such as spam e-mails.
 
-Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.
-
-*Quelle: [eRecht24](http://www.e-recht24.de/muster-datenschutzerklaerung.html){:target="_blank"}*
+*Source: [eRecht24](http://www.e-recht24.de/muster-datenschutzerklaerung.html){:target="_blank"} (translated via [DeepL](https://www.deepl.com/de/translator){:target="_blank"})*

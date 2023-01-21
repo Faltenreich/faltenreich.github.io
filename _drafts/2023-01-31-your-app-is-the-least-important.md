@@ -28,6 +28,6 @@ It took some time until it clicked to me and I realized the two apps were affect
 
 Remember that better solution mentioned before? This solution is another app which allows way more customization and uses the correct audio channel ([STREAM_NOTIFICATION](https://developer.android.com/reference/android/media/AudioManager#STREAM_NOTIFICATION)). Its setup cost plenty of time as it is not officially supported. In the end it took me a few hours and days to finally be able to use another app and to stop and uninstall the annoying official one. An additional benefit of the unofficial app is it being open source, so even a dead end could be resolved by forking the project or creating a pull request. I am aware that this is not a solution suited for everyone and every use case which leads me to my original point.
 
-Your app is not the most important one, so try not to pretend it is. Most users are not that patient and most use cases not that critical in order to hassle that much with something that should be easy to use. Most users will simply uninstall your app.
+Your app is not the most important one, so please try not to pretend it is. Most users are not that patient and most use cases not that critical in order to hassle that much with something that should be easy to use. Most users will simply uninstall your app.
 
-Remember: Your app is the least important.
+Remember: Your app is the least important ony my phone.
