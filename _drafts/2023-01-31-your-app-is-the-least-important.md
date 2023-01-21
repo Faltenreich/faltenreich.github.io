@@ -12,11 +12,11 @@ I use a app that is tracking medical readings. These readings are important, so 
 
 I tried to adapt to the app's behavior, but of course failed to manually mute a few times, which resulted in my phone acting up in inappropriate situations. Finally, I decided to mute the media channel completely until a better solution appears.
 
-I use another app to access a livestream from a webcam I have setup at home as baby monitor for our cat. This app is barely configurable and free of updates since 2018 which is reflected by the 2.6 star rating on Google Play. It automatically sets the volume of the media channel to the maximum every time a livestream is opened. You may already sense where this blogpost is heading to.
+I use another app to access a livestream from a webcam I have setup at home as baby monitor for our cat. This app is barely configurable and free of updates since 2018 which is reflected by the 2.6 star rating on Google Play. It also automatically sets the volume of the media channel to the maximum every time a livestream is opened. You may already sense where this blogpost is heading to.
 
 ### A series of unfortunate events
 
-My partner and I visited friends at New Year's Eve and stayed over the night. During this evening my medical readings went wild, as expected from the wild mixture of delicious food and equally unhealthy cocktails, and so did my phone. After medically derailing, one notification after one roared from my pockets and alerted everyone in the room including several people who have not been introduced yet to my condition. *"Just a reminder to check our cat!"*, was my spontaneous excuse to counter the astonished looks, but after the fourth and fifth time this no longer made sense even in an buzzed state. Each time I pulled out my phone the question arose why it was blasting at full volume even though I had muted it minutes before.
+My partner and I visited friends and stayed over the night. During that evening my medical readings went wild, as expected from the wild mixture of delicious food and equally unhealthy cocktails, and so did my phone. After medically derailing, one notification after another roared from my pockets and alerted everyone in the room including several people who have not been introduced yet to my condition. *"Just a reminder to check our cat!"*, was my spontaneous reaction to counter the astonished looks, but after the fourth and fifth time this excuse no longer made sense even in an buzzed state. Each time I pulled out my phone the question arose why it was blasting at full volume even though I had muted it minutes before.
 
 I have forgotten about that webcam app.
 
@@ -28,6 +28,6 @@ It took some time until it clicked to me and I realized the two apps were affect
 
 Remember that better solution mentioned before? This solution is another app which allows way more customization and uses the correct audio channel ([STREAM_NOTIFICATION](https://developer.android.com/reference/android/media/AudioManager#STREAM_NOTIFICATION)). Its setup cost plenty of time as it is not officially supported. In the end it took me a few hours and days to finally be able to use another app and to stop and uninstall the annoying official one. An additional benefit of the unofficial app is it being open source, so even a dead end could be resolved by forking the project or creating a pull request. I am aware that this is not a solution suited for everyone and every use case which leads me to my original point.
 
-Your app is not the most important one, so please try not to pretend it is. Most users are not that patient and most use cases not that critical in order to hassle that much with something that should be easy to use. Most users will simply uninstall your app.
+Your app is not the most important one but only one among many on most users' phones. Most users are not that patient and most use cases not that critical in order to invest a lot of time in something that should be easy to use. Most users will simply uninstall such an app.
 
-Remember: Your app is the least important ony my phone.
+Remember: Your app is the least important on your user's phone.
