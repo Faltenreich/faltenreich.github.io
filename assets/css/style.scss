@@ -305,3 +305,23 @@ a.showcase {
     background-color: $code-background-color-light;
   }
 }
+
+.home.icon {
+  width: 200px;
+  height: 200px;
+}
+
+.home.header {
+  display: flex;
+  gap: $spacing-unit * 2;
+  justify-content: center;
+  align-items: center;
+}
+
+.home.text {
+  text-align: center;
+}
+
+.home.text.label {
+  margin-bottom: 0px;
+}

@@ -1,6 +1,5 @@
 ---
 layout: home
-header: /assets/images/home.jpg
 ---
 
 # Writing Bits
