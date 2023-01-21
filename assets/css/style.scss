@@ -313,15 +313,19 @@ a.showcase {
 
 .home.header {
   display: flex;
-  gap: $spacing-unit * 2;
   justify-content: center;
   align-items: center;
-}
-
-.home.text {
+  margin-bottom: $spacing-unit;
+  flex-direction: column;
   text-align: center;
 }
 
-.home.text.label {
+.home.title {
+  font-size: 3rem;
+  margin-top: $spacing-unit / 2;
   margin-bottom: 0px;
+}
+
+.home.description {
+  font-size: 1rem;
 }

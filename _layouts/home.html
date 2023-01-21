@@ -3,35 +3,23 @@ layout: default
 ---
 
 <div class="home header">
-  <div class="home text">
-    <h1 class="home text label">Writing Bits</h1>
-    <span class="post-meta">of source code and other novels</span>
-  </div>
   <img src="/assets/images/icon.png" class="home icon"/>
-  <div class="home text">
-    <h1 class="home text label">Writing bits</h1>
-    <span class="post-meta">and sharing pieces from my mind</span>
-  </div>
+  <h1 class="home title">{{ site.title }}</h1>
+  <span class="home description">{{ site.description }}</span>
 </div>
 
 <div class="grid uneven">
       
   <div class="tile">
 
-    {{ content }}
+    {{ content }}<br/>
     
-    <br/>
-
     <div class="grid button">
-    
       <a href="/blog" class="button">Blog</a>
-    
       <a href="/software" class="button">Software</a>
-    
       <a href="/poetry" class="button">Poetry</a>
-    
     </div>
-    
+
   </div>
 
   <div class="list">
