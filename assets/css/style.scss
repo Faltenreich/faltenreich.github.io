@@ -175,6 +175,11 @@ a.grid-cell {
   width: 24px;
 }
 
+.icon.large {
+  width: 72px;
+  height: 72px;
+}
+
 .centered {
   display: flex; 
   align-items: center; 
@@ -282,6 +287,21 @@ a.tile-image:hover {
   max-height: 300px;
 }
 
-// rounded corners:
-// border-radius: 15px;
-// overflow: hidden;
+.showcase {
+  display: flex;
+  border-radius: 25px;
+  border-color: $code-background-color-light;
+  border-style: solid;
+  border-width: 2px;
+  padding: $spacing-unit / 1.5;
+  gap: $spacing-unit;
+}
+
+a.showcase {
+  transition: 0.3s;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $code-background-color-light;
+  }
+}

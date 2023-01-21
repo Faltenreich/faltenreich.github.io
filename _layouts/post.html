@@ -16,6 +16,24 @@ layout: default
 
   <div itemprop="articleBody" class="post-content">
     {{ content }}
+    
+    {%- assign github = site.minima.social_links | where: 'platform', 'github' | first -%}
+    {%- if github -%}
+    {%- assign github_url = github.user_url | append: '/' -%}
+    {%- if github_url -%}
+    {%- assign github_name = github.user_url | split: '/' | last | append: '/' | default: '' -%}
+    <a href="{{ page.github | prepend: github_url }}" target="_blank" class="showcase">
+        <img src="/assets/images/icons/github.png" class="icon large"/>
+        <div>
+            <span class="post-meta">github.com</span>
+            <p style="margin-bottom: 4px;">{{ page.github | prepend: github_name }}</p>
+            <span class="post-meta">
+                Check out this sample project which serves as proof of concept for most of the technologies described
+            </span>
+        </div>
+    </a>
+    {%- endif -%}
+    {%- endif -%}
   </div>
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>

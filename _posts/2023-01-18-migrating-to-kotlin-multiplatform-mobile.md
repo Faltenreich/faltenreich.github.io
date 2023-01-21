@@ -2,6 +2,7 @@
 layout: post
 header: /assets/images/posts/2023-01-kmm.jpg
 title: Migrating to Kotlin Multiplatform Mobile
+github: rhyme-kmm
 categories: mobile
 tags: kmm kotlin multiplatform
 ---
@@ -279,7 +280,3 @@ KMM shows great potential and has already been declared production-ready which m
 My prediction is that 2025 will be the first year for KMM to become a full-fledged alternative for multiplatform development. The years after will then close the gap to other frameworks regarding the matureness of tooling, frameworks and libraries. Mobile development is rapidly evolving since its beginning and we are used to adopting new technologies: Kotlin as one of them, which has been heavily adopted by Android developers since 2017, and declarative design being another, introduced to every first-party mobile framework. KMM with Compose Multiplatform seems to be the next logical step in this book and I am eager to read the next pages during the upcoming months.
 
 I will be there.
-
----
-
-*Check out my [sample project](https://github.com/Faltenreich/rhyme-kmm){:target="_blank"} which serves as proof of concept for most of the technologies described*
