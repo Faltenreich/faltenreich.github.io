@@ -13,6 +13,13 @@ $accent-color: rgb(38, 148, 148);
 // Overrides
 // Minima
 
+.wrapper {
+  max-width: calc(#{$content-width} - (#{$spacing-unit}));
+  @media screen and (min-width: $on-large) {
+    max-width: calc(#{900px} - (#{$spacing-unit} * 2));
+  }
+}
+
 .site-header {
   border: 0px;
 }
