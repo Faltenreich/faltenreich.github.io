@@ -13,7 +13,7 @@
       <div class="wrapper">
 
         {%- if page.header -%}
-        <img class="header" src="{{ page.header }}">
+        <img class="header image" src="{{ page.header }}">
         {%- endif -%}
 
         {{ content }}
@@ -21,6 +21,8 @@
       </div>
       
     </main>
+    
+    <p>{%- include social.html -%}</p>
 
     {%- include footer.html -%}
 

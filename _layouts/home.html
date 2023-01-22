@@ -6,26 +6,22 @@ layout: default
   <img src="/assets/images/icon.png" class="home icon"/>
   <h1 class="home title">{{ site.title }}</h1>
   <p class="home subtitle">{{ site.description }}</p>
-  {%- include social.html -%}
 </div>
 
-<div class="grid uneven">
-      
-  <div class="tile">
+<p class="home buttons">
+  <a href="/blog" class="home button">Blog</a>
+  <a href="/software" class="home button">Software</a>
+  <a href="/poetry" class="home button">Poetry</a>
+</p>
 
-    <div class="home author">
-      <p>
-        <img src="/assets/images/face.png" class="home icon"/>
-      </p>
-      <div>
-        <h1 class="home title small">{{ site.author.name }}</h1>
-        <h1 class="home subtitle">{{ site.author.title }}</h1>
-      </div>
-    </div>
+<div class="grid uneven">
+
+  <div>
     {{ content }}
   </div>
 
   <div class="tile no-justify">
+    <h2>Activity</h2>
     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
     {%- assign items = site.posts | concat: site.poetry | sort: "date" | reverse -%}
     {%- for item in items limit: 10 -%}

@@ -17,6 +17,7 @@ header_pages:
   - blog.md
   - software.md
   - poetry.md
+  - about.md
 
 remote_theme: jekyll/minima
 

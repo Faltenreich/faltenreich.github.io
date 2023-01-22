@@ -4,4 +4,4 @@ layout: home
 
 Welcome to my website which is all about the one thing I love doing the most: writing. Be it source code, a blogpost or every now and then a piece of poetry.
 
-This place serves one purpose: logging this work in some sort of diary or portfolio. Potential employers may evaluate my skills by taking a look at the software I have written or took part in. Potentially everyone, including myself, may read my blog posts, poems or stories in order to learn something new, take a break from daily work or simply get some inspiration.
+This place serves one purpose: logging this work like a diary or portfolio. Fellow developers may take a look at the software I have written or took part in and hpefully learn something from the blogposts I have written. One may take a break from daily work or simply get some inspiration.
