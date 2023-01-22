@@ -365,7 +365,7 @@ a.showcase {
   grid-gap: $spacing-unit / 2;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: $spacing-unit;
+  margin-bottom: $spacing-unit * 1.5;
 }
 
 .home.button {
