@@ -356,15 +356,17 @@ a.showcase {
   font-size: 3rem;
   margin-top: $spacing-unit / 2;
   margin-bottom: 0px;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .home.subtitle {
   font-size: 1.1rem;
   letter-spacing: 2px;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .home.buttons {
@@ -372,7 +374,6 @@ a.showcase {
   grid-gap: $spacing-unit / 2;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: $spacing-unit * 1.5;
 }
 
 .home.button {
