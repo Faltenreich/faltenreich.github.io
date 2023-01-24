@@ -1,6 +1,6 @@
 ---
 layout: post
-header: /assets/images/posts/king.jpg
+image: /assets/images/posts/king.jpg
 title: Man glaubt mir noch nicht
 date: 2022-04-29
 ---

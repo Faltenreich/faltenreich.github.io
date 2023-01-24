@@ -1,6 +1,6 @@
 ---
 layout: post
-header: /assets/images/posts/mask.jpg
+image: /assets/images/posts/mask.jpg
 title: Ich brauche einen Feind
 date: 2021-01-30
 ---

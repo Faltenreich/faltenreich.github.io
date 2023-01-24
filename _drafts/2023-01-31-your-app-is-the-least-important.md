@@ -1,6 +1,6 @@
 ---
 layout: post
-header: /assets/images/posts/2023-01-standing-in-line.jpg
+image: /assets/images/posts/2023-01-standing-in-line.jpg
 title: Your app is the least important
 tags: app ux
 ---

@@ -1,9 +1,9 @@
 ---
 layout: post
-header: /assets/images/posts/2023-01-kmm.jpg
+image: /assets/images/posts/2023-01-kmm.jpg
 title: Migrating to Kotlin Multiplatform Mobile
-github: rhyme-kmm
 tags: kmm kotlin multiplatform
+github: rhyme-kmm
 ---
 
 Write once, deploy everywhere. This promise has been made time and time again.

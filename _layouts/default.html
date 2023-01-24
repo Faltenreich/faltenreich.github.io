@@ -12,8 +12,8 @@
 
       <div class="wrapper">
 
-        {%- if page.header -%}
-        <img class="header image" src="{{ page.header }}" alt="">
+        {%- if page.image -%}
+        <img class="header image" src="{{ page.image | prepend: site.baseurl }}" alt="">
         {%- endif -%}
 
         {{ content }}

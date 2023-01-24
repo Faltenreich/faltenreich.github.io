@@ -1,6 +1,6 @@
 ---
 layout: post
-header: /assets/images/posts/soldier.jpg
+image: /assets/images/posts/soldier.jpg
 title: Generationeneieruhr
 date: 2008-05-28
 ---
