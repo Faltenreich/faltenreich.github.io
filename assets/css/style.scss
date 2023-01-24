@@ -329,9 +329,8 @@ a.showcase {
 }
 
 .home.icon {
-  width: auto;
+  width: 200px;
   height: 200px;
-  object-fit: contain;
 }
 
 .home.header {
@@ -344,12 +343,6 @@ a.showcase {
 .home.author {
   display: flex;
   gap: $spacing-unit;
-}
-
-.home.face {
-  width: auto;
-  height: 120px;
-  object-fit: contain;
 }
 
 .home.title {
