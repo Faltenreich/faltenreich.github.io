@@ -12,7 +12,7 @@ layout: page
 
       <div class="grid-header">
         <a href="{{ company.url }}" target="_blank">
-          <img src="{{ company.image }}" class="grid-icon">
+          <img src="{{ company.image }}" class="grid-icon" alt="{{ company.name }}">
         </a>
         <div class="post-meta grid-date">{{ company.start | date: "%m/%Y" }} - {{ company.end | date: "%m/%Y" | default: "Today" }}</div>
       </div>
@@ -49,7 +49,7 @@ layout: page
               {%- assign platform_ids = experience.platforms | split: ", " -%}
               {%- for platform_id in platform_ids -%}
               {%- assign platform = site.data.platforms | where: "id", platform_id | first -%}
-              <img src="{{ platform.image }}" class="icon" title="{{ platform.name }}">
+              <img src="{{ platform.image }}" class="icon" title="{{ platform.name }}" alt="{{ platform.name }}">
               {%- endfor -%}
             </div>
 

@@ -8,7 +8,7 @@ layout: page
   {% for poetry in site.poetry reversed %}
   <a href="{{ poetry.url }}" class="tile-image">
     <div class="tile-image">
-      <img class="wallpaper" src="{{ poetry.header | default: "/assets/images/placeholder.jpg" }}" title="">
+      <img class="wallpaper" src="{{ poetry.header | default: "/assets/images/placeholder.jpg" }}" title="" alt="">
       <div class="tile-title">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <div class="post-meta">{{ poetry.date | date: date_format }}</div>
