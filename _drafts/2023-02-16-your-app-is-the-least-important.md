@@ -5,10 +5,7 @@ title: Your app is the least important
 tags: app ux
 ---
 
-TODO: More images?
-TODO: Intro
-
-Developing software takes time. When the day of release finally arrives, and the world seems to revolve around your idea that has been translated from simple thoughts to bits and bytes.
+Developing software takes time. Deadlines pass by, priorities shift and there may even come a time when the whole world revolves around that single project. It may be hard to imagine that a user base does not share the same deep feelings about a piece of software as its developer, but pretending otherwise can lead to fatal flaws. This blog post aims to prevent such bad user experiences by highlighting this potential gap between developer and user, using a scenario from the author's daily life as an example.
 
 ### An unexpected party
 
@@ -26,7 +23,7 @@ I have forgotten about that webcam app.
 
 Between the wrestling rounds with my phone, my partner wanted to check out our cat, and with the hours passing, those requests became repeated and their intervals shorter. As the responsible partner I am trying to be, I handed over my phone as soon as hers was out of battery. After opening the livestream, looking for the cat and sending a few meow meow's through the webcam's speakers, she returned my phone and the process started all over again.
 
-It took some time until it clicked to me and I realized the two apps were affecting each other. This series of unfortunate events should then become the straw that broke the camel's back.
+It took some time until it clicked and I realized the two apps were affecting each other. This series of unfortunate events should then become the straw that broke the camel's back.
 
 ### A fine day to exit
 
@@ -34,6 +31,6 @@ Remember that better solution mentioned before? This solution is another medical
 
 Most users are not that patient and most use cases are not that critical. Why spend time on something that should be easy to use? Many users will simply uninstall and never look back, which is the worst thing that can happen to the software in which you have invested so much time and energy.
 
-Your app is not the most important one on your users' phones, so do not expect the user to threat your app differently than the many others on his or her phone. Resist the urge to force your users to behave in a certain way. Either take the path of least resistance and integrate seamlessly into an unfamiliar environment, or provide customization options to adapt to your users' needs. This approach can be boiled down to one single statement:
+Your app is not the only one on your users' phones, so do not expect them to treat yours any differently. Resist the urge to force a certain type of behaviour on your entire user base. Instead, take the path of least resistance and integrate seamlessly into an unfamiliar environment, or provide customization options to adapt to your users' needs. This approach boils down to a single mindset:
 
 Your app is the least important.
