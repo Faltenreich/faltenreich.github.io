@@ -13,7 +13,7 @@ I use an Android app for tracking medical readings. These readings are important
 
 I tried to adapt to the medical tracking app's behavior by manually muting the device when silence was demanded. Of course I failed to remember that repeatedly, which resulted in my phone acting up in inappropriate situations. Finally, I decided to change my sounds settings and mute the media channel completely until a better solution appears. To add insult to injury, the medical tracking app comments this muting with a reappearing notification and multiple in-app messages advising to unmute. Working around this by selecting "None" as notification sound counts as muting nonetheless.
 
-![](/assets/images/posts/2023-02-importance-notification.jpg)
+[![](/assets/images/posts/2023-02-importance-notification.jpg)][screenshot]{:target="_blank"}
 *My sound settings (left), that reappearing notification (middle) and in-app messages on every app restart (right)*
 
 This situation, as inconvenient as it is, does not really interfere with my daily routine and therefore would not be a deal-breaker on its own. That part begins with a second app I use to access a baby monitor for our cat at home. This webcam app is barely configurable and free of updates since 2018 which is reflected by the 2.6 star rating on Google Play. It also automatically sets the volume of the media channel to the maximum every time a livestream is opened. You may already sense where this blog post is heading.
@@ -37,3 +37,5 @@ Most users are not that patient and most use cases are not that critical. Why sp
 Your app is not the only one on your users' phones, so do not expect them to treat yours any differently. Resist the urge to force a certain type of behaviour on your entire user base. Instead, take the path of least resistance and integrate seamlessly into an unfamiliar environment, or provide customization options to adapt to your users' needs. This approach boils down to a single mindset:
 
 Your app is the least important.
+
+[screenshot]: /assets/images/posts/2023-02-importance-notification.jpg
