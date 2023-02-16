@@ -9,11 +9,14 @@ Developing software takes time. Deadlines pass by, priorities shift and there ma
 
 ### An unexpected party
 
-I use an Android app for tracking medical readings. These readings are important for me, so I want to be informed about unexpectedly high or low values. This medical tracking app does so by generating a local notification. This notification causes my phone to ring and vibrate. The ringing takes place via the media channel [STREAM_MUSIC](https://developer.android.com/reference/android/media/AudioManager#STREAM_MUSIC), "Used to identify the volume of audio streams for music playback", which is the same for music- and video players like Spotify or YouTube. This means controlling the volume of one will affect the others and vice versa.
+I use an Android app for tracking medical readings. These readings are important for me, so I want to be informed about unexpectedly high or low values. This medical tracking app does so by generating a local notification. This notification causes my phone to ring and vibrate. The ringing is controlled by the media channel, which is the same for music- and video players such as Spotify or YouTube. This means that adjusting the volume of one will affect the other and vice versa. The media channel is internally labelled [STREAM_MUSIC](https://developer.android.com/reference/android/media/AudioManager#STREAM_MUSIC), "Used to identify the volume of audio streams for music playback".
 
-I tried to adapt to the medical tracking app's behavior by manually muting the device when silence was demanded. I failed to remember repeatedly, which resulted in my phone acting up in inappropriate situations. Finally, I decided to mute the media channel for music and video completely until a better solution appears. To add insult to injury, the medical tracking app comments the muting with an in-app message and a notification advising to unmute.
+I tried to adapt to the medical tracking app's behavior by manually muting the device when silence was demanded. Of course I failed to remember that repeatedly, which resulted in my phone acting up in inappropriate situations. Finally, I decided to change my sounds settings and mute the media channel completely until a better solution appears. To add insult to injury, the medical tracking app comments this muting with a reappearing notification and multiple in-app messages advising to unmute. Working around this by selecting "None" as notification sound counts as muting nonetheless.
 
-I use another app to access a livestream from a webcam I have setup at home as baby monitor for our cat. This webcam app is barely configurable and free of updates since 2018 which is reflected by the 2.6 star rating on Google Play. It also automatically sets the volume of the media channel to the maximum every time a livestream is opened. You may already sense where this blog post is heading.
+![](/assets/images/posts/2023-02-importance-notification.jpg)
+*My sound settings (left), that reappearing notification (middle) and in-app messages on every app restart (right)*
+
+This situation, as inconvenient as it is, does not really interfere with my daily routine and therefore would not be a deal-breaker on its own. That part begins with a second app I use to access a baby monitor for our cat at home. This webcam app is barely configurable and free of updates since 2018 which is reflected by the 2.6 star rating on Google Play. It also automatically sets the volume of the media channel to the maximum every time a livestream is opened. You may already sense where this blog post is heading.
 
 ### A series of unfortunate events
 
@@ -33,4 +36,4 @@ Most users are not that patient and most use cases are not that critical. Why sp
 
 Your app is not the only one on your users' phones, so do not expect them to treat yours any differently. Resist the urge to force a certain type of behaviour on your entire user base. Instead, take the path of least resistance and integrate seamlessly into an unfamiliar environment, or provide customization options to adapt to your users' needs. This approach boils down to a single mindset:
 
-Your app is the least important.
+### Your app is the least important.
