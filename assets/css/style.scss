@@ -21,10 +21,20 @@ $accent-color: rgb(38, 148, 148);
 }
 
 .site-header {
+  position: fixed;
+  width: 100%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background-color: $background-color;
   border: 0px;
 }
 
+.page-content {
+  margin-top: 60px;
+}
+
 .site-title {
+  font-size: 2em;
   font-weight: 400;
   letter-spacing: 0px;
   text-decoration: none !important;
