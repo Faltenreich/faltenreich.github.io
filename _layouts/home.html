@@ -1,27 +1,21 @@
 ---
 layout: default
 ---
-
 <div class="home header">
   <img src="/assets/images/icon.png" class="home icon" alt=""/>
   <h1 class="home title">{{ site.title }}</h1>
   <p class="home subtitle">{{ site.description }}</p>
 </div>
-
 <p class="home buttons">
   <a href="/blog" class="home button">Blog</a>
   <a href="/software" class="home button">Software</a>
   <a href="/poetry" class="home button">Poetry</a>
 </p>
-
 </br>
-
 <div class="grid uneven">
-
   <div>
     {{ content }}
   </div>
-
   <div class="tile no-justify">
     <h2>Activity</h2>
     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
@@ -33,5 +27,4 @@ layout: default
     </a>
     {%- endfor -%}
   </div>
-
 </div>

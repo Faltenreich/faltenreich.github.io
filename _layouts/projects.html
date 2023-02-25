@@ -1,37 +1,26 @@
 ---
 layout: page
 ---
-
 {{ content }}
-
 <div class="grid uneven">
-
     {%- for project in site.data.projects -%}
-
         {% if project.url %}
         <a href="{{ project.url }}" target="_blank" class="tile">
         {% else %}
         <div class="tile">
         {% endif %}
-
             {{- project.platform -}}
-
             <h1>{{- project.name -}}</h1>
-
             {{- project.summary -}}
-
             {%- if project.image -%}
             <br/>
             <br/>
             <img class="project-image" src="{{- project.image -}}" alt="">
             {%- endif -%}
-        
         {% if project.url %}
         </a>
         {% else %}
         </div>
         {% endif %}
-
     {%- endfor -%}
-  
 </div>

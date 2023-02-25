@@ -1,38 +1,27 @@
 ---
 layout: page
 ---
-
 {{ content }}
-
 <div class="list">
-
   {% for company in site.data.companies %}
-
     <div class="tile small">
-
       <div class="grid-header">
         <a href="{{ company.url }}" target="_blank">
           <img src="{{ company.image }}" class="grid-icon" alt="{{ company.name }}">
         </a>
         <div class="post-meta grid-date">{{ company.start | date: "%m/%Y" }} - {{ company.end | date: "%m/%Y" | default: "Today" }}</div>
       </div>
-
       {% assign experience_in_company = site.data.experiences | where: "company", company.id %}
-
       <div class="grid small">
-
         {%- for experience in experience_in_company -%}
-
           {%- if experience.url -%}
           <a href="{{ experience.url }}" target="_blank" class="grid-cell">
           {%- else -%}
           <div class="grid-cell">
           {%- endif -%}
-
             {%- if experience.industry -%}
             <div class="post-meta">{{- experience.industry -}}</div>
             {%- endif -%}
-
             <div>
               {%- if experience.title -%}
               {{ experience.title }}
@@ -40,11 +29,8 @@ layout: page
               <i>Undisclosed project</i>
               {%- endif -%}
             </div>
-
             <div class="post-meta">{{ experience.start | date: "%m/%Y" }} - {{ experience.end | date: "%m/%Y" | default: "Today" }}</div>
-
             <div class="table-summary post-meta">{{ experience.summary }}</div>
-
             <div class="table-icon">
               {%- assign platform_ids = experience.platforms | split: ", " -%}
               {%- for platform_id in platform_ids -%}
@@ -52,19 +38,13 @@ layout: page
               <img src="{{ platform.image }}" class="icon" title="{{ platform.name }}" alt="{{ platform.name }}">
               {%- endfor -%}
             </div>
-
           {%- if experience.url -%}
           </a>
           {%- else -%}
           </div>
           {%- endif -%}
-
         {% endfor %}
-
       </div>
-      
     </div>
-
   {% endfor %}
-
 </div>
