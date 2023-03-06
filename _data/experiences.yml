@@ -1,3 +1,17 @@
+- title: 
+  summary: Requirements engineering for a braking system manufacturer according to safety integrity level 2
+  industry: Rail industry
+  company: xroot
+  start: 2022-12-01
+
+- title: Qualifood
+  summary: Continuing development of a monitoring app written in Flutter
+  url: https://www.qualifood.de/Common/App.aspx
+  industry: Livestock
+  platforms: android, ios
+  company: xroot
+  start: 2022-10-28
+
 - title: MediaMarktSaturn
   summary: Maintaining native legacy apps with large user bases and accompanying the transition to successors
   url: https://www.mediamarktsaturn.com
