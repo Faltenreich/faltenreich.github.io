@@ -181,6 +181,10 @@ a.grid-cell {
 
 // Custom
 
+.justify {
+  text-align: justify;
+}
+
 .post-image {
   width: 100%;
   max-height: 500px;
@@ -357,6 +361,7 @@ a.showcase {
   animation-direction: alternate;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
+  z-index: -1;
 }
 
 .home.header {

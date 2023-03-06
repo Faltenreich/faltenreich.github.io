@@ -4,4 +4,4 @@ layout: home
 
 Welcome to my website which is all about the one thing I love doing the most: writing. Be it source code, a blogpost or every now and then a piece of poetry.
 
-This place serves one purpose: logging this work like a diary or portfolio. Fellow developers may take a look at the software I have written or took part in and hopefully learn something from the blogposts I have written. One may take a break from daily work or simply get some inspiration.
+I am a software developer from Germany, specialized in mobile computing. I have conceptualized, developed, published and maintained multiple projects including small backends or setting up a Backend-as-a-service. In my spare time, I discover new programming languages and frameworks, one of them being the website you are currently on.
