@@ -24,12 +24,12 @@
   description: >-
     Even though Flutter has established itself, my bet is on Kotlin Multiplatform Mobile (and Compose Multiplatform) 
     to revolutionize cross-platform development once again in the following years. Therefore I am developing first 
-    proof-of-concepts and going to use this technology for my next multiplatform project.
+    proof-of-concepts as preparation for my next multiplatform project.
   technologies:
     - Kotlin Native
     - Compose Multiplatform
     - Material3
-    - MObile KOtlin (Moko Resources)
+    - MObile KOtlin
     - SQLDelight
     - Ktor, Coroutines
     - Koin

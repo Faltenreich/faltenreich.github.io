@@ -5,10 +5,10 @@
   "minima/skins/{{ site.minima.skin | default: 'classic' }}",
   "minima/initialize";
 
-$link-color: #fff;
 $text-color-light: lighten($text-color, 20%);
+$link-color: #fff;
 $code-background-color-light: $table-header-bg-color;
-$accent-color: rgb(38, 148, 148);
+$primary-color: #41785aff;
 
 // Overrides
 // Minima
@@ -123,6 +123,10 @@ a {
 
 .grid.uneven {
   grid-template-columns: 1fr;
+}
+
+.grid.uneven.spaced {
+  grid-gap: 32px;
 }
 
 @media only screen and (min-width: 600px) {
@@ -404,13 +408,4 @@ a.showcase {
   width: auto;
   padding-left: $spacing-unit;
   padding-right: $spacing-unit;
-}
-
-.home.author.label {
-  font-size: 0.8em;
-  color: $accent-color;
-}
-
-.home.author.text {
-  margin-bottom: 0px;
 }
