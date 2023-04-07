@@ -1,7 +1,14 @@
+- id: rewe-digital
+  name: REWE digital
+  url: https://www.rewe-digital.com
+  image: "/assets/images/software/rewe-digital.png"
+  start: 2023-04-01
+
 - id: xroot
   name: x-root Software GmbH
   url: https://www.x-root.de
   image: "/assets/images/software/xroot.png"
+  end: 2023-03-31
   start: 2015-04-01
 
 - id: cubeware
