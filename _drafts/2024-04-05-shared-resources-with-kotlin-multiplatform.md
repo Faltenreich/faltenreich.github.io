@@ -2,60 +2,69 @@
 layout: post
 image: 
 title: Shared resources with Kotlin Multiplatform
-description: One single source of truth for multiplatform strings and other resources
+description: One single source of truth for multiplatform resources
 tags: kmp multiplatform compose
 ---
 
-JetBrains 
-
-This article describes my transition from MOKO resources to Compose Resources. Both solutions provide a good way of creating one single source of truth for resources but are far from stable as of April 2024 and come with their own specialties and caveats.
-
-> Disclaimer: This blogpost continues a previous one about [Migrating to Kotlin Multiplatform](/_posts/2023-01-18-migrating-to-kotlin-multiplatform-mobile.md#resources)
+Kotlin Multiplatform, together with Compose Multiplatform, is a serious competition for multiplatform frameworks like Flutter or React Native. Besides business logic and user interfaces, one missing piece of the puzzle are multiplatform resources. 
 
 ---
 
 ##### [Table of Contents](#table-of-contents)
 
+1. [Solutions](#solutions)
+    1. [MOKO resources](#moko-resources)
+    2. [JetBrains Compose resources](#jetbrains-compose-resources)
+    3. [Comparison](#comparison)
+    4. [Conclusion](#conclusion)
+3. [User interface](#user-interface)
+    1. [Compose Multiplatform](#compose-multiplatform)
+    2. [Material](#material)
+    3. [Resources](#resources)
+4. [Conclusion](#conclusion)
+
 ---
 
-## Multiplatform resources
+> This blogpost continues [Migrating to Kotlin Multiplatform](/_posts/2023-01-18-migrating-to-kotlin-multiplatform-mobile.md) and its part about [resources](/_posts/2023-01-18-migrating-to-kotlin-multiplatform-mobile.md#resources)
 
-If Kotlin Multiplatform was a series, and Compose Multiplatform one season, then the next episode would be multiplatform resources. As of April 2024 there is no official and stable solution that covers resource handling like we are used to from native Android or iOS development. Luckily there are already multiple solutions that support multiplatform resources to a varying degree. We will dive into two of them.
+## Solutions
+
+As of April 2024 there is no official and stable solution that covers resource handling like we are used to from native Android or iOS development. Luckily there are already multiple solutions available that support multiplatform resources to a varying degree. We will dive into two of them.
 
 ### MOKO resources
 
-MOKO resources started development in 2019 and became one of the largest third-party solutions for multiplatform resources. It is one of many components by [IceRock Development](https://moko.icerock.dev) targeting Kotlin Multiplatform. The project is well-documented, has more than thirty contributors and almost 1k stars. 
+MOKO resources started development in 2019 and became one of the largest third-party solutions for multiplatform resources. It is one of many components by [IceRock Development](https://moko.icerock.dev) targeting Kotlin Multiplatform. Therefore its name: **MO**bile **KO**tlin project. The project is well-documented, has more than thirty contributors and almost 1k stars. 
 
 Unfortunately it has become somewhat stale, as issues are responded to sparsely and the last minor update `0.23.0` was almost a year ago. 2024 started promising with weekly alpha versions but that trend ended two months later. Personally I experienced one crash after upgrading the Android Gradle Plugin to 8.3.0 (see [#652](https://github.com/icerockdev/moko-resources/issues/652)) and the issue tracker is approaching a point where open issues outnumber closed ones.
 
-### Compose resources
+### JetBrains resources
 
-JetBrains added multiplatform resources to its [roadmap](https://blog.jetbrains.com/kotlin/2023/11/kotlin-multiplatform-development-roadmap-for-2024/#compose-multiplatform) in November 2023. In February 2024 they released a first experimental version of `compose.components.resources` with [Compose Multiplatform 1.6.0](https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.6.0). One month later "Resources" occupy a good chunk of the changelog for [Compose Multiplatform 1.6.1](https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.6.1) which might be a good sign for this library to slowly gain track.
+JetBrains added multiplatform resources to its [roadmap](https://blog.jetbrains.com/kotlin/2023/11/kotlin-multiplatform-development-roadmap-for-2024/#compose-multiplatform) in November 2023. In February 2024 they released a first experimental version of `compose.components.resources` with [Compose Multiplatform 1.6.0](https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.6.0). One month later "Resources" occupy a good chunk of the changelog for [Compose Multiplatform 1.6.1](https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.6.1).
+
+> We will continue to name this solution "JetBrains resources" in the following text, as there is no clear indication of whether or how JetBrains wants to identify it.
 
 ### Comparison
 
-Currently MOKO is leagues ahead of JetBrains' solution: more features, more customization, less bugs. MOKO supports multi-module projects,  - features JetBrains has yet to implement. MOKO has all of those, even though they are far from reaching the same level as their native counterparts.
-MOKO supports splitting up resources of the same type into multiple files. This feature is a little bit limited (e.g. string files require a `strings`-prefix) and not very well documented, but it is working.
+Currently the solution by IceRock Development is leagues ahead of JetBrains'. While the former's featureset is extensive and its configuration customizable, the latter misses many features and does not support multi-module projects or splitting up resources into multiple files yet, which might be dealbrakers.
 
-Following matrix compares the feature-set of both solutions:
+Following types of resources are supported:
 
-| Feature | MOKO | JetBrains |
-| ------- | ---- | ------- |
-| Strings | ✅ | ✅ (no plurals) |
+| Type | MOKO | JetBrains |
+| ------ | ---- | -------- |
+| Strings | ✅ | ✅ (except plurals) |
 | Rasterized images | ✅ (.png, .jpg) | ✅ (.png, .jpg, .bmp, .webp) |
 | Vector images | ✅ (.svg) | ✅ ([.xml](https://developer.android.com/develop/ui/views/graphics/vector-drawable-resources)) |
-| Fonts | ✅ (.ttf, .otf) |  |
-| Files | ✅ (raw, assets) | ✅ |
-| Colors | ✅ |  |
-| Modularization | ✅ | ❌ |
+| Fonts | ✅ (.ttf, .otf) | ✅ (.ttf, .otf) |
+| Files | ✅ (raw, assets) | ✅ (raw) |
+| Colors | ✅ | ❌ |
 
-Both solutions support rasterized and vectorized images, but the format of the latter differs from each other: MOKO uses SVG while JetBrains reuses the XML format we know from native Android [Vector drawables](https://developer.android.com/develop/ui/views/graphics/vector-drawable-resources).
+This limited set can most likely be explained with platforms missing native support for a type, like `.dimens` or `.mipmap`, or using proprietary ones, like `.xml` or `.mlmodel`.
 
 ### Conclusion
 
 As of April 2024 neither of both solutions is production-ready. If one has to decide for a single source of truth, MOKO resources should be the best bet. That might change in the near future because if both projects keep their current pace, I expect JetBrains to surpass MOKO in a few months and become stable during 2025.
 
-## Howto migrate from MOKO resources to Compose Resources
+## Showcase: Migrate from MOKO resources to JetBrains resources
 
 Next I will describe my transition from MOKO resources to Compose Resources. MOKO resources provides a more mature solution. I decided to migrate to JetBrains' solution nonetheless as I anticipate tighter release cycles and therefore a more full-fledged solution in the near future.
 
