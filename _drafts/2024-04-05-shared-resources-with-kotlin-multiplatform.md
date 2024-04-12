@@ -49,60 +49,102 @@ Currently the solution by IceRock Development is leagues ahead of JetBrains'. Wh
 
 Following types of resources are supported:
 
-| Type | MOKO | JetBrains |
-| ------ | ---- | -------- |
-| Strings | ✅ | ✅ (except plurals) |
-| Rasterized images | ✅ (.png, .jpg) | ✅ (.png, .jpg, .bmp, .webp) |
-| Vector images | ✅ (.svg) | ✅ ([.xml](https://developer.android.com/develop/ui/views/graphics/vector-drawable-resources)) |
-| Fonts | ✅ (.ttf, .otf) | ✅ (.ttf, .otf) |
-| Files | ✅ (raw, assets) | ✅ (raw) |
-| Colors | ✅ | ❌ |
+| Resource | MOKO | JetBrains |
+| -------- | ---- | -------- |
+| String | ✅ | ✅ (except plurals) |
+| Image (Rasterized) | ✅ (.png, .jpg) | ✅ (.png, .jpg, .bmp, .webp) |
+| Image (Vectorized) | ✅ (.svg) | ✅ ([.xml](https://developer.android.com/develop/ui/views/graphics/vector-drawable-resources)) |
+| Font | ✅ (.ttf, .otf) | ✅ (.ttf, .otf) |
+| File | ✅ (raw, assets) | ✅ (raw) |
+| Color | ✅ | ❌ |
 
-This limited set can most likely be explained with platforms missing native support for a type, like `.dimens` or `.mipmap`, or using proprietary ones, like `.xml` or `.mlmodel`.
+Compared to native solution this set seems limited and most likely boils down to the lowest common denominator of every supported platform. Some platforms may not support certain types, like `.dimens` or `.mipmap`, or use proprietary ones, like `.xml` or `.mlmodel`. Colors on the other hand can be covered completely by the app's theme and therefor their single source of truth shifts from resources to the Composable realm.
 
 ### Conclusion
 
-As of April 2024 neither of both solutions is production-ready. If one has to decide for a single source of truth, MOKO resources should be the best bet. That might change in the near future because if both projects keep their current pace, I expect JetBrains to surpass MOKO in a few months and become stable during 2025.
+As of April 2024 neither of the two solutions is production-ready. If one has to decide for a single source of truth, MOKO resources should be the best bet. That might change in the near future because if both projects keep their current pace, I expect JetBrains to surpass MOKO in the upcoming months and become stable late 2025 / early 2026.
 
 ## Showcase: Migrate from MOKO resources to JetBrains resources
 
-Next I will describe my transition from MOKO resources to Compose Resources. MOKO resources provides a more mature solution. I decided to migrate to JetBrains' solution nonetheless as I anticipate tighter release cycles and therefore a more full-fledged solution in the near future.
+This showcase describes the migration path from MOKO resources to JetBrains resources. I did this for [Diaguard](https://github.com/Faltenreich/Diaguard) which is currently being rewritten from native Android with Java to Kotlin Multiplatform using technologies mentioned in this blogpost and the [previous one](/_posts/2023-01-18-migrating-to-kotlin-multiplatform-mobile.md). I tried to abstract everything domain-specific, so this can be applied to similar projects. I did not use any custom fonts but migrating those and other types should work similarly to strings and images.
 
-For this example we use a namespace of `com.author.app`.
+### Prerequisite
 
-Prequisite: Plugins for both solutions have been applied and the project is single-module.
+The project is single-module and dependencies for both MOKO resources and JetBrains resources have been implemented.
 
 ### Move resources
 
-- Move resources from `src/commonMain/moko-resources` (0.24.+) or `src/commonMain/resources/MR` (0.23.0 or older) to `src/commonMain/composeResources`
-- Move string resources from `base` to `values` and `<locale>` to `values-<locale>`
-- Rename folder for images from `images` to `drawable`
+Move resource folders:
+
+```diff
+- src/commonMain/moko-resources
+- src/commonMain/resources/MR
++ src/commonMain/composeResources
+```
+
+Rename folders for resource types:
+
+```diff
+- base
++ values
+
+- <locale>
++ values-<locale>
+
+- images
++ drawable
+```
 
 ### Convert resources
 
-- Convert string templates from implicitly formatted (`%s` or `%d`) to explicitly formatted (`%1$s` or `%1$d`)
-- Convert vector drawables from `.svg` to `.xml` via Android Studio: `Tools/Resource Manager/Drawable/+/Import Drawables and move them to src/commonMain/composeResources/drawable`
+Convert string templates from implicitly- to explicitly formatted, e.g. for strings placeholders:
 
-### Find and replace
+```diff
+- %s Hello, World %d
++ %1$s Hello, World %2$d
+```
 
-Next we will make excessive use of `Edit/Find/Replace in Files...` to avoid touching every file dependant on resources.
+Convert vector drawables from `.svg` to `.xml` via Android Studio's `Resource Manager`
 
-Prequisite: Disable `Add unambiguous imports on the fly` and `Optimize imports on the fly` for `Kotlin` in `File/Settings/Editor/General/Auto Import`. This will keep Android Studio from scrambling imports up in the process and can be re-enabled after this chapter.
+1. Resource Manager -> Drawable -> + -> Import Drawables
+2. Select everything `.svg` that should be converted to `.xml`
+4. Move the generated `.xml` to `src/commonMain/composeResources/drawable`
 
-Core element of the . Android developers know them as `R.java` which will be generated at `TODO`. MOKO calls it `MR` and places it at `com.author.app.MR`. JetBrains calls it `Res` and places it at `app.shared.generated.resources.Res`. 
+### Migrate imports
 
-By default the import path changes from `<namespace>.MR` to `<rootProject>.shared.generated.resources.*`. That wildcard speeds up the transition of imports which would have otherwise be declared individually for every resource. If you want to avoid wildcards, optimize your imports afterwards.
+Next we need to migrate all imports for the resource linkers that are bridging Kotlin to XML. Android developers know this bridge as `R.java` which will be generated during compilation in the build folder. MOKO resource calls it `MR` (by default) and places it at `<namespace>.MR`. JetBrains resources calls it `Res` and places it at `app.shared.generated.resources.Res`. 
 
+This migration steps makes excessive use of `Edit/Find/Replace in Files…` to avoid touching every file that uses resources.
+
+> Tip: Disable `Add unambiguous imports on the fly` and `Optimize imports on the fly` for `Kotlin` in `File/Settings/Editor/General/Auto Import`. This will keep Android Studio from scrambling imports up in the process and can be re-enabled after this chapter.
+
+```diff
+- import <namespace>.MR
++ import <rootProject>.shared.generated.resources.*
+
+- import dev.icerock.moko.resources.compose.stringResource
++ import org.jetbrains.compose.resources.stringResource
+
+- import dev.icerock.moko.resources.compose.painterResource
++ import org.jetbrains.compose.resources.painterResource
+
+- import dev.icerock.moko.resources.ImageResource
++ import org.jetbrains.compose.resources.DrawableResource
+```
+
+The wildcard speeds up the transition of imports which would have otherwise be declared individually for every resource. If you want to avoid wildcards, optimize your imports afterwards via Android Studio's `Code / Optimize imports`.
 
 ### Migrate function calls
 
-MOKO and Compose share a similar API which makes it easy to migrate from one to the other. `PainterResource` and `StringResource` are called the same and only differ by import.
+MOKO resources and JetBrains resources share a similar API which makes it easy to migrate from one to the other.
 
-- `import com.faltenreich.diaguard.MR` becomes `import diaguard.shared.generated.resources.*`
-- `import dev.icerock.moko.resources.compose.stringResource` becomes `import org.jetbrains.compose.resources.stringResource`
-- `import dev.icerock.moko.resources.compose.painterResource` becomes `import org.jetbrains.compose.resources.painterResource`
-- `import dev.icerock.moko.resources.ImageResource` becomes `import org.jetbrains.compose.resources.DrawableResource`
+```diff
+- MR.strings
++ Res.string
 
-| MOKO | Compose |
-| ---- | ------- |
-| com.faltenreich.diaguard.MR | 
+- MR.images
++ Res.drawable
+```
+
+Since JetBrains resources does not support file assets (yet), we need to put a little bit more work into migrating access to files:
+
