@@ -6,40 +6,33 @@ description: One single source of truth for multiplatform resources
 tags: kmp multiplatform compose
 ---
 
-Kotlin Multiplatform, together with Compose Multiplatform, is a serious competition for multiplatform frameworks like Flutter or React Native. Besides business logic and user interfaces, one missing piece of the puzzle are multiplatform resources. 
+Kotlin Multiplatform, together with Compose Multiplatform, is a serious competition for multiplatform frameworks like Flutter or React Native. Besides business logic and user interfaces, one missing piece of the puzzle are multiplatform resources.
+
+> This blogpost continues [Migrating to Kotlin Multiplatform](/_posts/2023-01-18-migrating-to-kotlin-multiplatform-mobile.md) and its part about [resources](/_posts/2023-01-18-migrating-to-kotlin-multiplatform-mobile.md#resources)
 
 ---
 
 ##### [Table of Contents](#table-of-contents)
 
-1. [Solutions](#solutions)
-    1. [MOKO resources](#moko-resources)
-    2. [JetBrains Compose resources](#jetbrains-compose-resources)
-    3. [Comparison](#comparison)
-    4. [Conclusion](#conclusion)
-3. [User interface](#user-interface)
-    1. [Compose Multiplatform](#compose-multiplatform)
-    2. [Material](#material)
-    3. [Resources](#resources)
+1. [MOKO resources](#moko-resources)
+2. [JetBrains resources](#jetbrains-resources)
+3. [Comparison](#comparison)
 4. [Conclusion](#conclusion)
+3. [Showcase: Migrating from MOKO resources to JetBrains resources](#showcase)
 
 ---
 
-> This blogpost continues [Migrating to Kotlin Multiplatform](/_posts/2023-01-18-migrating-to-kotlin-multiplatform-mobile.md) and its part about [resources](/_posts/2023-01-18-migrating-to-kotlin-multiplatform-mobile.md#resources)
-
-## Solutions
-
-As of April 2024 there is no official and stable solution that covers resource handling like we are used to from native Android or iOS development. Luckily there are already multiple solutions available that support multiplatform resources to a varying degree. We will dive into two of them.
+As of April 2024 there is no official and stable solution that covers resource handling like we are used to from native Android or iOS development. Luckily there are solutions available that support multiplatform resources to a varying degree. We will dive into two of them.
 
 ### MOKO resources
 
-MOKO resources started development in 2019 and became one of the largest third-party solutions for multiplatform resources. It is one of many components by [IceRock Development](https://moko.icerock.dev) targeting Kotlin Multiplatform. Therefore its name: **MO**bile **KO**tlin project. The project is well-documented, has more than thirty contributors and almost 1k stars. 
+[MOKO resources](https://github.com/icerockdev/moko-resources) started development in 2019 and became one of the largest third-party solutions for multiplatform resources. It is one of many components by [IceRock Development](https://moko.icerock.dev) targeting Kotlin Multiplatform. Therefore its name: **MO**bile **KO**tlin project. This project is well-documented, has more than thirty contributors and almost 1k stars on GitHub. 
 
 Unfortunately it has become somewhat stale, as issues are responded to sparsely and the last minor update `0.23.0` was almost a year ago. 2024 started promising with weekly alpha versions but that trend ended two months later. Personally I experienced one crash after upgrading the Android Gradle Plugin to 8.3.0 (see [#652](https://github.com/icerockdev/moko-resources/issues/652)) and the issue tracker is approaching a point where open issues outnumber closed ones.
 
 ### JetBrains resources
 
-JetBrains added multiplatform resources to its [roadmap](https://blog.jetbrains.com/kotlin/2023/11/kotlin-multiplatform-development-roadmap-for-2024/#compose-multiplatform) in November 2023. In February 2024 they released a first experimental version of `compose.components.resources` with [Compose Multiplatform 1.6.0](https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.6.0). One month later "Resources" occupy a good chunk of the changelog for [Compose Multiplatform 1.6.1](https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.6.1).
+JetBrains added multiplatform resources to its [roadmap](https://blog.jetbrains.com/kotlin/2023/11/kotlin-multiplatform-development-roadmap-for-2024/#compose-multiplatform) in November 2023. In February 2024 they released a first experimental version of `compose.components.resources` with [Compose Multiplatform 1.6.0](https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.6.0). One month later "Resources" occupy a good chunk of the changelog for [Compose Multiplatform 1.6.1](https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.6.1). The documentation can be found at [jetbrains.com](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-images-resources.html).
 
 > We will continue to name this solution "JetBrains resources" in the following text, as there is no clear indication of whether or how JetBrains wants to identify it.
 
@@ -64,7 +57,7 @@ Compared to native solution this set seems limited and most likely boils down to
 
 As of April 2024 neither of the two solutions is production-ready. If one has to decide for a single source of truth, MOKO resources should be the best bet. That might change in the near future because if both projects keep their current pace, I expect JetBrains to surpass MOKO in the upcoming months and become stable late 2025 / early 2026.
 
-## Showcase: Migrate from MOKO resources to JetBrains resources
+## Showcase: Migrating from MOKO resources to JetBrains resources
 
 This showcase describes the migration path from MOKO resources to JetBrains resources. I did this for [Diaguard](https://github.com/Faltenreich/Diaguard) which is currently being rewritten from native Android with Java to Kotlin Multiplatform using technologies mentioned in this blogpost and the [previous one](/_posts/2023-01-18-migrating-to-kotlin-multiplatform-mobile.md). I tried to abstract everything domain-specific, so this can be applied to similar projects. I did not use any custom fonts but migrating those and other types should work similarly to strings and images.
 
@@ -136,7 +129,7 @@ The wildcard speeds up the transition of imports which would have otherwise be d
 
 ### Migrate function calls
 
-MOKO resources and JetBrains resources share a similar API which makes it easy to migrate from one to the other.
+Strings and images can be migrated project-wide, since MOKO resources and JetBrains resources share a similar API:
 
 ```diff
 - MR.strings
@@ -146,5 +139,19 @@ MOKO resources and JetBrains resources share a similar API which makes it easy t
 + Res.drawable
 ```
 
-Since JetBrains resources does not support file assets (yet), we need to put a little bit more work into migrating access to files:
+Files do not yet support resource linking, so every call-site requires manual migration:
 
+```diff
+- MR.files.<filename>.readTextAsState()
++ runBlocking { Res.readBytes("files/<filename>.<filetype>").decodeToString() }
+```
+
+Let me break down those changes:
+
+- Files are read asynchronously, so we use `runBlocking` for call-sites that operate synchronously
+- Files are referenced by file name including -type and by their relative path, from `src/commonMain/composeResources`
+- Files are returned as `ByteArray`, so we decode them, e.g. to `String` via `ByteArray.decodeToString(): String`
+
+### Summary
+
+As always, encapsulating access to the resource handling may have seemed a good idea to streamline the migration process. But since resources are such an essential part of every user-facing application, the effort might not be worth this cost. In my case, I applied all described steps to migrate my small app within a few hours, thanks to a handful of functions provided by Android Studio. Then I tried to encapsulate everything redundant, like file access, but leaving access to the resource linker scattered across the project. This will be my sweet spot between simplifying another potential migration process and hoping that JetBrains resources is here to stay. Time will tell.
