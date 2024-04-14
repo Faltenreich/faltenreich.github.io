@@ -13,6 +13,6 @@ bundle exec jekyll serve --drafts --livereload
 
 ## License
 
-    Copyright (C) 2023 Philipp Fahlteich
+    Copyright (C) 2024 Philipp Fahlteich
 
     All rights served to the copyright holder

@@ -1,26 +1,30 @@
 ---
 layout: post
-image: 
+image: /assets/images/posts/2024-04-multiplatform-resorces.jpg
 title: Shared resources with Kotlin Multiplatform
 description: One single source of truth for multiplatform resources
 tags: kmp multiplatform compose
 ---
 
-Kotlin Multiplatform, together with Compose Multiplatform, is a serious competition for multiplatform frameworks like Flutter or React Native. Besides business logic and user interfaces, one missing piece of the puzzle are multiplatform resources.
-
 > This blogpost continues [Migrating to Kotlin Multiplatform](/_posts/2023-01-18-migrating-to-kotlin-multiplatform-mobile.md) and its part about [resources](/_posts/2023-01-18-migrating-to-kotlin-multiplatform-mobile.md#resources)
+
+Kotlin Multiplatform, together with Compose Multiplatform, is a serious competition for multiplatform frameworks like Flutter or React Native. Besides business logic and user interfaces, one missing piece of the puzzle are multiplatform resources.
 
 ---
 
 ##### [Table of Contents](#table-of-contents)
 
-1. [MOKO resources](#moko-resources)
-2. [JetBrains resources](#jetbrains-resources)
-3. [Comparison](#comparison)
-4. [Conclusion](#conclusion)
-3. [Showcase: Migrating from MOKO resources to JetBrains resources](#showcase)
+1. [Plugins](#plugins)
+    1. [MOKO resources](#moko-resources)
+    2. [JetBrains resources](#jetbrains-resources)
+    3. [Comparison](#comparison)
+    4. [Conclusion](#conclusion)
+2. [Tutorial](#tutorial)
+    1. [Migration from MOKO resources to JetBrains resources](#showcase)
 
 ---
+
+## Plugins
 
 As of April 2024 there is no official and stable solution that covers resource handling like we are used to from native Android or iOS development. Luckily there are solutions available that support multiplatform resources to a varying degree. We will dive into two of them.
 
@@ -57,15 +61,19 @@ Compared to native solution this set seems limited and most likely boils down to
 
 As of April 2024 neither of the two solutions is production-ready. If one has to decide for a single source of truth, MOKO resources should be the best bet. That might change in the near future because if both projects keep their current pace, I expect JetBrains to surpass MOKO in the upcoming months and become stable late 2025 / early 2026.
 
-## Showcase: Migrating from MOKO resources to JetBrains resources
+## Tutorial
 
-This showcase describes the migration path from MOKO resources to JetBrains resources. I did this for [Diaguard](https://github.com/Faltenreich/Diaguard) which is currently being rewritten from native Android with Java to Kotlin Multiplatform using technologies mentioned in this blogpost and the [previous one](/_posts/2023-01-18-migrating-to-kotlin-multiplatform-mobile.md). I tried to abstract everything domain-specific, so this can be applied to similar projects. I did not use any custom fonts but migrating those and other types should work similarly to strings and images.
+This tutorial documents challenges I faced during the rewrite of [Diaguard](https://github.com/Faltenreich/Diaguard). In April 2023 I decided to replace the then ten-years-old native Android app written in Java with Kotlin Multiplatform.
 
-### Prerequisite
 
-The project is single-module and dependencies for both MOKO resources and JetBrains resources have been implemented.
 
-### Move resources
+### Migration from MOKO- to JetBrains resources
+
+This tutorial describes the migration path from MOKO resources to JetBrains resources. I tried to abstract everything domain-specific, so this can be applied to similar projects. I did not use any custom fonts but migrating those and other types should work similarly to strings and images.
+
+> Prerequisite: The project is single-module and dependencies for both MOKO resources and JetBrains resources have been implemented.
+
+**Move resources**
 
 Move resource folders:
 
@@ -88,7 +96,7 @@ Rename folders for resource types:
 + drawable
 ```
 
-### Convert resources
+**Convert resources**
 
 Convert string templates from implicitly- to explicitly formatted, e.g. for strings placeholders:
 
@@ -103,7 +111,7 @@ Convert vector drawables from `.svg` to `.xml` via Android Studio's `Resource Ma
 2. Select everything `.svg` that should be converted to `.xml`
 4. Move the generated `.xml` to `src/commonMain/composeResources/drawable`
 
-### Migrate imports
+**Migrate imports**
 
 Next we need to migrate all imports for the resource linkers that are bridging Kotlin to XML. Android developers know this bridge as `R.java` which will be generated during compilation in the build folder. MOKO resource calls it `MR` (by default) and places it at `<namespace>.MR`. JetBrains resources calls it `Res` and places it at `app.shared.generated.resources.Res`. 
 
@@ -127,7 +135,7 @@ This migration steps makes excessive use of `Edit/Find/Replace in Files…` to a
 
 The wildcard speeds up the transition of imports which would have otherwise be declared individually for every resource. If you want to avoid wildcards, optimize your imports afterwards via Android Studio's `Code / Optimize imports`.
 
-### Migrate function calls
+**Migrate function calls**
 
 Strings and images can be migrated project-wide, since MOKO resources and JetBrains resources share a similar API:
 
@@ -152,6 +160,10 @@ Let me break down those changes:
 - Files are referenced by file name including -type and by their relative path, from `src/commonMain/composeResources`
 - Files are returned as `ByteArray`, so we decode them, e.g. to `String` via `ByteArray.decodeToString(): String`
 
-### Summary
+### Encapsulation
 
-As always, encapsulating access to the resource handling may have seemed a good idea to streamline the migration process. But since resources are such an essential part of every user-facing application, the effort might not be worth this cost. In my case, I applied all described steps to migrate my small app within a few hours, thanks to a handful of functions provided by Android Studio. Then I tried to encapsulate everything redundant, like file access, but leaving access to the resource linker scattered across the project. This will be my sweet spot between simplifying another potential migration process and hoping that JetBrains resources is here to stay. Time will tell.
+Encapsulatin helps a lot when working with moving targets that require repeated adjustment of the toolchain.
+
+ Kotlin Multiplatform and especially Compose Multiplatform are still moving targets, I tried to encapsulate as much as possible in order to speed up migration paths. This helped a lot when swapping out functions resource file accress or other resources which would have been tedious if scattered across the project.
+
+Encapsulation may have helped during the migration process, but since resources are such an essential part of every user-facing application, effort and return must be weighed up. In my case, I applied all described steps to migrate my small app within a few hours, thanks to a handful of functions provided by Android Studio. Then I tried to encapsulate everything redundant, like file access, but leaving access to the resource linker scattered across the project. This will be my sweet spot between simplifying another potential migration process and hoping that JetBrains resources is here to stay. Time will tell.
