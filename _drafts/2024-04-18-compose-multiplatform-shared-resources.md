@@ -5,9 +5,9 @@ description: One single source of truth for multiplatform resources
 tags: kmp multiplatform compose
 ---
 
-> This blogpost continues [Migrating to Kotlin Multiplatform](/_posts/2023-01-18-migrating-to-kotlin-multiplatform-mobile.md) and its part about [resources](/_posts/2023-01-18-migrating-to-kotlin-multiplatform-mobile.md#resources)
+> This blogpost continues [Migrating to Kotlin Multiplatform](/2023/01/18/migrating-to-kotlin-multiplatform-mobile.html) and its part about [resources](/2023/01/18/migrating-to-kotlin-multiplatform-mobile.html#resources)
 
-Kotlin Multiplatform, together with Compose Multiplatform, is a serious competition for multiplatform frameworks like Flutter or React Native. Besides business logic and user interfaces, one missing piece of the puzzle are multiplatform resources.
+Kotlin Multiplatform, together with Compose Multiplatform, is becoming a serious competition for multiplatform frameworks like Flutter or React Native. Besides business logic and user interfaces, there is another major aspect for a multiplatform experience with a single source of truth: shared resources.
 
 ---
 
@@ -25,13 +25,13 @@ Kotlin Multiplatform, together with Compose Multiplatform, is a serious competit
 
 ## Plugins
 
-As of April 2024 there is no official and stable solution that covers resource handling like we are used to from native Android or iOS development. Luckily there are solutions available that support multiplatform resources to a varying degree. We will dive into the most promising two.
+As of April 2024 we have no definite answer to shared resources with Compose Multiplatform. Luckily there are already multiple plugins available that fulfill this requirement to a varying degree. We will dive into the most promising two.
 
 ### Compose Multiplatform resources
 
-JetBrains added multiplatform resources to its [roadmap](https://blog.jetbrains.com/kotlin/2023/11/kotlin-multiplatform-development-roadmap-for-2024/#compose-multiplatform) in November 2023. In February 2024 they released a first experimental version of `compose.components.resources` with [Compose Multiplatform 1.6.0](https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.6.0). One month later "Resources" occupy a good chunk of the changelog for [Compose Multiplatform 1.6.1](https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.6.1). The documentation can be found at [jetbrains.com](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-images-resources.html).
+JetBrains added multiplatform resources to its [roadmap](https://blog.jetbrains.com/kotlin/2023/11/kotlin-multiplatform-development-roadmap-for-2024/#compose-multiplatform) and its [documentation](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-images-resources.html) in November 2023. In February 2024 they released a first experimental version of `compose.components.resources` with [Compose Multiplatform 1.6.0](https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.6.0). One month later "Resources" occupy a good chunk of the changelog for [Compose Multiplatform 1.6.1](https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.6.1).
 
-Compose Multiplatform resources works in a similar manner to Android's native [App resources](https://developer.android.com/guide/topics/resources/providing-resources). Resources accessors are generated during compilation (for everything within `composeResources`) and available through one single source of truth (`Res.kt`).
+Compose Multiplatform resources works in a similar way to Android's native [App resources](https://developer.android.com/guide/topics/resources/providing-resources). Resources accessors are generated during compilation (for everything within `composeResources`) and available through one single source of truth (`Res.kt`).
 
 ```
 shared
@@ -77,9 +77,9 @@ Unfortunately it has become somewhat stale, as issues are responded to sparsely 
 
 ### Comparison
 
-Currently Compose Multiplatform resources is leagues behind MOKO resources. While the former does not support multi-module projects or splitting up resources into multiple files yet, the former's featureset is extensive and its configuration customizable. 
+Currently Compose Multiplatform resources is leagues behind MOKO resources. While the former does not support multi-module projects or splitting up resources into multiple files yet, the latter's featureset is extensive and its configuration customizable. 
 
-Both solutions support the usual resource types and common restrictions boil down to the lowest common denominator of every supported platform. Some platforms may not support certain types, like `.dimens` or `.mipmap`, or use proprietary ones, like `.xml` or `.mlmodel`. Colors on the other hand can be covered completely by the app's theme and therefor their single source of truth shifts from resources to the Composable realm.
+Both solutions support the usual resource types and common restrictions boil down to the lowest common denominator of every supported platform. Some platforms may not support certain types, like `.dimens` or `.mipmap`, or use proprietary ones, like `.xml` or `.mlmodel`. `color` may be missing but can be covered by the app's theme within the Composable realm.
 
 | Resource type | Compose Multiplatform resources | MOKO resources | 
 | ------------- | ------------------------------- | -------------- |
@@ -92,15 +92,17 @@ Both solutions support the usual resource types and common restrictions boil dow
 
 ### Conclusion
 
-As of April 2024 neither of the two solutions is production-ready. If one has to decide for a single source of truth, MOKO resources should be the way to go. But if both projects keep their current pace, I expect Compose Multiplatform resources to surpass MOKO resources in the near future.
+As of April 2024 neither of the two solutions is production-ready. If splitting up resources is not an option, MOKO resources should be the best bet, but expect breaking changes and open issues along the way. If both projects keep their current pace, I expect Compose Multiplatform resources to surpass MOKO resources in the near future.
 
 ## Tutorial
 
-This tutorial documents challenges I faced during the rewrite of [Diaguard](https://github.com/Faltenreich/Diaguard). In April 2023 I decided to replace the then ten-years-old native Android app written in Java with Kotlin Multiplatform.
+The following tutorial has been written during my rewrite of [Diaguard](https://github.com/Faltenreich/Diaguard), a previously ten-years-old native app written in Java.
 
 ### Migration from MOKO resources to Compose Multiplatform resources
 
-This tutorial describes the migration path from MOKO resources 0.24.0-alpha-5 to Compose Multiplatform resources 1.6.1. I tried to abstract everything domain-specific, so this can be applied to similar projects. I did not use any custom fonts but migrating those and other types should work similarly to strings and images.
+After one year with MOKO resources I decided to migrate to Compose Multiplatform resources. I tried to abstract everything domain-specific, so this can be applied to similar projects. I did not use any custom fonts, but migrating those and other types should work similarly to strings and images.
+
+> This migration path describes the transition from MOKO resources 0.24.0-alpha-5 to Compose Multiplatform resources 1.6.1.
 
 **Prerequisites**
 
@@ -112,7 +114,6 @@ Move resource folders:
 
 ```diff
 - src/commonMain/moko-resources
-- src/commonMain/resources/MR
 + src/commonMain/composeResources
 ```
 
@@ -194,6 +195,8 @@ Let me break down those changes:
 - Files are returned as `ByteArray`, so we decode them, e.g. to `String` via `ByteArray.decodeToString(): String`
 
 ### Encapsulation
+
+<TBD>
 
 Encapsulatin helps a lot when working with moving targets that require repeated adjustment of the toolchain.
 
