@@ -6,9 +6,9 @@ tags: kmp multiplatform compose
 github: diaguard/tree/feature/multiplatform
 ---
 
-> This blogpost continues [Migrating to Kotlin Multiplatform](/2023/01/18/migrating-to-kotlin-multiplatform-mobile.html) and its part about [resources](/2023/01/18/migrating-to-kotlin-multiplatform-mobile.html#resources)
-
 Kotlin Multiplatform, together with Compose Multiplatform, is becoming a serious competition for multiplatform frameworks like Flutter or React Native. Besides business logic and user interfaces, there is another aspect that should be shared across platforms: resources.
+
+> This blogpost continues [Migrating to Kotlin Multiplatform](/2023/01/18/migrating-to-kotlin-multiplatform-mobile.html) and its part about [resources](/2023/01/18/migrating-to-kotlin-multiplatform-mobile.html#resources)
 
 ---
 
@@ -20,7 +20,8 @@ Kotlin Multiplatform, together with Compose Multiplatform, is becoming a serious
     3. [Comparison](#comparison)
     4. [Conclusion](#conclusion)
 2. [Tutorial](#tutorial)
-    1. [Migration from MOKO resources to Compose Multiplatform resources](#showcase)
+    1. [Migration from MOKO resources to Compose Multiplatform resources](#migration-from-moko-resources-to-compose-multiplatform-resources)
+    2. [Encapsulation](#encapsulation)
 
 ---
 
