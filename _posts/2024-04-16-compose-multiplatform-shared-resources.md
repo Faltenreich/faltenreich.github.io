@@ -8,7 +8,7 @@ github: diaguard/tree/feature/multiplatform
 
 Kotlin Multiplatform, together with Compose Multiplatform, is becoming a serious competition for multiplatform frameworks like Flutter or React Native. Besides business logic and user interfaces, there is another aspect that should be shared across platforms: resources.
 
-> This blogpost continues [Migrating to Kotlin Multiplatform](/2023/01/18/migrating-to-kotlin-multiplatform-mobile.html) and its part about [resources](/2023/01/18/migrating-to-kotlin-multiplatform-mobile.html#resources)
+> This blogpost continues [Migrating to Kotlin Multiplatform](/2023/01/18/migrating-to-kotlin-multiplatform-mobile.html) and its chapter about [resources](/2023/01/18/migrating-to-kotlin-multiplatform-mobile.html#resources)
 
 ---
 
@@ -50,13 +50,9 @@ shared
 
 ```
 internal object Res {
-
   public object drawable
-
   public suspend fun readBytes(path: String): ByteArray = readResourceBytes(path)
-
   public object font
-
   public object string
 }
 ```
@@ -190,7 +186,7 @@ Files do not yet support resource linking, so every call-site requires manual mi
 Let me break down those changes:
 
 - Files are read asynchronously, so we use `runBlocking` for call-sites that operate synchronously
-- Files are referenced by file name including -type and by their relative path, from `src/commonMain/composeResources`
+- Files are referenced by file name including -type and by their relative path from `src/commonMain/composeResources`
 - Files are returned as `ByteArray`, so we decode them, e.g. to `String` via `ByteArray.decodeToString(): String`
 
 ### Encapsulation
