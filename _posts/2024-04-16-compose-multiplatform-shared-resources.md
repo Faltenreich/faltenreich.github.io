@@ -3,11 +3,12 @@ layout: post
 title: Compose Multiplatform with shared resources
 description: One single source of truth for multiplatform resources
 tags: kmp multiplatform compose
+github: diaguard/tree/feature/multiplatform
 ---
 
 > This blogpost continues [Migrating to Kotlin Multiplatform](/2023/01/18/migrating-to-kotlin-multiplatform-mobile.html) and its part about [resources](/2023/01/18/migrating-to-kotlin-multiplatform-mobile.html#resources)
 
-Kotlin Multiplatform, together with Compose Multiplatform, is becoming a serious competition for multiplatform frameworks like Flutter or React Native. Besides business logic and user interfaces, there is another major aspect for a multiplatform experience with a single source of truth: shared resources.
+Kotlin Multiplatform, together with Compose Multiplatform, is becoming a serious competition for multiplatform frameworks like Flutter or React Native. Besides business logic and user interfaces, there is another aspect that should be shared across platforms: resources.
 
 ---
 
@@ -46,7 +47,7 @@ shared
 
 `Res.kt` itself is an `object` providing accessors for every resource type.
 
-```kotlin
+```
 internal object Res {
 
   public object drawable
@@ -59,14 +60,17 @@ internal object Res {
 }
 ```
 
-Compose Multiplatform resources provides representations for supported resource types, like `StringResource` or `DrawableResource`. Additional helper methods simplify access from within a Composable context, e.g.
+Compose Multiplatform resources provides representations for some resource types, e.g. `StringResource` or `DrawableResource`. They ensure type-safety and can be consumed within a Composable context:
 
 ```kotlin
 @Composable
-fun stringResource(resource: StringResource, vararg formatArgs: Any): String
+fun painterResource(resource: DrawableResource): Painter
 
 @Composable
-fun painterResource(resource: DrawableResource): Painter
+fun Font(resource: FontResource): Font
+
+@Composable
+fun stringResource(resource: StringResource): String
 ```
 
 ### MOKO resources
@@ -100,13 +104,13 @@ The following tutorial has been written during my rewrite of [Diaguard](https://
 
 ### Migration from MOKO resources to Compose Multiplatform resources
 
-After one year with MOKO resources I decided to migrate to Compose Multiplatform resources. I tried to abstract everything domain-specific, so this can be applied to similar projects. I did not use any custom fonts, but migrating those and other types should work similarly to strings and images.
-
-> This migration path describes the transition from MOKO resources 0.24.0-alpha-5 to Compose Multiplatform resources 1.6.1.
+After one year with MOKO resources I decided to migrate to Compose Multiplatform resources. I tried to abstract everything domain-specific, so this tutorial can be applied to similar projects. I did not use any custom fonts, but migrating those and other types should work similarly to strings and images.
 
 **Prerequisites**
 
 Dependencies for both MOKO resources and Compose Multiplatform resources have been implemented and are working. The project is single-module.
+
+> Versions: MOKO resources 0.24.0-alpha-5, Compose Multiplatform resources 1.6.1
 
 **Move resources**
 
@@ -122,10 +126,8 @@ Rename folders for resource types:
 ```diff
 - base
 + values
-
 - <locale>
 + values-<locale>
-
 - images
 + drawable
 ```
@@ -156,13 +158,10 @@ This migration steps makes excessive use of `Edit/Find/Replace in Files…` to a
 ```diff
 - import <namespace>.MR
 + import <rootProject>.shared.generated.resources.*
-
 - import dev.icerock.moko.resources.compose.stringResource
 + import org.jetbrains.compose.resources.stringResource
-
 - import dev.icerock.moko.resources.compose.painterResource
 + import org.jetbrains.compose.resources.painterResource
-
 - import dev.icerock.moko.resources.ImageResource
 + import org.jetbrains.compose.resources.DrawableResource
 ```
@@ -176,7 +175,6 @@ Strings and images can be migrated project-wide, since MOKO resources and Compos
 ```diff
 - MR.strings
 + Res.string
-
 - MR.images
 + Res.drawable
 ```
@@ -196,10 +194,8 @@ Let me break down those changes:
 
 ### Encapsulation
 
-<TBD>
+Kotlin Multiplatform and especially Compose Multiplatform are still moving targets. Encapsulation can significantly reduce the migration effort. The fewer locations that access third-party libraries, the less effort is required to replace them. Since resources are such an essential part of every user-facing application, effort and return must be weighed up. 
 
-Encapsulatin helps a lot when working with moving targets that require repeated adjustment of the toolchain.
+In my case, I applied all described steps to migrate my small app within a few hours. Then I tried to encapsulate the most redundant code, like file access, but leaving access to the resource linker scattered across the project. This will be my sweet spot between simplifying another potential migration process and hoping that Compose Multiplatform resources is here to stay. 
 
- Kotlin Multiplatform and especially Compose Multiplatform are still moving targets, I tried to encapsulate as much as possible in order to speed up migration paths. This helped a lot when swapping out functions resource file accress or other resources which would have been tedious if scattered across the project.
-
-Encapsulation may have helped during the migration process, but since resources are such an essential part of every user-facing application, effort and return must be weighed up. In my case, I applied all described steps to migrate my small app within a few hours, thanks to a handful of functions provided by Android Studio. Then I tried to encapsulate everything redundant, like file access, but leaving access to the resource linker scattered across the project. This will be my sweet spot between simplifying another potential migration process and hoping that Compose Multiplatform resources is here to stay. Time will tell.
+Time will tell.

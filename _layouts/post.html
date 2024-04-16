@@ -28,6 +28,7 @@ layout: default
     {%- assign github_url = github.user_url | append: '/' -%}
     {%- if github_url -%}
     {%- assign github_name = github.user_url | split: '/' | last | append: '/' | default: '' -%}
+
     <a href="{{ page.github | prepend: github_url }}" target="_blank" class="showcase">
         <img src="/assets/images/icons/github.png" class="icon large" alt=""/>
         <div>

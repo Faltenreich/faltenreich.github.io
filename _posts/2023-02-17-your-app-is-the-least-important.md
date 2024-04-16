@@ -1,6 +1,5 @@
 ---
 layout: post
-image: /assets/images/posts/2023-02-importance-in-line.jpg
 title: Your app is the least important
 tags: app ux
 ---
