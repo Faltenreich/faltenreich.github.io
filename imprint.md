@@ -35,17 +35,9 @@ The content and works created by the site operators on these pages are subject t
 
 *Source: [eRecht24](http://www.e-recht24.de){:target="_blank"} (translated via [DeepL](https://www.deepl.com/de/translator){:target="_blank"})*
 
-# Lizenzen
+# Licenses
 
 Services used under their respective licenses are listed below.
-
-### [DALL·E 2](https://labs.openai.com)
-
-This website uses artificially generated images from DALL-E 2, a service of OpenAI LP.
-
-> You may access, and we grant you a non-exclusive right to use, the Services in accordance with these Terms. You will comply with these Terms and all applicable laws when using the Services. We and our affiliates own all rights, title, and interest in and to the Services.
->
-> -- <cite>[Terms of Use](https://openai.com/api/policies/terms){:target="_blank"}</cite>
 
 ### [Jekyll](https://jekyllrb.com)
 
@@ -74,21 +66,3 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 >
 > -- <cite>[License](https://github.com/jekyll/jekyll/blob/master/LICENSE){:target="_blank"}</cite>
-
-### [Midjourney](https://midjourney.com)
-
-This website uses artificially generated images from Midjourney, a service of Midjourney, Inc.
-
-> Subject to the above license, you own all Assets you create with the Services.
->
-> -- <cite>[Terms of Service](https://midjourney.gitbook.io/docs/terms-of-service#4.-copyright-and-trademark){:target="_blank"}</cite>
-
-### [Pexels](https://www.pexels.com)
-
-This website uses royalty-free images from Pexels, a service of Pexels GmbH.
-
-> All photos and videos on Pexels are free to use.
-> Attribution is not required. Giving credit to the photographer or Pexels is not necessary but always appreciated.
-> You can modify the photos and videos from Pexels. Be creative and edit them as you like.
->
-> -- <cite>[License](https://www.pexels.com/license){:target="_blank"}</cite>
