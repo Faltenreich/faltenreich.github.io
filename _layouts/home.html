@@ -20,7 +20,7 @@ layout: default
     <h2>Activity</h2>
     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
     {%- assign items = site.posts | concat: site.poetry | sort: "date" | reverse -%}
-    {%- for item in items limit: 10 -%}
+    {%- for item in items limit: 5 -%}
     <a href="{{ item.url }}">
       <div class="post-meta">{{ item.date | date: date_format}}</div>
       <p>{{ item.title | escape }}</p>
