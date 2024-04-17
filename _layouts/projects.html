@@ -9,7 +9,10 @@ layout: page
         {% else %}
         <div class="tile">
         {% endif %}
-            {{- project.platform -}}
+            <div style="display: flex; justify-content: space-between;">
+                <span>{{- project.platform -}}</span>
+                <span class="project status">{{- project.status -}}</span>
+            </div>
             <h1>{{- project.name -}}</h1>
             {{- project.summary -}}
             {%- if project.image -%}

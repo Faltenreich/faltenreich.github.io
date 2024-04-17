@@ -2,9 +2,8 @@
   color: "#7ac359"
   icon: "/assets/images/icons/android.png"
   description: >-
-    I have started development for Android in 2012 during my Bachelor studies by creating first proof-of-concepts. 
-    Some of them evolved into full-fledged projects and one of them is still running almost ten years later. 
-    I have used the following technologies and many more:
+    In 2012 I have started development for Android during my Bachelor studies by creating first proof-of-concepts. 
+    Some of them evolved into full-fledged projects and one of them is still running more than ten years later.
   technologies:
     - Kotlin, Java
     - Jetpack Compose, XML
@@ -22,9 +21,8 @@
   color: "#B125EA"
   icon: "/assets/images/icons/kotlin.png"
   description: >-
-    Even though Flutter has established itself, my bet is on Kotlin Multiplatform Mobile (and Compose Multiplatform) 
-    to revolutionize cross-platform development once again in the following years. Therefore I am developing first 
-    proof-of-concepts as preparation for my next multiplatform project.
+    In 2022 I have started development with Kotlin Multiplatform and am currently migrating my largest app 
+    from native Android to other platforms.
   technologies:
     - Kotlin Native
     - Compose Multiplatform
@@ -39,7 +37,7 @@
   color: "#7D7D7D"
   icon: "/assets/images/icons/ios.png"
   description: >-
-    I have started development for iOS in 2014 during my Master studies by taking courses and while working for a 
+    In 2014 I have started development for iOS by working as a working student for a 
     company which was developing an iOS client. Since then I have been working on numerous native apps.
   technologies:
     - Swift, Objective-C
@@ -67,7 +65,7 @@
     I have experience in maintaining projects until they enter middle school and evolve while neither 
     rusting undetected nor crumbling to dust. I ensure that level of quality by using:
   technologies:
-    - Model-View-ViewModel
+    - MVVM, MVI, MVC
     - Dependency Injection
     - Unit-, Instrumentation- and UI Testing
     - Continuous Integration, -Deployment and -Delivery

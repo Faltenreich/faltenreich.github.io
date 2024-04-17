@@ -411,3 +411,12 @@ a.showcase {
   padding-left: $spacing-unit;
   padding-right: $spacing-unit;
 }
+
+.project.status {
+  padding: 2px 8px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: $code-background-color-light;
+  font-size: 0.8rem;
+  color: $text-color-light;
+}
