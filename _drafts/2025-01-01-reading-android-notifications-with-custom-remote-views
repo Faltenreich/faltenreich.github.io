@@ -63,9 +63,9 @@ NotificationListenerService's `onNotificationPosted` is being called with every 
 
 TODO: Screenshot of debugger view with expanded RemoteViews
 
-RemoteViews do not expose their contents, so we use reflection to read their internal data. In order to find out which data , we analyze the data hierarchy using the debugger.
+RemoteViews do not expose their contents, so we use reflection to read their internals. The debugger helps us identifying the properties we need to read data from the custom view. With this information in mind, we forge a path from the `RemoteViews` to `mActions`, a list of pairs for every method that can be called and its latest value.
 
-We can see that the `RemoteViews` objects consists of 
+We access `mActions` by retrieving RemoteViews' members via `KClass.memberProperties`, searching for the one with the right name, making it accessible (in order to call this internal property) and casting the result to a list of wildcards.
 
 ```kotlin
 fun getRemoteViewActions(from: RemoteViews): List<Pair<String, Any?>> {
@@ -79,7 +79,7 @@ fun getRemoteViewActions(from: RemoteViews): List<Pair<String, Any?>> {
 }
 ```
 
-`getRemoteViewAction` accesses internal properties of the RemoteViews' actions to read their method name and value.
+We then iterate over this list of actions and access every entry's method name (`mMethodName`) and value (`mValue`) via reflection like before.
 
 ```kotlin
 fun getRemoteViewAction(from: Any): Pair<String, Any?>? {
@@ -102,9 +102,7 @@ fun getRemoteViewAction(from: Any): Pair<String, Any?>? {
 }
 ```
 
-The method names and values can then be filtered to only read those we are interested in. 
-
-In our example we are looking for the custom view that displays a floating point number. So we filter for actions that set a text in the RemoteViews to a number.
+The method names and values can then be filtered to only read those of interest. For example we are looking for a custom view that displays a floating point number. Therefore we filter for actions that set a text (`methodName == "setText"`) to a number (`(value as? String)?.toFloatOrNull()`).
 
 ```
 val remoteViewActions = getRemoteViewActions(remoteViews)
@@ -112,7 +110,7 @@ val setTextActions = remoteViewActions.filter { it.methodName == "setText" }
 val number = setTextActions.mapNotNull { (it.value as? String)?.toFloatOrNull() }.firstOrNull()
 ```
 
-This extracts the number from the notification and we are free to .
+Now we have access to the number in the notification's custom view.
 
 ## Breaking changes
 
