@@ -1,4 +1,21 @@
-- name: Diaguard
+- name: Diaguard (Kotlin Multiplatform)
+  platform: Android, iOS (planned)
+  status: alpha
+  image: "/assets/images/software/diaguard.png"
+  url: https://github.com/Faltenreich/Diaguard/tree/feature/multiplatform
+  summary: >-
+    This multiplatform app supports people with Diabetes mellitus by 
+    replacing their handwritten diary and offering additional features 
+    like a food database or multiple exports.
+
+- name: CamAPS FX Adapter
+  platform: Android, Home Assistant
+  status: private
+  url: https://github.com/Faltenreich/home-assistant-camaps-fx-adapter
+  summary: >-
+    This app reads notifications with custom RemoteViews and writes their data to the Home Assistant API.
+
+- name: Diaguard (Native)
   platform: Android
   status: public
   image: "/assets/images/software/diaguard.png"
