@@ -10,7 +10,7 @@
 
 - name: CamAPS FX Adapter
   platform: Android, Home Assistant
-  status: private
+  status: done
   url: https://github.com/Faltenreich/home-assistant-camaps-fx-adapter
   summary: >-
     This app reads notifications with custom RemoteViews and writes their data to the Home Assistant API.
@@ -73,7 +73,7 @@
 
 - name: Watchfacer
   platform: Android Wear
-  status: deprecated
+  status: done
   image: "/assets/images/software/watchfacer.jpg"
   summary: >-
     This watchface for Android Wear 2 can be fully customized: analog or digital, 
