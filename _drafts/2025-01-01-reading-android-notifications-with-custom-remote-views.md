@@ -2,7 +2,7 @@
 layout: post
 title: Reading Android Notifications with custom RemoteViews
 description: Using Reflection to read what you are not supposed to
-tags: android remoteviews notificationlistenerservice reflection
+tags: android notifications reflection
 github: home-assistant-camaps-fx-adapter
 ---
 
@@ -14,7 +14,7 @@ This blogpost shows how to read Android notifications with such custom views, ho
 
 Any incoming notification can be read by any app, as of Android 15, as long as the user gives permission. Therefore notifications should not contain sensitive data and instead be treated as public domain. This also affects content that may be displayed in a notification later on, like mails or SMS, but we will not delve deeper into this privacy concern at this point.
 
-Notifications can be observed via [NotificationListenerService](https://developer.android.com/reference/android/service/notification/NotificationListenerService). This service has to be registered via the AndroidManifest and will then be started and called by the operating system.
+Notifications can be observed via [NotificationListenerService](https://developer.android.com/reference/android/service/notification/NotificationListenerService). This service has to be registered in the AndroidManifest and will be started and called by the operating system.
 
 ```kotlin
 <manifest>

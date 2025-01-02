@@ -9,8 +9,14 @@ layout: page
     <span class="post-meta">{{ post.date | date: date_format }}</span>
     <h3>
         <a class="post-link" href="{{ post.url | relative_url }}">
-        {{ post.title | escape }}
+            {{ post.title | escape }}
         </a>
+        {% assign tags = post.tags %}
+        {% for tag in tags %}
+            <div style="display: inline-block; justify-content: space-between;">
+                <span class="project status">{{- tag -}}</span>
+            </div>
+        {% endfor %}
     </h3>
     {%- if site.show_excerpts -%}
         {{ post.excerpt }}
