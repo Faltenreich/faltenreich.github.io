@@ -1,15 +1,14 @@
 - title: Android
-  color: "#7ac359"
   icon: "/assets/images/icons/android.png"
   description: >-
     In 2012 I have started development for Android during my Bachelor studies by creating first proof-of-concepts. 
     Some of them evolved into full-fledged projects and one of them is still running more than ten years later.
   technologies:
-    - Kotlin, Java
+    - Kotlin JVM, Java
     - Jetpack Compose, XML
     - Android Architecture Components
     - Coroutines, Flows
-    - Gradle, Groovy, Library Development
+    - Gradle, Kotlin DSL, Groovy, Library Development
     - Firebase, Parse Server
     - Retrofit, OkHttp
     - Room, ObjectBox, OrmLite
@@ -18,7 +17,6 @@
     - NFC, Bluetooth
 
 - title: Kotlin Multiplatform
-  color: "#B125EA"
   icon: "/assets/images/icons/kotlin.png"
   description: >-
     In 2022 I have started development with Kotlin Multiplatform and am currently migrating my largest app 
@@ -27,14 +25,12 @@
     - Kotlin Native
     - Compose Multiplatform
     - Material3
-    - MObile KOtlin
     - SQLDelight
     - Ktor, Coroutines
     - Koin
     - kotlin.test
 
 - title: iOS
-  color: "#7D7D7D"
   icon: "/assets/images/icons/ios.png"
   description: >-
     In 2014 I have started development for iOS by working as a working student for a 
@@ -48,7 +44,6 @@
     - NFC, Bluetooth
 
 - title: Flutter
-  color: "#5ec8f8"
   icon: "/assets/images/icons/flutter.png"
   description: >-
     I have dived into Flutter many times, implemented small projects and helped maintaining legacy projects.
@@ -62,12 +57,22 @@
 
 - title: Quality Assurance
   description: >-
-    I have experience in maintaining projects until they enter middle school and evolve while neither 
-    rusting undetected nor crumbling to dust. I ensure that level of quality by using:
+    I have experience in maintaining projects until they enter middle school and evolve, while neither 
+    rusting undetected nor crumbling to dust.
   technologies:
     - MVVM, MVI, MVC
     - Dependency Injection
     - Unit-, Instrumentation- and UI Testing
     - Continuous Integration, -Deployment and -Delivery
+    - GitHub Actions, GitLab CI/CD
     - Code Reviews on Pull Requests
     - Clean Code
+
+- title: Agile Development
+  description: >-
+    I have worked in a wide variety of environments, from stand-alone to fully-fledged SCRUM teams, 
+    communicating with customers or other interface providers.
+  technologies:
+    - SCRUM, Kanban and everything in-between
+    - Requirements engineering
+    - JIRA, Confluence

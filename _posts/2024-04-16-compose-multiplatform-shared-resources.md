@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Compose Multiplatform with shared resources
-description: One single source of truth for multiplatform resources
 tags: kmp multiplatform compose
 github: diaguard/tree/feature/multiplatform
 ---
