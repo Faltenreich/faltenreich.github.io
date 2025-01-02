@@ -6,11 +6,9 @@ tags: android remoteviews notificationlistenerservice reflection
 github: home-assistant-camaps-fx-adapter
 ---
 
-## Android Notifications and RemoteViews
-
 Notifications on Android have seen countless changes through the years. What began as little more than a combination of title and summary, has been expanded with media controls, direct reply actions and notification groups/channels. However, one thing has been there from the very beginning: RemoteViews as the API for custom views. This blogpost describes how to read data from notifications with such custom views.
 
-## Observing notifications from other apps
+### Observing notifications from other apps
 
 Any incoming notification can be read by any app, as of Android 15, as long as the user gives permission. Therefore notifications should not contain sensitive data and instead be treated as public domain. This also affects content that may be displayed in a notification later on, like mails or SMS, but we will not delve deeper into this privacy concern at this point.
 
@@ -18,31 +16,20 @@ Notifications can be observed via [NotificationListenerService](https://develope
 
 ```kotlin
 <manifest>
-
     <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"/>
-
     <application>
-
         <service
             android:name="MyService"
             android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
-
             <intent-filter>
                 <action android:name="android.service.notification.NotificationListenerService"/>
             </intent-filter>
-
-            <meta-data
-                android:name="android.service.notification.default_filter_types"
-                android:value="conversations|alerting|ongoing|silent"/>
-
         </service>
-
     </application>
-
 </manifest>
 ```
 
-NotificationListenerService requires a permission that we have to check and, if not granted, we can redirect the user to the settings.
+The user has to grant the `enabled_notification_listeners` permission for the NotificationListenerService to work. So we first check the permission and, if not granted, redirect the user to the settings.
 
 ```kotlin
 fun hasNotificationListenerPermission(): Boolean {
@@ -60,28 +47,33 @@ fun openNotificationListenerSettings() {
 }
 ```
 
-NotificationListenerService will be called every time a new notification is being posted or updated in the status bar.
+Every time any new notification is being posted or updated in the status bar, the NotificationListenerService's `onNotificationPosted` will be invoked.
 
 ```kotlin
 class MyService : NotificationListenerService() {
-
     override fun onNotificationPosted(statusBarNotification: StatusBarNotification?) {
-        Log.d(TAG, "Notification posted: $statusBarNotification")
+        // Do something with the statusBarNotification
     }
 }
 ```
 
-Unfortunately the NotificationListenerService becomes somewhat unreliable during development. After a few deployments, you may experience a NotificationListenerService that stops working and will not be created, started or notified about incoming notifications anymore. This has been a known issue for several years now which has been reported to Google but has yet to be fixed (see [issuetracker.google.com/issues/75414169](https://issuetracker.google.com/issues/75414169)). You can workaround this by restarting the device or, allegedly, by withdrawing and granting the notification permission again (see [this comment on stackoverflow](https://stackoverflow.com/a/37081128/3269827)). The latter did not work for me, so I had to restart devices every other hour.
+> ⚠️ NotificationListenerService may become unreliable during development until it stops completely. This issue has yet to be fixed by Google (see [issuetracker.google](https://issuetracker.google.com/issues/75414169)) and can be workaround by restarting the device (see [stackoverflow](https://stackoverflow.com/a/37081128/3269827)).
 
-## Reading notification contents
+### Reading notification contents
 
 NotificationListenerService's `onNotificationPosted` is being called with every new or updated notification. Its parameter, a [StatusBarNotification](https://developer.android.com/reference/android/service/notification/StatusBarNotification), and its child, a [Notification](https://developer.android.com/reference/android/app/Notification), expose everything the user can see or do. Basic notifications contain pre-determined properties like title, summary or icon. More complex notifications use [RemoteViews](https://developer.android.com/reference/android/widget/RemoteViews) to render custom views.
 
-## Reading RemoteViews
+The notification we are observing is being posted by the app "CamAPS FX". This app displays medical data in RemoteViews of a local notification. There is no broadcast nor any other interface to access this data without some third-party cloud-based service.
+
+<img src="/assets/images/posts/2025-01-notification.png" width="420"/>
+*Sample notification from "CamAPS FX", with "172" being the value we are trying to read*
+
+### Reading RemoteViews
 
 RemoteViews do not expose their contents, so we use [reflection](https://kotlinlang.org/docs/reflection.html) to read their internals. The debugger helps us identifying the properties we need to read data from the custom view. We find out that `mActions` lists every callable method and its current value.
 
-[![](/assets/images/posts/2023-02-importance-notification.jpg)][/assets/images/posts/2025-01-remoteviews.jpg]{:target="_blank"}
+<img src="/assets/images/posts/2025-01-remoteviews.jpg" width="420"/>
+*RemoteViews with list of actions containing method name and value*
 
 We access `mActions` by retrieving RemoteViews' members via `KClass.memberProperties`, searching for the one with the right name, making it accessible and casting the result to a list of wildcards.
 
@@ -125,23 +117,21 @@ Now we have access to every piece of data the notification contains. Next we can
 In our example we are looking for some sort of text view that displays a floating point number. Therefore we search the actions for one that sets a text (`methodName == "setText"`) to a number (`(value as? String)?.toFloatOrNull()`).
 
 ```
-val remoteViewActions = getRemoteViewActions(remoteViews)
-val setTextActions = remoteViewActions.filter { it.methodName == "setText" }
-val number = setTextActions.mapNotNull { (it.value as? String)?.toFloatOrNull() }.firstOrNull()
+val remoteViewActions: List<Pair<String, Any?>> = getRemoteViewActions(remoteViews)
+val setTextActions = remoteViewActions.filter { it.first == "setText" }
+val number = setTextActions.mapNotNull { (it.second as? String)?.toFloatOrNull() }.firstOrNull()
 ```
 
 Now we have access to the number in the notification's custom view.
 
-[![](/assets/images/posts/2023-02-importance-notification.jpg)][/assets/images/posts/2025-01-notification.jpg]{:target="_blank"}
+### Beware breaking changes
 
-## Breaking changes
-
-As neat as this approach is, it also creates a moving target for changes outside of our reach: Updates to the app whose notifications we are reading may change the structure of its RemoteViews. Updates to the operating system may change the RemoteViews API. Both would break our mapping logic.
+As neat as this approach is, it also creates a moving target for changes outside of our reach. Updates to the app whose notifications we are reading may change the structure of its RemoteViews. Updates to the operating system may change the RemoteViews API. Both would break our mapping logic.
 
 This happened during the writing of this blogpost and its showcase. After updating to Android 15 no data from RemoteViews could be read anymore. The reason for this was the renaming of RemoteViews' internal properties which now use the hungarian notation and previously did not. `actions` became `mActions` and thus the filtering logic for that property stopped working.
 
-## Conclusion
+### Conclusion
 
 Reflection is a powerful tool that allows us to read data we are not supposed to and can be a feasible approach to overcome dead ends. However, this comes at a cost and may be too fragile for long-living software with a broad target audience.
 
-In my case I tried to read notifications from a closed software in order to write it to my local Home Assistance instance. I do not plan to publish it to Google Play and am fine with the service not running for a while in case of a breaking change. This means there is no risk involved, but in an environment that requires more stability I would not recommend using reflection.
+In my case I tried to read notifications in order to write its data to my local Home Assistance instance. I do not plan to publish this app and am fine with the service not running for a while in case of a breaking change. This means there is no risk involved, but in an environment that requires more stability, I would strongly advice other solutions before falling back to reflection.
