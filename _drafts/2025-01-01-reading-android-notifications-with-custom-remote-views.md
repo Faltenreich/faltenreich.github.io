@@ -6,13 +6,15 @@ tags: android remoteviews notificationlistenerservice reflection
 github: home-assistant-camaps-fx-adapter
 ---
 
-Notifications on Android have seen countless changes through the years. What began as little more than a combination of title and summary, has been expanded with media controls, direct reply actions and notification groups/channels. However, one thing has been there from the very beginning: RemoteViews as the API for custom views. This blogpost describes how to read data from notifications with such custom views.
+Notifications on Android have seen countless changes through the years. What began as little more than a set of texts and icons, has been expanded with media controls, direct reply actions, notification groups/channels and more. However, one thing has been there from the very beginning: RemoteViews as the API for custom views. 
+
+This blogpost shows how to read Android notifications with such custom views, how to analyze internal APIs using reflection and which stumbling blocks to watch out for. You can find a showcase at the end of this page in which all the mechanisms used are explained.
 
 ### Observing notifications from other apps
 
 Any incoming notification can be read by any app, as of Android 15, as long as the user gives permission. Therefore notifications should not contain sensitive data and instead be treated as public domain. This also affects content that may be displayed in a notification later on, like mails or SMS, but we will not delve deeper into this privacy concern at this point.
 
-Notifications can be observed via [NotificationListenerService](https://developer.android.com/reference/android/service/notification/NotificationListenerService). This Android service has to be registered via the AndroidManifest and will then be started and called by the operating system.
+Notifications can be observed via [NotificationListenerService](https://developer.android.com/reference/android/service/notification/NotificationListenerService). This service has to be registered via the AndroidManifest and will then be started and called by the operating system.
 
 ```kotlin
 <manifest>
@@ -29,7 +31,7 @@ Notifications can be observed via [NotificationListenerService](https://develope
 </manifest>
 ```
 
-The user has to grant the `enabled_notification_listeners` permission for the NotificationListenerService to work. So we first check the permission and, if not granted, redirect the user to the settings.
+The user has to grant the `enabled_notification_listeners` permission for the NotificationListenerService to work. So we check the permission and, if not granted, redirect the user to the settings.
 
 ```kotlin
 fun hasNotificationListenerPermission(): Boolean {
@@ -47,7 +49,7 @@ fun openNotificationListenerSettings() {
 }
 ```
 
-Every time any new notification is being posted or updated in the status bar, the NotificationListenerService's `onNotificationPosted` will be invoked.
+Every time a new notification is being posted or updated in the status bar, the NotificationListenerService's `onNotificationPosted` will be invoked.
 
 ```kotlin
 class MyService : NotificationListenerService() {
@@ -61,9 +63,9 @@ class MyService : NotificationListenerService() {
 
 ### Reading notification contents
 
-NotificationListenerService's `onNotificationPosted` is being called with every new or updated notification. Its parameter, a [StatusBarNotification](https://developer.android.com/reference/android/service/notification/StatusBarNotification), and its child, a [Notification](https://developer.android.com/reference/android/app/Notification), expose everything the user can see or do. Basic notifications contain pre-determined properties like title, summary or icon. More complex notifications use [RemoteViews](https://developer.android.com/reference/android/widget/RemoteViews) to render custom views.
+`onNotificationPosted` receives a [StatusBarNotification](https://developer.android.com/reference/android/service/notification/StatusBarNotification) whose [Notification](https://developer.android.com/reference/android/app/Notification) exposes everything the user can see or do. Basic notifications contain pre-determined properties like title, summary or icon. More complex notifications use [RemoteViews](https://developer.android.com/reference/android/widget/RemoteViews) to render custom views.
 
-The notification we are observing is being posted by the app "CamAPS FX". This app displays medical data in RemoteViews of a local notification. There is no broadcast nor any other interface to access this data without some third-party cloud-based service.
+The notification in my example is being posted by the app "CamAPS FX". This app displays medical data in RemoteViews of a local notification. There is no broadcast nor any other interface to access this data without some third-party cloud-based service.
 
 <img src="/assets/images/posts/2025-01-notification.png" width="420"/>
 *Sample notification from "CamAPS FX", with "172" being the value we are trying to read*
@@ -114,7 +116,7 @@ fun getRemoteViewAction(action: Any): Pair<String, Any?>? {
 
 Now we have access to every piece of data the notification contains. Next we can filter the method names and values for those of interest.
 
-In our example we are looking for some sort of text view that displays a floating point number. Therefore we search the actions for one that sets a text (`methodName == "setText"`) to a number (`(value as? String)?.toFloatOrNull()`).
+In our example we are looking for some sort of text view that displays a number ("172" in the screenshot above). Therefore we search the actions for one that sets a text (`methodName == "setText"`) to a number (`(value as? String)?.toFloatOrNull()`).
 
 ```
 val remoteViewActions: List<Pair<String, Any?>> = getRemoteViewActions(remoteViews)
@@ -126,12 +128,12 @@ Now we have access to the number in the notification's custom view.
 
 ### Beware breaking changes
 
-As neat as this approach is, it also creates a moving target for changes outside of our reach. Updates to the app whose notifications we are reading may change the structure of its RemoteViews. Updates to the operating system may change the RemoteViews API. Both would break our mapping logic.
+As neat as this approach is, it also creates a moving target for changes outside of our reach. Updates to the notification-producing app may change the structure of its RemoteViews. Updates to the operating system may change the RemoteViews' internals. Both would break our mapping logic.
 
 This happened during the writing of this blogpost and its showcase. After updating to Android 15 no data from RemoteViews could be read anymore. The reason for this was the renaming of RemoteViews' internal properties which now use the hungarian notation and previously did not. `actions` became `mActions` and thus the filtering logic for that property stopped working.
 
 ### Conclusion
 
-Reflection is a powerful tool that allows us to read data we are not supposed to and can be a feasible approach to overcome dead ends. However, this comes at a cost and may be too fragile for long-living software with a broad target audience.
+Reflection is a powerful tool that allows us to read data we are not supposed to. It can be a feasible approach to overcome dead ends. However, this comes at a cost and may be too fragile for long-living software with a broad target audience.
 
-In my case I tried to read notifications in order to write its data to my local Home Assistance instance. I do not plan to publish this app and am fine with the service not running for a while in case of a breaking change. This means there is no risk involved, but in an environment that requires more stability, I would strongly advice other solutions before falling back to reflection.
+This worked well in my example, in which I wanted to transfer data from an Android app and its notifications to my local Home Assistance instance. I do not plan to publish this solution to any store and am fine with the service not running for a while in case of a breaking change. You can find the code for this example in the GitHub project below.
