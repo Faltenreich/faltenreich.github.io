@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Reading Android Notifications with RemoteViews using Reflection
+title: Reading Android notifications with custom views using reflection
 tags: android notifications reflection
 github: home-assistant-camaps-fx-adapter
 ---
