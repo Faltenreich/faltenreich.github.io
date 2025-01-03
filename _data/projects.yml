@@ -1,7 +1,6 @@
 - name: Diaguard (Kotlin Multiplatform)
   platform: Android, iOS (planned)
   status: alpha
-  image: "/assets/images/software/diaguard.png"
   url: https://github.com/Faltenreich/Diaguard/tree/feature/multiplatform
   summary: >-
     This multiplatform app supports people with Diabetes mellitus by 
