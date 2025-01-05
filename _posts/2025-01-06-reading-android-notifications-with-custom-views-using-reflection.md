@@ -74,7 +74,7 @@ The notification in my example is being posted by the app "CamAPS FX". This app 
 RemoteViews do not expose their contents, so we use [reflection](https://kotlinlang.org/docs/reflection.html) to read their internals. The debugger helps us identifying the properties we need to read data from the custom view. We find out that `mActions` lists every callable method and its current value.
 
 <img src="/assets/images/posts/2025-01-remoteviews.jpg" width="420"/>
-*RemoteViews with list of actions containing method name and value*
+*RemoteViews with list of actions, each containing method name and value*
 
 We access `mActions` by retrieving RemoteViews' members via `KClass.memberProperties`, searching for the one with the right name, making it accessible and casting the result to a list of wildcards.
 
