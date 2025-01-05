@@ -1,11 +1,9 @@
-- name: Diaguard (Kotlin Multiplatform)
+- name: Diaguard (Multiplatform)
   platform: Android, iOS (planned)
   status: alpha
   url: https://github.com/Faltenreich/Diaguard/tree/feature/multiplatform
   summary: >-
-    This multiplatform app supports people with Diabetes mellitus by 
-    replacing their handwritten diary and offering additional features 
-    like a food database or multiple exports.
+    This rewrite migrates a decade-old app to iOS and other platforms using Kotlin- and Compose Multiplatform. 
 
 - name: CamAPS FX Adapter
   platform: Android, Home Assistant
@@ -20,7 +18,7 @@
   image: "/assets/images/software/diaguard.png"
   url: https://github.com/Faltenreich/Diaguard
   summary: >-
-    This Android app supports people with Diabetes mellitus by 
+    This app supports people with Diabetes mellitus by 
     replacing their handwritten diary and offering additional features 
     like a food database or multiple exports.
 
