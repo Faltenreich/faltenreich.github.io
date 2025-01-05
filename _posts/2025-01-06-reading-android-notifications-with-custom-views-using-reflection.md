@@ -7,7 +7,7 @@ github: home-assistant-camaps-fx-adapter
 
 Notifications on Android have seen countless changes through the years. What began as little more than a set of texts and icons, has been expanded with media controls, direct reply actions, notification groups/channels and more. However, one thing has been there from the very beginning: RemoteViews as the API for custom views. 
 
-This blogpost shows how to read Android notifications with such custom views, how to analyze internal APIs using reflection and which stumbling blocks to watch out for. You can find a showcase at the end of this page in which all the mechanisms used are explained.
+This blogpost shows how to read Android notifications with such custom views, how to analyze internal APIs using reflection and which stumbling blocks to watch out for. At the end of this page you will find a showcase that illustrates the techniques used.
 
 ### Observing notifications from other apps
 
@@ -135,4 +135,4 @@ This happened during the writing of this blogpost and its showcase. After updati
 
 Reflection is a powerful tool that allows us to read data we are not supposed to. It can be a feasible approach to overcome dead ends. However, this comes at a cost and may be too fragile for long-living software with a broad target audience.
 
-This worked well in my example, in which I wanted to transfer data from an Android app and its notifications to my local Home Assistance instance. I do not plan to publish this solution to any store and am fine with the service not running for a while in case of a breaking change. You can find the code for this example in the GitHub project below.
+This worked well in my example, in which I wanted to transfer data from an Android app and its notifications to my local Home Assistance instance. I do not plan to publish this solution to any store and I am fine with the service not running for a while in case of a breaking change. You can find the code for this example in the GitHub project below.
