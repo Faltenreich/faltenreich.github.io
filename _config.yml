@@ -21,24 +21,22 @@ remote_theme: jekyll/minima
 minima:
   skin: dark
   social_links:
-    - platform: github
-      user_url: https://github.com/Faltenreich
-      title: GitHub
-    - platform: stackoverflow
-      user_url: https://stackoverflow.com/users/3269827/philipp-fahlteich
-      title: Stack Overflow
-    - platform: linkedin
-      user_url: https://www.linkedin.com/in/philipp-fahlteich
-      title: LinkedIn
-    - platform: xing
-      user_url: https://www.xing.com/profile/Philipp_Fahlteich
-      title: XING
-    - platform: mail
-      user_url: mailto:philipp.fahlteich@gmail.com
-      title: E-Mail
-    - platform: rss
-      user_url: feed.xml
-      title: RSS
+    - title: GitHub
+      icon: github
+      url: https://github.com/Faltenreich
+    - title: Stack Overflow
+      icon: stackoverflow
+      url: https://stackoverflow.com/users/3269827/philipp-fahlteich
+    - title: LinkedIn
+      icon: linkedin
+      url: https://www.linkedin.com/in/philipp-fahlteich
+    - title: XING
+      icon: xing
+      url: https://www.xing.com/profile/Philipp_Fahlteich
+    - title: E-Mail
+      icon: inbox
+      url: mailto:philipp.fahlteich@gmail.com
+      
 
 kramdown:
   hard_wrap: true
