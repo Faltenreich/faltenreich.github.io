@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Migrating to Kotlin Multiplatform Mobile
-description: From native Android- and iOS development to multiplatform
 tags: kmm kmp kotlin multiplatform
 github: rhyme-kmm
 ---
