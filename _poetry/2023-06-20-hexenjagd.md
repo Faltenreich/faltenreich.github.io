@@ -1,6 +1,6 @@
 ---
 layout: post
-image: /assets/images/posts/hexenjagd.jpg
+image: /assets/images/posts/witchhunt.jpg
 title: Hexenjagd
 date: 2023-06-20
 ---
