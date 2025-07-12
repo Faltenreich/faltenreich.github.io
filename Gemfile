@@ -9,7 +9,7 @@ source "https://rubygems.org"
 # Happy Jekylling!
 gem "jekyll", "~> 4.2.2"
 # Minima 3 is not yet whitelisted on GitHub Pages, so we fallback to remote theme
-gem "minima", "~> 2.5"
+gem "minima", "~> 2.5.1"
 gem "jekyll-remote-theme"
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
@@ -34,5 +34,3 @@ gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
 gem "webrick", "~> 1.7"
-
-gem "logger", "~> 1.6.4"

@@ -23,21 +23,18 @@ minima:
   social_links:
     - title: GitHub
       icon: github
-      url: https://github.com/Faltenreich
-    - title: Stack Overflow
-      icon: stackoverflow
-      url: https://stackoverflow.com/users/3269827/philipp-fahlteich
+      url: "https://github.com/Faltenreich"
     - title: LinkedIn
       icon: linkedin
-      url: https://www.linkedin.com/in/philipp-fahlteich
+      url: "https://www.linkedin.com/in/philipp-fahlteich"
     - title: XING
       icon: xing
-      url: https://www.xing.com/profile/Philipp_Fahlteich
+      url: "https://www.xing.com/profile/Philipp_Fahlteich"
     - title: E-Mail
-      icon: inbox
-      url: mailto:philipp.fahlteich@gmail.com
+      icon: envelope
+      fa_namespace: regular
+      url: "mailto:philipp.fahlteich@gmail.com"
       
-
 kramdown:
   hard_wrap: true
 
